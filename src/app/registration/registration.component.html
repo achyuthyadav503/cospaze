@@ -1,0 +1,132 @@
+<div class="text-center">
+  <h2 class="jumbotron">User Registration</h2>
+</div>
+<div class="row">
+  <div class="col-md-8">
+ <form id="formNewUser" name="formNewUser" #userData="ngForm" (ngSubmit)="userData.valid && addNewUser(userData.value)">
+  <div class="form-group">
+    <label>OfficeName:</label><input type="text" class="form-control" name="OfficeName" id="OfficeName" placeholder="OfficeName" maxlength="20" required [pattern]="textpattern" ngModel #OfficeName="ngModel"></div>
+    <div *ngIf="OfficeName.errors"> 
+      <div [hidden]="!(OfficeName.errors.required) || OfficeName.pristine" class="alert alert-danger"> 
+        OfficeName required.
+      </div>		   
+      <div [hidden]="!(OfficeName.errors.pattern)|| OfficeName.pristine" class="alert alert-danger"> 
+        OfficeName not valid.
+      </div>	
+      </div> 
+  <div class="form-group">
+    <label>Address:</label><input type="text" class="form-control" name="Address" id="Address" placeholder="Address" maxlength="20" required [pattern]="textpattern" ngModel #Address="ngModel"></div>
+    <div *ngIf="Address.errors"> 
+      <div [hidden]="!(Address.errors.required) || Address.pristine" class="alert alert-danger"> 
+        Address required.
+      </div>		   
+      <div [hidden]="!(Address.errors.pattern)|| Address.pristine" class="alert alert-danger"> 
+        Address not valid.
+      </div>	
+      </div> 
+  
+  <div class="form-group">
+  <label>Location:</label><input type="text" class="form-control" name="Location" id="Location" placeholder="Location" maxlength="20" required [pattern]="textpattern" ngModel #Location="ngModel"></div>
+  <div *ngIf="Location.errors"> 
+    <div [hidden]="!(Location.errors.required) || Location.pristine" class="alert alert-danger"> 
+      Location required.
+    </div>		   
+    <div [hidden]="!(Location.errors.pattern)|| Location.pristine" class="alert alert-danger"> 
+      Location not valid.
+    </div>	
+    </div> 
+<div class="form-group">
+  <label>City:</label><input type="text" class="form-control" name="City" id="City" placeholder="City" maxlength="20" required [pattern]="textpattern" ngModel #City="ngModel"></div>
+  <div *ngIf="City.errors"> 
+    <div [hidden]="!(City.errors.required) || City.pristine" class="alert alert-danger"> 
+      City required.
+    </div>		   
+    <div [hidden]="!(City.errors.pattern)|| City.pristine" class="alert alert-danger"> 
+      City not valid.
+    </div>	
+    </div> 
+    <div class="form-group">
+      <label>Types of seats:</label>
+      <select  name="typesOfSeats" id="typesOfSeats" ngModel>
+        <option value="Openworkstation">Open workstation</option>
+        <option value="PrivateCabin">Private Cabin</option>
+        <option value="Semi-privateCabin">Semi-private cabin</option>
+        <option value="ManagerialCabin">Managerial Cabin</option>
+      </select>
+        <label>Number of seats:</label><input type="text" name="Numberofseats" id="Numberofseats" maxlength="20" required ngModel #Numberofseats="ngModel">
+        <label>Price per seat:</label><input type="text" name="Priceperseat" id="Priceperseat" maxlength="20" required ngModel #Priceperseat="ngModel">
+        <input type="button" value="+" (click)="addData(userData.value)">
+    </div>
+    <table>
+    <div *ngFor="let type of types; let i = index">
+      <tr border="1">
+       <td> {{type.typesOfSeats}} </td>
+       <td>  {{type.Numberofseats}}  </td>
+       <td> {{type.Priceperseat}} </td>
+       <td> <input type="button" value="X" (click)="deleteType(i)"> </td>
+      </tr>
+      
+  </div>
+</table>
+<br><br>
+<div class="panel panel-primary" style="border: 2px solid black">
+    <div class="panel-heading"  style="text-align:center">
+        <h4>authorized personnel</h4>
+</div>
+<br>
+<div class="panel-body">
+    <div class="form-group">
+      <label>UserName:</label><input type="text" class="form-control" name="UserName" id="UserName" placeholder="UserName" maxlength="20" required [pattern]="textpattern" ngModel #UserName="ngModel"></div>
+      <div *ngIf="UserName.errors"> 
+        <div [hidden]="!(UserName.errors.required) || UserName.pristine" class="alert alert-danger"> 
+          UserName required.
+        </div>		   
+        <div [hidden]="!(UserName.errors.pattern)|| UserName.pristine" class="alert alert-danger"> 
+          UserName not valid.
+        </div>	
+        </div> 
+    <div class="form-group">
+      <label>Password:</label><input type="text" class="form-control" name="PassWord" id="PassWord" placeholder="PassWord" maxlength="20" required [pattern]="textpattern" ngModel #PassWord="ngModel"></div>
+      <div *ngIf="PassWord.errors"> 
+        <div [hidden]="!(PassWord.errors.required) || PassWord.pristine" class="alert alert-danger"> 
+          PassWord required.
+        </div>		   
+        <div [hidden]="!(PassWord.errors.pattern)|| PassWord.pristine" class="alert alert-danger"> 
+          PassWord not valid.
+        </div>	
+        </div> 
+    
+    <div class="form-group">
+    <label>Mobile No:</label><input type="text" class="form-control" name="MobileNo" id="MobileNo" placeholder="Mobile No" maxlength="20" required [pattern]="mobilepattern" ngModel #MobileNo="ngModel"></div>
+    <div *ngIf="MobileNo.errors"> 
+      <div [hidden]="!(MobileNo.errors.required) || MobileNo.pristine" class="alert alert-danger"> 
+        MobileNo required.
+      </div>		   
+      <div [hidden]="!(MobileNo.errors.pattern)|| MobileNo.pristine" class="alert alert-danger"> 
+        MobileNo not valid.
+      </div>	
+      </div>
+  
+   <div class="form-group">
+  <label>Personal EmailID:</label><input type="text" name="PersonalEmailID" class="form-control" id="PersonalEmailID" placeholder="Personal EmailID" required [pattern]="emailPattern" ngModel #perEmail="ngModel"></div>
+  <div *ngIf="perEmail.errors"> 
+    <div [hidden]="!(perEmail.errors.required) || perEmail.pristine" class="alert alert-danger"> 
+      Personal Email required.
+    </div>			   
+    <div [hidden]="!(perEmail.errors.pattern)|| perEmail.pristine" class="alert alert-danger"> 
+      Personal Email not valid.
+    </div>	
+ </div> 
+ </div></div>
+ 
+   
+  <input type="submit" class="btn btn-success" value="Register">
+</form>
+<br>
+<h3 *ngIf="isAdded">
+  {{conformationString}}
+</h3>
+
+
+</div></div>
+

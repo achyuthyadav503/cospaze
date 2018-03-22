@@ -1,0 +1,10 @@
+<p>
+  welcome {{userDetailsObj?.UserName}}
+  
+ 
+</p>
+<a routerLink='register'><input type="button" class="btn btn-success" value="Register"></a>
+ 
+<input type="button" *ngIf="islogedin" class="btn btn-success" (click)="logout()" value="Logout">
+<input type="button" *ngIf="!islogedin" class="btn btn-success" (click)="logout()" value="Login">
+ 
