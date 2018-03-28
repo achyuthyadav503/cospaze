@@ -1,0 +1,20 @@
+<div class="text-center">
+  <h3 class="jumbotron">Search co-working spaces</h3>
+</div>
+<div class="row">
+  <div class="col-md-8">
+ <form id="formSearch" name="formSearch" #searchData="ngForm" (ngSubmit)="searchData.valid && search(searchData.value)">
+  <div class="form-group">
+    <label>Location:</label>
+    <select name="Location" id="Location" ngModel>
+      <option value="koramangala">koramangala</option>
+      <option value="Marathalli">Marathalli</option>
+      <option value="BTM">BTM</option>
+      <option value="HSR Layout">HSR Layout</option>
+    </select>
+    <label>Number of seats:</label><input type="text" name="NoSeats" id="NoSeats" placeholder="OfficeName" maxlength="20" required [pattern]="textpattern" ngModel #NoSeats="ngModel">
+    <input type="button" class="btn btn-success" value="Search" (click)="search(searchData.value)">
+    </div>
+  
+     </form>
+    </div></div>
