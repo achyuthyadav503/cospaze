@@ -1,0 +1,114 @@
+<div class="text-center">
+  <h2 class="jumbotron">Free Lancer Registration</h2>
+</div>
+<div class="row">
+  <div class="col-md-8">
+ <form id="formNewUser" name="formNewUser" #userData="ngForm" (ngSubmit)="userData.valid && addNewUser(userData.value)">
+  <div class="form-group">
+    <label>FullName:</label><input type="text" class="form-control" name="FullName" id="FullName" placeholder="FullName" maxlength="20" required [pattern]="textpattern" ngModel #FullName="ngModel"></div>
+    <div *ngIf="FullName.errors"> 
+      <div [hidden]="!(FullName.errors.required) || FullName.pristine" class="alert alert-danger"> 
+        FullName required.
+      </div>		   
+      <div [hidden]="!(FullName.errors.pattern)|| FullName.pristine" class="alert alert-danger"> 
+        FullName not valid.
+      </div>	
+      </div> 
+  <div class="form-group">
+    <label>Password:</label><input type="text" class="form-control" name="PassWord" id="PassWord" placeholder="PassWord" maxlength="20" required [pattern]="textpattern" ngModel #PassWord="ngModel"></div>
+    <div *ngIf="PassWord.errors"> 
+      <div [hidden]="!(PassWord.errors.required) || PassWord.pristine" class="alert alert-danger"> 
+        PassWord required.
+      </div>		   
+      <div [hidden]="!(PassWord.errors.pattern)|| PassWord.pristine" class="alert alert-danger"> 
+        PassWord not valid.
+      </div>	
+      </div> 
+  
+  <div class="form-group">
+  <label>Mobile No:</label><input type="text" class="form-control" name="MobileNo" id="MobileNo" placeholder="Mobile No" maxlength="20" required [pattern]="mobilepattern" ngModel #MobileNo="ngModel"></div>
+  <div *ngIf="MobileNo.errors"> 
+    <div [hidden]="!(MobileNo.errors.required) || MobileNo.pristine" class="alert alert-danger"> 
+      MobileNo required.
+    </div>		   
+    <div [hidden]="!(MobileNo.errors.pattern)|| MobileNo.pristine" class="alert alert-danger"> 
+      MobileNo not valid.
+    </div>	
+    </div>
+
+ <div class="form-group">
+<label>Email:</label><input type="text" name="Email" class="form-control" id="Email" placeholder="Email" required [pattern]="emailPattern" ngModel #Email="ngModel"></div>
+<div *ngIf="Email.errors"> 
+  <div [hidden]="!(Email.errors.required) || Email.pristine" class="alert alert-danger"> 
+    Email required.
+  </div>			   
+  <div [hidden]="!(Email.errors.pattern)|| Email.pristine" class="alert alert-danger"> 
+    Email not valid.
+  </div>	
+</div> 
+</div>
+<div class="form-group">
+  <label>Types of seats:</label>
+  <select  name="typesOfSeats" id="typesOfSeats" ngModel>
+    <option value="Openworkstation">Open workstation</option>
+    <option value="PrivateCabin">Private Cabin</option>
+    <option value="Semi-privateCabin">Semi-private cabin</option>
+    <option value="ManagerialCabin">Managerial Cabin</option>
+  </select>
+    <label>Number of seats:</label><input type="text" name="Numberofseats" id="Numberofseats" maxlength="20" required ngModel #Numberofseats="ngModel">
+    <label>Price per seat:</label><input type="text" name="Priceperseat" id="Priceperseat" maxlength="20" required ngModel #Priceperseat="ngModel">
+    <input type="button" value="+" (click)="addData(userData.value)">
+</div>
+<table>
+<div *ngFor="let type of types; let i = index">
+  <tr border="1">
+   <td> {{type.typesOfSeats}} </td>
+   <td>  {{type.Numberofseats}}  </td>
+   <td> {{type.Priceperseat}} </td>
+   <td> <input type="button" value="X" (click)="deleteType(i)"> </td>
+  </tr>
+  
+</div>
+</table>
+<br><br>
+<div class="form-group">
+  <label>joining Date:</label><input type="text" class="form-control" name="joiningDate" id="joiningDate" placeholder="joining Date" maxlength="20" required [pattern]="textpattern" ngModel #joiningDate="ngModel"></div>
+  <div *ngIf="joiningDate.errors"> 
+    <div [hidden]="!(joiningDate.errors.required) || joiningDate.pristine" class="alert alert-danger"> 
+      joining Date required.
+    </div>		   
+    <div [hidden]="!(joiningDate.errors.pattern)|| joiningDate.pristine" class="alert alert-danger"> 
+      joining Date not valid.
+    </div>	
+    </div> 
+<div class="form-group">
+  <label>Total monthly rent:</label><input type="text" class="form-control" name="Tmrent" id="Tmrent" placeholder="Total monthly rent" maxlength="20" required [pattern]="textpattern" ngModel #Tmrent="ngModel"></div>
+  <div *ngIf="Tmrent.errors"> 
+    <div [hidden]="!(Tmrent.errors.required) || Tmrent.pristine" class="alert alert-danger"> 
+      Total monthly rent required.
+    </div>		   
+    <div [hidden]="!(Tmrent.errors.pattern)|| Tmrent.pristine" class="alert alert-danger"> 
+      Total monthly rent not valid.
+    </div>	
+    </div> 
+    <div class="form-group">
+      <label>Description:</label><input type="text" class="form-control" name="Description" id="Description" placeholder="Description" maxlength="20" required [pattern]="textpattern" ngModel #Description="ngModel"></div>
+      <div *ngIf="Description.errors"> 
+        <div [hidden]="!(Description.errors.required) || Description.pristine" class="alert alert-danger"> 
+          Description required.
+        </div>		   
+        <div [hidden]="!(Description.errors.pattern)|| Description.pristine" class="alert alert-danger"> 
+          Description not valid.
+        </div>	
+        </div> 
+     
+  <input type="submit" class="btn btn-success" value="Register">
+</form>
+<br>
+<h3 *ngIf="isAdded">
+  {{conformationString}}
+</h3>
+
+
+</div></div>
+
