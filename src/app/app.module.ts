@@ -36,7 +36,9 @@ import { UserregistrationComponent } from './userregistration/userregistration.c
      {path:"errorpage",component:ErrorpageComponent},
 	 {path:"home/register",component:RegistrationComponent},
     {path:"register",component:RegistrationComponent},
-     {path:"home/search",component:SearchComponent}
+     {path:"home/search",component:SearchComponent},
+     {path:"home/register-company",component:CompregistrationComponent},
+     {path:"home/register-employee",component:UserregistrationComponent}
      ])
     
   ],

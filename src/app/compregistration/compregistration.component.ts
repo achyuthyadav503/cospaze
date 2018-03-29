@@ -44,12 +44,11 @@ export class CompregistrationComponent implements OnInit {
   addNewComp=function (company) {
     
     this.compDetailsObj={
-      "":company.id,
       "CompanyName":company.CompanyName,
       "typesofseats":this.typesOfSeatsObj,
       "joiningDate":company.joiningDate,
       "Tmrent": company.Tmrent,
-      "Description": company.Description
+      "Description": company.description
       
     }
     this.userDeatilsObj={
@@ -58,12 +57,24 @@ export class CompregistrationComponent implements OnInit {
       "MobileNo": company.MobileNo,
       "Email": company.perEmail
     }
-    this.http.post("http://localhost/cospaze/officedetails",this.OfficeDetailsObj).
+    this.http.post("/CoAPI/register-company.php",this.compDetailsObj).
     subscribe((res:Response)=>{
-      this.http.post("http://localhost:5555/userdetails",this.userDeatilsObj).
+      console.log(res);
+      let data = res.json();
+      let officeData = data.details;
+      let companyId = officeData.companyId;
+      this.userDeatilsObj={
+        "UserName":this.userDeatilsObj.UserName,
+        "PassWord":this.userDeatilsObj.PassWord,
+        "MobileNo": this.userDeatilsObj.MobileNo,
+        "Email": this.userDeatilsObj.perEmail,
+        "companyId": companyId
+      }
+      this.http.post("/CoAPI/register-employee.php",this.userDeatilsObj).
     subscribe((res:Response)=>{
+		console.log(res);
      this.isAdded=true;
-     this.router.navigateByUrl("/home");
+    // this.router.navigateByUrl("/home");
     })
     })
   }
