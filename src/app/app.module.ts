@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { SearchComponent } from './search/search.component';
+import { CompregistrationComponent } from './compregistration/compregistration.component';
+import { UserregistrationComponent } from './userregistration/userregistration.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { SearchComponent } from './search/search.component';
     HomeComponent,
     RegistrationComponent,
     ErrorpageComponent,
-    SearchComponent
+    SearchComponent,
+    CompregistrationComponent,
+    UserregistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +34,8 @@ import { SearchComponent } from './search/search.component';
       {path:"",component:LoginComponent},
      {path:"home",component:HomeComponent},
      {path:"errorpage",component:ErrorpageComponent},
-     {path:"home/register",component:RegistrationComponent},
-     {path:"register",component:RegistrationComponent},
+	 {path:"home/register",component:RegistrationComponent},
+    {path:"register",component:RegistrationComponent},
      {path:"home/search",component:SearchComponent}
      ])
     
