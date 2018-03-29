@@ -1,0 +1,9 @@
+{
+  "/CoAPI": {
+    "target": "http://localhost/CoAPI/",
+    "secure": false,
+	"pathRewrite": {
+      "^/CoAPI": ""
+    }
+  }
+}

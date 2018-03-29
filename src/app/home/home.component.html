@@ -1,10 +1,119 @@
-<p>
-  welcome {{userDetailsObj?.UserName}}
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="dist/img/" alt="cospace" style="width:100%;height: 120px;">
+        </div>
+          <div class="text-center img-circle">
+            <img src="dist/img/" alt="cospace" class="img-circle">
+          </div>
+        <div class="logo-description">
+            <h1> welcome {{userDetailsObj?.name}}</h1>
+            <p>Company</p>
+            <h1><a href="editprofile.php">Edit Profile</a></h1>	
+        </div>
+      </div>	
+      <div class="col-md-6">
+          <div class="New-Members-Announcement">
+            <h1>New Members Announcement</h1>
+            <a routerLink='register'><input type="button" class="btn btn-success" value="Register Co Office"></a>
+            
+            <a routerLink='search'><input type="button" class="btn btn-success" value="Search Office"></a>
+             
+            <input type="button" *ngIf="islogedin" class="btn btn-success" (click)="logout()" value="Logout">
+            <input type="button" *ngIf="!islogedin" class="btn btn-success" (click)="logout()" value="Login">
+         </div>	
+      </div>
+      <div class="col-md-3">
+          <div class="menu-background">
+          <div class="menu-mainbox">
+             <h1 class="menu">Menu</h1>
+            <div class="menu-description">
+               <ul style="list-style:none" id="responsive">
+                <li>Brookies<span> RS 20</span></li>
+                <li>Samosa<span> RS 10</span></li>
+                <li>Chips <span>RS 10</span></li>
+                <li>Muffina <span>RS 18</span></li>
+                <li>Pizza <span>RS 25</span></li>
+              </ul>	
+            </div>
+             </div>	
+         </div>
+      </div>
+    </div>
   
  
-</p>
-<a routerLink='register'><input type="button" class="btn btn-success" value="Register"></a>
- 
-<input type="button" *ngIf="islogedin" class="btn btn-success" (click)="logout()" value="Logout">
-<input type="button" *ngIf="!islogedin" class="btn btn-success" (click)="logout()" value="Login">
- 
+    <div class="row">
+        <div class="col-md-3">
+
+            <div class="member-mainbox">
+                <h1 class="member-tittle">Memders</h1>
+                <hr class="hr">
+                <div class="member-box-space member-box">
+                    <div class="text-center">
+                      <img src="" class="company-logo" />
+                    </div>
+                    <h1 style=" font-size:20px;margin-left: 50px;">Company Name</h1>
+                    <p style=" font-size:15px;margin-left: 50px;">Description</p>
+                  </div>
+                
+               
+            </div>
+
+
+          </div>
+          <div class="col-md-6">
+
+
+              <div class="sprit-box">
+                  <div class="sprit-logo-image">
+                  <img src="dist/img/image-slider.jpeg" alt="cospace" class="sprit-logo text-center">
+                 <div class="sprit-heading">
+                    <h1>The Sprit Of First Among Equals</h1>
+                    <p>One lucky bride a month wins a sponsored look for one of their wedding functionsYour sponsored look comprise of a beautiful outfit,accessories and jewelry to go along.</p>
+                 </div>
+               </div>	
+                <div class="likes">
+                  
+                  <div class="likes-user-logo">
+                       <img src="dist/img/image-slider.jpeg" alt="cospace">
+                    <div class="user"> <h1 style="font-size:20px;color:#adadef;margin-left:10px;">vivak Agrawal <span style="color:#ebe0e0;padding: 10px;">.4 mutual friends</span></h1>
+                     <p style="font-size:10px;color:black;margin-left:10px;"> missinu u lots and lots my little friends |when r u commimy to meet</p></div>
+                     <h1 style="font-size:20px;margin-left: 20%;color:#adadef;">likes<span style="margin-left:10px;"> reply</span> <span style="margin-left:10px; color:#000;">40w</span></h1>
+                  </div>
+                  <div class="likes-user-logo">
+                       <img src="dist/img/image-slider.jpeg" alt="cospace">
+                    <div class="user"> 
+                    <h1 style="font-size:20px;color:#f4f4f2;">Comments on these post.... </h1>
+                    <div class="" style=" margin-left: 75%;">
+                    <i class="fa fa-frown-o" style="padding: 5px;"></i><i class="fa fa-camera" aria-hidden="true"></i>
+                    </div>
+                   </div>
+                     
+                  </div> 
+                       
+                     
+                    
+                </div>
+              </div>
+
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="offering-services-mainbox">
+                    <h1 class="offering-services-tittle">Offerings/Services</h1>
+                    <hr class="hr">
+                    <p class="text-center"><a href="services.php">(list yourself)</a></p>
+                   <div class="list-yourself">
+                    <ul style="list-style:none">
+                   
+                     <li>userName{{service_name}}</li>
+                     
+                 
+                   </ul>
+                   </div>
+               </div>
+
+              </div>
+   </div>

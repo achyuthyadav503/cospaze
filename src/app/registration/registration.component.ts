@@ -39,7 +39,7 @@ export class RegistrationComponent implements OnInit {
    this.types.splice(i, 1);
   }
   addNewUser=function (user) {
-    
+    console.log('click add');
     this.OfficeDetailsObj={
       "":user.id,
       "OfficeName":user.OfficeName,
@@ -53,12 +53,23 @@ export class RegistrationComponent implements OnInit {
       "MobileNo": user.MobileNo,
       "Email": user.perEmail
     }
-    this.http.post("http://localhost/cospaze/officedetails",this.OfficeDetailsObj).
+    this.http.post("/CoAPI/register-office.php",this.OfficeDetailsObj).
     subscribe((res:Response)=>{
-      this.http.post("http://localhost:5555/userdetails",this.userDeatilsObj).
+      let data = res.json();
+      let officeData = data.details;
+      let officeId = officeData.officeID;
+      this.userDeatilsObj={
+        "UserName":this.userDeatilsObj.UserName,
+        "PassWord":this.userDeatilsObj.PassWord,
+        "MobileNo": this.userDeatilsObj.MobileNo,
+        "Email": this.userDeatilsObj.perEmail,
+        "OfficeId": officeId
+      }
+      this.http.post("/CoAPI/register.php",this.userDeatilsObj).
     subscribe((res:Response)=>{
+		console.log(res);
      this.isAdded=true;
-     this.router.navigateByUrl("/home");
+    // this.router.navigateByUrl("/home");
     })
     })
   }

@@ -9,12 +9,14 @@ import {Router} from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router) { }
-  userDetailsObj:object=[];
+  userDetailsObj;
   islogedin:boolean=false;
   name:String;
   ngOnInit() {
     this.name=(localStorage.getItem("userdata"));
+    console.log("form user name "+localStorage.getItem("userdata"));
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
+    console.log("form user name "+this.userDetailsObj.name);
    if(this.userDetailsObj!= null){
     this.islogedin=true;
    }else{

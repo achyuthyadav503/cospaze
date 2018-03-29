@@ -31,7 +31,8 @@ import { SearchComponent } from './search/search.component';
      {path:"home",component:HomeComponent},
      {path:"errorpage",component:ErrorpageComponent},
      {path:"home/register",component:RegistrationComponent},
-     {path:"register",component:RegistrationComponent}
+     {path:"register",component:RegistrationComponent},
+     {path:"home/search",component:SearchComponent}
      ])
     
   ],

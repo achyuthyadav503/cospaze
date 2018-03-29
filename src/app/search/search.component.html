@@ -6,15 +6,30 @@
  <form id="formSearch" name="formSearch" #searchData="ngForm" (ngSubmit)="searchData.valid && search(searchData.value)">
   <div class="form-group">
     <label>Location:</label>
-    <select name="Location" id="Location" ngModel>
+    <select name="Location" id="Location" ngModel #Location="ngModel">
       <option value="koramangala">koramangala</option>
       <option value="Marathalli">Marathalli</option>
       <option value="BTM">BTM</option>
       <option value="HSR Layout">HSR Layout</option>
     </select>
-    <label>Number of seats:</label><input type="text" name="NoSeats" id="NoSeats" placeholder="OfficeName" maxlength="20" required [pattern]="textpattern" ngModel #NoSeats="ngModel">
-    <input type="button" class="btn btn-success" value="Search" (click)="search(searchData.value)">
+    <label>Number of seats:</label><input type="text" name="NoSeats" id="NoSeats" placeholder="NoSeats" maxlength="20"  ngModel #NoSeats="ngModel">
+    <input type="submit" class="btn btn-success" value="Search">
     </div>
   
      </form>
     </div></div>
+    <div class="row">
+  <div class="col-md-8">
+      <ul>
+          <li *ngFor="let item of list; let i = index">
+            <div class="office-list-details" style="font-size:30px">OfficeName:-{{item.OfficeName}}</div>
+          
+               <div class="office-list-details">Address:-{{item.Address}}</div> 
+                <div class="office-list-details">Location:-{{item.Location}}</div>
+               <div class="office-list-details">City:-{{item.City}}</div> 
+          
+          </li>
+        </ul>
+  </div>
+  </div>
+    

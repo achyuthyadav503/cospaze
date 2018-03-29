@@ -1,0 +1,220 @@
+body {
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.login-box-body, .register-box-body {
+    background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
+}
+.login-page, .register-page {
+    background: #d2d6de;
+}
+.login-logo, .register-logo {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+.login-box, .register-box {
+    width: 360px;
+    margin: 7% auto;
+}
+.has-feedback {
+    position: relative;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+   
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.login-box-body .form-control-feedback, .register-box-body .form-control-feedback {
+    color: #777;
+}
+.form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    pointer-events: none;
+}
+.glyphicon {
+  
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+   
+    -moz-osx-font-smoothing: grayscale;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    user-select: none;
+    background-image: none; 
+}
+.login-box-msg, .register-box-msg {
+    margin: 0;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+.register-login-page{
+    background-color: #aec2cb;
+}
+.login-logo a, .register-logo a {
+    color: #444;
+}
+
+
+.member-tittle{
+text-align:center; font-size:20px;border-bottom-color:2px solid red;
+}
+.member-mainbox{
+	border:2px solid gray;
+}
+.sprit-box{
+	border:2px solid gray;
+	    padding: 90px;
+}
+.member-box{
+    background: #f6f3f3;
+}
+.offering-services-mainbox{
+	   border:2px solid gray;
+}
+.offering-services-tittle{
+text-align:center; font-size:20px;border-bottom-color:2px solid red;	
+}
+.member-logo{ 
+    width: 30%;
+    height: 30%;
+    margin-top: 10px;
+	}
+.hr{
+	border-top: 2px solid green;
+    font-weight: 700;
+    width: 50px;
+	margin-top: 10px;
+}
+.sprit-logo{
+	width: 99%;
+	 margin-left: 2px;
+    border: 1px solid gray;
+
+}
+.sprit-heading h1{
+    margin-left: 10px;
+	font-size:20px;
+	margin-top: 0px;
+	
+}
+.sprit-heading p{
+	font-size:15px;
+	padding-left: 8px;
+	
+}
+.sprit-logo-image{
+	 border: 2px solid gray;
+}
+.menu{
+	text-align:center;
+	font-size:25px;
+}
+.menu-background{
+	/* background-image: url("dist/img/image-slider.jpeg"); */
+	     padding: 15px 40px 15px 40px;
+	 margin-bottom: 5px;
+	 background: #f6ebeb;
+}
+.menu-mainbox{
+	    background: white;
+    border: 1px solid gray;
+}
+.menu-description p{
+	text-align:center;
+    font-size:15px;
+}
+.menu-description p span{
+	margin-left:40px;
+}
+.New-Members-Announcement{
+	text-align: center;
+	margin-top: 12%;
+}
+.img-circle >img {
+	    width: 100%;
+    max-width: 80px;
+    height: auto;
+    margin-top: -20px;
+}
+.img-circle{
+	 border-radius: 50%;
+}
+.logo-description h1{
+	font-size:20px;
+	text-align:center;
+	margin: 0 auto;
+}
+.logo-description p{
+	font-size:15px;
+	text-align:center;
+	color:#ebe0e0;
+}
+.likes{
+	    background: #f5f3f3;
+}
+.likes-user-logo >img{
+	 width: 100%;
+    max-width: 50px;
+    height: auto;
+    border-radius: 50%;
+	    margin: 15px;
+}
+.user{
+	margin-left: 16%;
+    margin-top: -65px;
+    background: white;
+    border-radius: 32px;
+}
+#responsive li {
+    margin-top: 8px !important;   
+    margin-bottom: 10px !important;
+    font-size: 15px !important;
+	padding: 0px 30px 0px 0px;
+}
+#responsive li span{
+	 float: right;
+}
+.list-yourself ul li{
+	 font-size: 18px ;
+	 text-align: center;
+    line-height: 1.9;
+	 padding: 8px;
+}
