@@ -49,12 +49,12 @@
             <div class="member-mainbox">
                 <h1 class="member-tittle">Memders</h1>
                 <hr class="hr">
-                <div class="member-box-space member-box">
+                <div class="member-box-space member-box" *ngFor="let item of memberList; let i = index">
                     <div class="text-center">
-                      <img src="" class="company-logo" />
+                      <img src="src/images/{{ item.companyLogo }}" class="company-logo" />
                     </div>
-                    <h1 style=" font-size:20px;margin-left: 50px;">Company Name</h1>
-                    <p style=" font-size:15px;margin-left: 50px;">Description</p>
+                    <h1 style=" font-size:20px;margin-left: 50px;">{{ item.companyName }}</h1>
+                    <p style=" font-size:15px;margin-left: 50px;">{{ item.description }}</p>
                   </div>
                 
                
@@ -67,7 +67,7 @@
 
               <div class="sprit-box">
                   <div class="sprit-logo-image">
-                  <img src="dist/img/image-slider.jpeg" alt="cospace" class="sprit-logo text-center">
+                  <img src="src/images/image-slider.jpeg" alt="cospace" class="sprit-logo text-center">
                  <div class="sprit-heading">
                     <h1>The Sprit Of First Among Equals</h1>
                     <p>One lucky bride a month wins a sponsored look for one of their wedding functionsYour sponsored look comprise of a beautiful outfit,accessories and jewelry to go along.</p>
@@ -76,13 +76,13 @@
                 <div class="likes">
                   
                   <div class="likes-user-logo">
-                       <img src="dist/img/image-slider.jpeg" alt="cospace">
+                       <img src="src/images/image-slider.jpeg" alt="cospace">
                     <div class="user"> <h1 style="font-size:20px;color:#adadef;margin-left:10px;">vivak Agrawal <span style="color:#ebe0e0;padding: 10px;">.4 mutual friends</span></h1>
                      <p style="font-size:10px;color:black;margin-left:10px;"> missinu u lots and lots my little friends |when r u commimy to meet</p></div>
                      <h1 style="font-size:20px;margin-left: 20%;color:#adadef;">likes<span style="margin-left:10px;"> reply</span> <span style="margin-left:10px; color:#000;">40w</span></h1>
                   </div>
                   <div class="likes-user-logo">
-                       <img src="dist/img/image-slider.jpeg" alt="cospace">
+                       <img src="src/images/image-slider.jpeg" alt="cospace">
                     <div class="user"> 
                     <h1 style="font-size:20px;color:#f4f4f2;">Comments on these post.... </h1>
                     <div class="" style=" margin-left: 75%;">
@@ -106,9 +106,9 @@
                     <hr class="hr">
                     <p class="text-center"><a href="services.php">(list yourself)</a></p>
                    <div class="list-yourself">
-                    <ul style="list-style:none">
+                    <ul style="list-style:none" >
                    
-                     <li>userName{{service_name}}</li>
+                     <li *ngFor="let item of serviceList; let i = index">{{ item.serviceName }}-{{item.name}}</li>
                      
                  
                    </ul>
