@@ -53,7 +53,7 @@
                 <hr class="hr">
                 <div class="member-box-space member-box" *ngFor="let item of memberList; let i = index">
                     <div class="text-center">
-                      <img src="src/images/{{ item.companyLogo }}" class="company-logo" />
+                      <img src="images/{{ item.companyLogo }}" class="company-logo" />
                     </div>
                     <h1 style=" font-size:20px;margin-left: 50px;">{{ item.companyName }}</h1>
                     <p style=" font-size:15px;margin-left: 50px;">{{ item.description }}</p>
@@ -66,6 +66,10 @@
           </div>
           <div class="col-md-6">
 
+
+            <app-search></app-search>
+
+            <!--
 
               <div class="sprit-box">
                   <div class="sprit-logo-image">
@@ -98,6 +102,8 @@
                     
                 </div>
               </div>
+
+            -->
 
 
             </div>

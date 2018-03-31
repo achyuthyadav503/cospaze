@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
       console.log('response');
       
      let data = res.json();
-      //this.list = data.list;
+      this.list = data.list;
       console.log(this.list);
     })
 
