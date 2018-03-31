@@ -14,6 +14,38 @@
         CompanyName not valid.
       </div>	
       </div>
+
+      <div class="form-group">
+          <label>joining Date:</label><input type="text" class="form-control" name="joiningDate" id="joiningDate" placeholder="joining Date" maxlength="20" required  ngModel #joiningDate="ngModel"></div>
+          <div *ngIf="joiningDate.errors"> 
+            <div [hidden]="!(joiningDate.errors.required) || joiningDate.pristine" class="alert alert-danger"> 
+              joining Date required.
+            </div>		   
+            <div [hidden]="!(joiningDate.errors.pattern)|| joiningDate.pristine" class="alert alert-danger"> 
+              joining Date not valid.
+            </div>	
+            </div> 
+        <div class="form-group">
+          <label>Total monthly rent:</label><input type="text" class="form-control" name="Tmrent" id="Total monthly rent" placeholder="Tmrent" maxlength="20" required ngModel #Tmrent="ngModel"></div>
+          <div *ngIf="Tmrent.errors"> 
+            <div [hidden]="!(Tmrent.errors.required) || Tmrent.pristine" class="alert alert-danger"> 
+              Total monthly rent required.
+            </div>		   
+            <div [hidden]="!(Tmrent.errors.pattern)|| Tmrent.pristine" class="alert alert-danger"> 
+              Total monthly rent not valid.
+            </div>	
+            </div> 
+            <div class="form-group">
+                <label>description:</label><input type="text" class="form-control" name="description" id="description" placeholder="description" maxlength="20" required [pattern]="textpattern" ngModel #description="ngModel"></div>
+                <div *ngIf="description.errors"> 
+                  <div [hidden]="!(description.errors.required) || description.pristine" class="alert alert-danger"> 
+                      description required.
+                  </div>		   
+                  <div [hidden]="!(description.errors.pattern)|| description.pristine" class="alert alert-danger"> 
+                      description not valid.
+                  </div>	
+                  </div> 
+
       <div class="form-group">
         <label>Types of seats:</label>
         <select  name="typesOfSeats" id="typesOfSeats" ngModel>
@@ -24,7 +56,7 @@
         </select>
           <label>Number of seats:</label><input type="text" name="Numberofseats" id="Numberofseats" maxlength="20" required ngModel #Numberofseats="ngModel">
           <label>Price per seat:</label><input type="text" name="Priceperseat" id="Priceperseat" maxlength="20" required ngModel #Priceperseat="ngModel">
-          <input type="button" value="+" (click)="addData(userData.value)">
+          <input type="button" value="+" (click)="addData(compData.value)">
       </div>
       <table>
       <div *ngFor="let type of types; let i = index">
@@ -41,26 +73,7 @@
 
 
   
-  <div class="form-group">
-  <label>joining Date:</label><input type="text" class="form-control" name="joiningDate" id="joiningDate" placeholder="joining Date" maxlength="20" required [pattern]="textpattern" ngModel #joiningDate="ngModel"></div>
-  <div *ngIf="joiningDate.errors"> 
-    <div [hidden]="!(joiningDate.errors.required) || joiningDate.pristine" class="alert alert-danger"> 
-      joining Date required.
-    </div>		   
-    <div [hidden]="!(joiningDate.errors.pattern)|| joiningDate.pristine" class="alert alert-danger"> 
-      joining Date not valid.
-    </div>	
-    </div> 
-<div class="form-group">
-  <label>Total monthly rent:</label><input type="text" class="form-control" name="Tmrent" id="Total monthly rent" placeholder="Tmrent" maxlength="20" required [pattern]="textpattern" ngModel #Tmrent="ngModel"></div>
-  <div *ngIf="Tmrent.errors"> 
-    <div [hidden]="!(Tmrent.errors.required) || Tmrent.pristine" class="alert alert-danger"> 
-      Total monthly rent required.
-    </div>		   
-    <div [hidden]="!(Tmrent.errors.pattern)|| Tmrent.pristine" class="alert alert-danger"> 
-      Total monthly rent not valid.
-    </div>	
-    </div> 
+ 
     
 <div class="panel panel-primary" style="border: 2px solid black">
     <div class="panel-heading"  style="text-align:center">
