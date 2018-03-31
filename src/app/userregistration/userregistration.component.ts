@@ -39,7 +39,7 @@ export class UserregistrationComponent implements OnInit {
    console.log(i);
    this.types.splice(i, 1);
   }
-  addNewComp=function (user) {
+  addNewUser=function (user) {
     
     this.userDeatilsObj={
       "":user.id,
