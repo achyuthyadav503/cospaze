@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit {
   textpattern="^[a-zA-Z\\s]+$";
   searchDeatilsObj:object=[];
   list = [];
+  data=JSON;
 
   ngOnInit() {
   }
@@ -29,8 +30,8 @@ export class SearchComponent implements OnInit {
     subscribe((res:Response)=>{
       console.log('response');
       
-     let data = res.json();
-      this.list = data.list;
+     this.data = res.json();
+      this.list = this.data.list;
       console.log(this.list);
     })
 
