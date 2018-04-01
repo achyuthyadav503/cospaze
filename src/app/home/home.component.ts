@@ -11,13 +11,16 @@ import {Http,Response,Headers}from '@angular/http';
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router,private http:Http) { }
+  conformationString:string="Your details has been added";
+  isAdded:boolean=false;
   userDetailsObj;
   serviceDetailsObj;
   islogedin:boolean=false;
   name:String;
   memberList = [];
   serviceList = [];
-  DisplayDialogBox=false;
+  showDialog = false;
+  listYourData:object=[];
   ngOnInit() {
     
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
@@ -75,8 +78,27 @@ export class HomeComponent implements OnInit {
   }
 
   open(){
-   this.DisplayDialogBox=true;
+   this. showDialog =true;
+}
+addYourdetails=function (yourdata){
+  let x= yourdata.value;
+  console.log(x);
+  this.listYourData={
+    "Profession":yourdata.profession,
+    "Name":yourdata.Name
+    
   }
+  console.log(this.listYourData);
+  //this.http.post("/CoAPI/listyourself.php",this.listYourData).
+  //subscribe((res:Response)=>{
+ // console.log(res);
+   this.isAdded=true;
+   yourdata.reset();
+  // this.router.navigateByUrl("/home");
+  //})
+ 
+
+ }
   
 
 }

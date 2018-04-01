@@ -32,4 +32,6 @@ export class ListyourselfComponent implements OnInit {
     this.visible = false;
     this.visibleChange.emit(this.visible);
   }
+
+ 
 }

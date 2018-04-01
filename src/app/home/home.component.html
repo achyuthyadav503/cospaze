@@ -118,7 +118,40 @@
               </div>
    </div>
 
-  <!-- <app-listyourself id="listme" [class.visible]="DisplayDialogBox">
-      
-      
-    </app-listyourself> -->
+   
+   <app-listyourself id="listme" [(visible)]="showDialog">
+      <h5>Enter your detalis</h5>
+      <form id="formNewData" name="formNewData" #yourData="ngForm" (ngSubmit)="yourData.valid && addYourdetails(yourData)">
+          <label>profession:</label>
+        <input type="text" name="profession" id="profession" placeholder="profession" maxlength="20" required [pattern]="textpattern" ngModel #profession="ngModel">
+      <div *ngIf="profession.errors"> 
+          <div [hidden]="!(profession.errors.required) || profession.pristine" class="alert alert-danger"> 
+              profession required.
+          </div>
+          <div [hidden]="!(profession.errors.pattern)|| profession.pristine" class="alert alert-danger"> 
+              profession not valid.
+            </div>			   	
+          </div> 
+          <br>
+          <label>Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+      <input type="text" name="Name" id="Name" placeholder="Name" maxlength="20" required [pattern]="textpattern" ngModel #Name="ngModel">
+      <div *ngIf="Name.errors"> 
+          <div [hidden]="!(Name.errors.required) || Name.pristine" class="alert alert-danger"> 
+              Name required.
+          </div>
+          <div [hidden]="!(Name.errors.pattern)|| Name.pristine" class="alert alert-danger"> 
+              Name not valid.
+            </div>		   	
+          </div> 
+      <br>
+  <input type="submit" class="btn btn-success" value="submit">
+  
+</form>
+<br>
+<h3 *ngIf="isAdded">
+  {{conformationString}}
+</h3>
+  <button (click)="showDialog = !showDialog" class="btn">Close</button>
+
+   
+    </app-listyourself> 

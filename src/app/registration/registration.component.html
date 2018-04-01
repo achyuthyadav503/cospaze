@@ -24,15 +24,14 @@
       </div>		   
       </div> 
   
-  <div class="form-group">
-  <label>Location:</label><input type="text" class="form-control" name="Location" id="Location" placeholder="Location" maxlength="20" required [pattern]="textpattern" ngModel #Location="ngModel"></div>
-  <div *ngIf="Location.errors"> 
-    <div [hidden]="!(Location.errors.required) || Location.pristine" class="alert alert-danger"> 
-      Location required.
-    </div>		   
-    <div [hidden]="!(Location.errors.pattern)|| Location.pristine" class="alert alert-danger"> 
-      Location not valid.
-    </div>	
+      <div class="form-group">
+          <label>Location:</label>
+          <select class="form-control" name="Location" id="Location" ngModel #Location="ngModel">
+            <option value="koramangala">koramangala</option>
+            <option value="Marathalli">Marathalli</option>
+            <option value="BTM">BTM</option>
+            <option value="HSR Layout">HSR Layout</option>
+          </select>
     </div> 
 <div class="form-group">
   <label>City:</label><input type="text" class="form-control" name="City" id="City" placeholder="City" maxlength="20" required [pattern]="textpattern" ngModel #City="ngModel"></div>
@@ -85,7 +84,7 @@
         </div>	
         </div> 
     <div class="form-group">
-      <label>Password:</label><input type="text" class="form-control" name="PassWord" id="PassWord" placeholder="PassWord" maxlength="20" required [pattern]="textpattern" ngModel #PassWord="ngModel"></div>
+      <label>Password:</label><input type="password" class="form-control" name="PassWord" id="PassWord" placeholder="PassWord" maxlength="20" required [pattern]="textpattern" ngModel #PassWord="ngModel"></div>
       <div *ngIf="PassWord.errors"> 
         <div [hidden]="!(PassWord.errors.required) || PassWord.pristine" class="alert alert-danger"> 
           PassWord required.
