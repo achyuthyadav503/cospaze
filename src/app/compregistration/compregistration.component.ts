@@ -13,7 +13,7 @@ export class CompregistrationComponent implements OnInit {
 
   
 
-  conformationString:string="New User details has been added";
+  conformationString:string="New Company details has been added";
   emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\.-]?\\w+)*(\\.\\w{2,3})+$";
   textpattern="^[a-zA-Z\\s]+$";
   mobilepattern="^[2-9]{2}[0-9]{8}$";
@@ -41,8 +41,8 @@ export class CompregistrationComponent implements OnInit {
    console.log(i);
    this.types.splice(i, 1);
   }
-  addNewComp=function (company) {
-    
+  addNewComp=function (companyForm) {
+    let company=companyForm.value;
     this.compDetailsObj={
       "CompanyName":company.CompanyName,
       "typesofseats":this.typesOfSeatsObj,
@@ -74,9 +74,13 @@ export class CompregistrationComponent implements OnInit {
     subscribe((res:Response)=>{
 		console.log(res);
      this.isAdded=true;
+     companyForm.reset();
     // this.router.navigateByUrl("/home");
     })
     })
+  }
+  reset=function (Form) {
+    Form.reset();
   }
 
 }

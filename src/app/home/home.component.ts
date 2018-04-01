@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Http,Response,Headers}from '@angular/http';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,11 +17,11 @@ export class HomeComponent implements OnInit {
   name:String;
   memberList = [];
   serviceList = [];
+  DisplayDialogBox=false;
   ngOnInit() {
-    this.name=(localStorage.getItem("userdata"));
-    console.log("form user name "+localStorage.getItem("userdata"));
+    
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
-    console.log("form user name "+this.userDetailsObj.name);
+    console.log("user name "+this.userDetailsObj.name);
    if(this.userDetailsObj!= null){
     this.islogedin=true;
    }else{
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
     
    let data = res.json();
     this.memberList = data.memberList;
-    console.log(this.memberList);
+    console.log("member list"+this.memberList);
   })
 
   this.http.get("/CoAPI/services.php").
@@ -72,5 +73,10 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl("");
 
   }
+
+  open(){
+   this.DisplayDialogBox=true;
+  }
+  
 
 }

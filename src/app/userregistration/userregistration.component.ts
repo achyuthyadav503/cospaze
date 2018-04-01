@@ -11,7 +11,7 @@ export class UserregistrationComponent implements OnInit {
   constructor(private http:Http,private router: Router) { }
 
  
-  conformationString:string="New User details has been added";
+  conformationString:string="New Employee has been added";
   emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\.-]?\\w+)*(\\.\\w{2,3})+$";
   textpattern="^[a-zA-Z\\s]+$";
   mobilepattern="^[2-9]{2}[0-9]{8}$";
@@ -23,45 +23,27 @@ export class UserregistrationComponent implements OnInit {
   
   ngOnInit() {
   }
-  addData=function (user) {
-    this.typesOfSeatsObj={
-    "typesOfSeats":user.typesOfSeats,
-    "Numberofseats":user.Numberofseats,
-    "Priceperseat":user.Priceperseat
-    }
-    this.types.push(this.typesOfSeatsObj);
-  }
-  deleteType=function (i){
-   // let id=typeOf.id;
-   // this.types = this.types.filter(typesOfSeatsObj => typesOfSeatsObj.id !== id);
-   //delete[this.types.indexOf(typeOf)];
-   console.log("entry");
-   console.log(i);
-   this.types.splice(i, 1);
-  }
-  addNewUser=function (user) {
-    
+ 
+  addNewUser=function (userform) {
+    let user=userform.value;
+    let companyId = null; //will get from session
     this.userDeatilsObj={
-      "":user.id,
-      "FullName":user.FullName,
+      "UserName":user.FullName,
       "PassWord":user.PassWord,
       "MobileNo": user.MobileNo,
-      "Email": user.perEmail,
-      "typesofseats":this.typesOfSeatsObj,
-      "joiningDate":user.joiningDate,
-      "Tmrent": user.Tmrent,
-      "Description": user.Description
-      
+      "Email": user.Email,
+      "companyId": companyId
     }
-    
-    
-      this.http.post("http://localhost:5555/userdetails",this.userDeatilsObj).
+    console.log(this.userDeatilsObj);
+    this.http.post("/CoAPI/register-employee.php",this.userDeatilsObj).
     subscribe((res:Response)=>{
+		console.log(res);
      this.isAdded=true;
-     this.router.navigateByUrl("/home");
+     userform.reset();
+    // this.router.navigateByUrl("/home");
     })
-  
   }
-
-
+  reset=function (Form) {
+    Form.reset();
+  }
 }

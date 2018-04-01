@@ -30,12 +30,14 @@ export class LoginComponent implements OnInit {
       //console.log(res.json());
       let data = res.json();
       //let k = JSON.parse(data);
-     // console.log("form user name"+data);
-    //  console.log("form user name"+k);
+      console.log("form user name"+data);
+      console.log("form user name"+res);
       let userData = data.details;
+
      // console.log("form user name"+user.UserName);
-      //console.log("form user name"+userData.name);
+      console.log("form user name"+userData.name);
       localStorage.setItem("userdata", JSON.stringify(userData));
+      //keep this line in hold for sometime I mean delay in navigation
       this.router.navigateByUrl("/home");
 
     })

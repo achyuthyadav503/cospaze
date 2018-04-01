@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class RegistrationComponent implements OnInit {
 
   constructor(private http:Http,private router: Router) { }
-  conformationString:string="New User details has been added";
+  conformationString:string="New Co space details has been added";
   emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\.-]?\\w+)*(\\.\\w{2,3})+$";
   textpattern="^[a-zA-Z\\s]+$";
   mobilepattern="^[2-9]{2}[0-9]{8}$";
@@ -38,7 +38,8 @@ export class RegistrationComponent implements OnInit {
    console.log(i);
    this.types.splice(i, 1);
   }
-  addNewUser=function (user) {
+  addNewUser=function (regform) {
+    let user=regform.value;
     console.log('click add');
     this.OfficeDetailsObj={
       "":user.id,
@@ -69,11 +70,14 @@ export class RegistrationComponent implements OnInit {
     subscribe((res:Response)=>{
 		console.log(res);
      this.isAdded=true;
+     regform.reset();
     // this.router.navigateByUrl("/home");
     })
     })
   }
 
-
+  reset=function (Form) {
+    Form.reset();
+  }
 
 }

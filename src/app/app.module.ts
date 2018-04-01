@@ -13,6 +13,8 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { SearchComponent } from './search/search.component';
 import { CompregistrationComponent } from './compregistration/compregistration.component';
 import { UserregistrationComponent } from './userregistration/userregistration.component';
+import { MenuComponent } from './menu/menu.component';
+import { ListyourselfComponent } from './listyourself/listyourself.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { UserregistrationComponent } from './userregistration/userregistration.c
     ErrorpageComponent,
     SearchComponent,
     CompregistrationComponent,
-    UserregistrationComponent
+    UserregistrationComponent,
+    MenuComponent,
+    ListyourselfComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +41,8 @@ import { UserregistrationComponent } from './userregistration/userregistration.c
 	 {path:"home/register",component:RegistrationComponent},
     {path:"register",component:RegistrationComponent},
      {path:"home/search",component:SearchComponent},
-     {path:"home/register-company",component:CompregistrationComponent},
-     {path:"home/register-employee",component:UserregistrationComponent}
+     {path:"register-company",component:CompregistrationComponent},
+     {path:"register-employee",component:UserregistrationComponent}
      ])
     
   ],

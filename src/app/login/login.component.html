@@ -1,7 +1,8 @@
 <div class="text-center">
-  <h3 class="jumbotron">Login here</h3>
+  <h3 class="jumbotron">Login Here</h3>
 </div>
-<div class="container">
+<div class="container" style="border: 2px solid black">
+
 <div class="row">
     <div class="Absolute-Center is-Responsive">
         <div id="logo-container"></div>
@@ -9,17 +10,17 @@
     
  <form id="formLoginUser" name="formLoginUser" #loginData="ngForm" (ngSubmit)="loginData.valid && validateUser(loginData.value)">
   <div class="form-group">
-      <label> User Name:</label><input type="text" class="form-control" name="UserName" id="UserName" placeholder="User Name"  required  ngModel #UserName="ngModel"></div>
+      <label> Email/MobileNo:</label><input type="text" class="form-control" name="UserName" id="UserName" placeholder="User Name"  required  ngModel #UserName="ngModel"></div>
       <div *ngIf="UserName.errors"> 
         <div [hidden]="!(UserName.errors.required) || UserName.pristine" class="alert alert-danger"> 
-          FirstName required.
+            Email/MobileNo required.
         </div>		   	
         </div> 
     <div class="form-group">
       <label>Password:</label><input type="password" class="form-control" name="password" id="password" placeholder="password" required ngModel #password="ngModel"></div>
       <div *ngIf="password.errors"> 
         <div [hidden]="!(password.errors.required) || password.pristine" class="alert alert-danger"> 
-          FirstName required.
+          Password required.
         </div>		   
         </div> 
 

@@ -1,8 +1,10 @@
+
 <div class="text-center">
   <h3 class="jumbotron">Search co-working spaces</h3>
+  
 </div>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
  <form id="formSearch" name="formSearch" #searchData="ngForm" (ngSubmit)="searchData.valid && search(searchData.value)">
   <div class="form-group">
     <label>Location:</label>
@@ -19,7 +21,7 @@
      </form>
     </div></div>
     <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
       <ul>
           <li *ngFor="let item of list; let i = index">
             <div class="office-list-details" style="font-size:30px">OfficeName:-{{item.OfficeName}}</div>

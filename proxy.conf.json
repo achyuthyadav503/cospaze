@@ -1,7 +1,7 @@
 {
   "/CoAPI": {
-    "target": "https://cospaze.in/CoAPI/",
-    "secure": "secure",
+    "target": "http://localhost/CoAPI/",
+    "secure": "false",
 	"pathRewrite": {
       "^/CoAPI": ""
     }

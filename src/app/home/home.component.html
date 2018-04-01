@@ -2,41 +2,33 @@
     <div class="row">
       <div class="col-md-3">
         <div class="text-center">
-          <img src="dist/img/" alt="cospace" style="width:100%;height: 120px;">
+          <img src="assets/cospaze-logo.png" alt="cospace" style="width:100%;height: 120px;">
         </div>
           <div class="text-center img-circle">
-            <img src="dist/img/" alt="cospace" class="img-circle">
+            <img src="assets/profile.jpg" alt="cospace" class="img-circle">
           </div>
         <div class="logo-description">
             <h1> welcome {{userDetailsObj?.name}}</h1>
             <p>Company</p>
-            <h1><a href="editprofile.php">Edit Profile</a></h1>	
+            <h1><a href="#">Edit Profile</a></h1>	
         </div>
       </div>	
       <div class="col-md-6">
           <div class="New-Members-Announcement">
             <h1>New Members Announcement</h1>
-            <a routerLink='register'><input type="button" class="btn btn-success" value="Register Co Office"></a>
-            
-            <a routerLink='search'><input type="button" class="btn btn-success" value="Search Office"></a>
-            <a routerLink='register-company'><input type="button" class="btn btn-success" value="Register Company"></a>
-            <a routerLink='register-employee'><input type="button" class="btn btn-success" value="Register Employee"></a>
-             
-            <input type="button" *ngIf="islogedin" class="btn btn-success" (click)="logout()" value="Logout">
-            <input type="button" *ngIf="!islogedin" class="btn btn-success" (click)="logout()" value="Login">
+            <app-menu></app-menu>
          </div>	
       </div>
       <div class="col-md-3">
           <div class="menu-background">
           <div class="menu-mainbox">
-             <h1 class="menu">Menu</h1>
+             <h1 class="menu">Payment Status</h1>
             <div class="menu-description">
                <ul style="list-style:none" id="responsive">
-                <li>Brookies<span> RS 20</span></li>
-                <li>Samosa<span> RS 10</span></li>
-                <li>Chips <span>RS 10</span></li>
-                <li>Muffina <span>RS 18</span></li>
-                <li>Pizza <span>RS 25</span></li>
+                <li>Total Rent<span> RS 20000</span></li>
+                <li>Amount Paid<span>RS 10000</span></li>
+                <li>Due <span>RS 10000</span></li>
+                <li>Due Date<span>05/04/2018</span></li>
               </ul>	
             </div>
              </div>	
@@ -49,11 +41,11 @@
         <div class="col-md-3">
 
             <div class="member-mainbox">
-                <h1 class="member-tittle">Memders</h1>
+                <h1 class="member-tittle">Members</h1>
                 <hr class="hr">
                 <div class="member-box-space member-box" *ngFor="let item of memberList; let i = index">
                     <div class="text-center">
-                      <img src="images/{{ item.companyLogo }}" class="company-logo" />
+                      <img src="assets/members/{{ item.companyLogo }}" class="member-logo" />
                     </div>
                     <h1 style=" font-size:20px;margin-left: 50px;">{{ item.companyName }}</h1>
                     <p style=" font-size:15px;margin-left: 50px;">{{ item.description }}</p>
@@ -112,7 +104,7 @@
                 <div class="offering-services-mainbox">
                     <h1 class="offering-services-tittle">Offerings/Services</h1>
                     <hr class="hr">
-                    <p class="text-center"><a href="services.php">(list yourself)</a></p>
+                    <p class="text-center"><a (click)="open()"><u>(list yourself)</u></a></p>
                    <div class="list-yourself">
                     <ul style="list-style:none" >
                    
@@ -125,3 +117,8 @@
 
               </div>
    </div>
+
+  <!-- <app-listyourself id="listme" [class.visible]="DisplayDialogBox">
+      
+      
+    </app-listyourself> -->
