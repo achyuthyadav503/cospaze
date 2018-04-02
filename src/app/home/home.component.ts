@@ -84,18 +84,17 @@ addYourdetails=function (yourdata){
   let x= yourdata.value;
   console.log(x);
   this.listYourData={
-    "Profession":yourdata.profession,
-    "Name":yourdata.Name
-    
+    "service":x.Service,
+    "user":this.userDetailsObj.id   
   }
   console.log(this.listYourData);
-  //this.http.post("/CoAPI/listyourself.php",this.listYourData).
-  //subscribe((res:Response)=>{
- // console.log(res);
+  this.http.post("/CoAPI/list-yourself.php",this.listYourData).
+  subscribe((res:Response)=>{
+ console.log(res);
    this.isAdded=true;
    yourdata.reset();
   // this.router.navigateByUrl("/home");
-  //})
+  })
  
 
  }
