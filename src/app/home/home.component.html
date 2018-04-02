@@ -134,7 +134,7 @@
           </div> 
           
       <br>
-      <input type="cancel" class="btn btn-success" value="cancel" style="margin-left: 55%;padding: 6px 0px;">
+      <input type="cancel"  (click)="showDialog = !showDialog" class="btn btn-success" value="cancel" style="margin-left: 55%;padding: 6px 0px;">
      <input type="submit" class="btn btn-success" value="submit" style="float:right">
   
 </form>
@@ -142,7 +142,7 @@
 <h3 *ngIf="isAdded">
   {{conformationString}}
 </h3>
-  <button (click)="showDialog = !showDialog" class="btn">Close</button>
+ <!-- <button (click)="showDialog = !showDialog" class="btn">Close</button>-->
 
    
     </app-listyourself> 
