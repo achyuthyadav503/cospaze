@@ -19,8 +19,25 @@ export class RegistrationComponent implements OnInit {
   userDeatilsObj:object=[];
   typesOfSeatsObj:object=[];
   types:object[]=[];
+  cities=[];
+  loctaions=[];
+  loctaionsByCity=[];
   
   ngOnInit() {
+
+    this.http.get("/CoAPI/catalouge-list.php").
+  subscribe((res:Response)=>{
+    console.log('response catalogue');
+    
+   let data = res.json();
+   console.log(data);
+    this.cities = data.cityList;
+    this.loctaions=data.locationList;
+    console.log(this.cities);
+  })
+
+
+
   }
   addData=function (user) {
     this.typesOfSeatsObj={
@@ -78,6 +95,13 @@ export class RegistrationComponent implements OnInit {
 
   reset=function (Form) {
     Form.reset();
+  }
+  updateLocations=function(City){
+    console.log(City);
+    console.log(this.loctaions);
+    if(City!='')
+    this.loctaionsByCity=this.loctaions[City];
+    console.log(this.loctaionsByCity);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Http}from '@angular/http';
+import {Http,Response,Headers}from '@angular/http';
 
 @Component({
   selector: 'app-search',
@@ -14,8 +14,22 @@ export class SearchComponent implements OnInit {
   searchDeatilsObj:object=[];
   list = [];
   data=JSON;
+  cities=[];
+  loctaions=[];
+  loctaionsByCity=[];
 
   ngOnInit() {
+
+    this.http.get("/CoAPI/catalouge-list.php").
+  subscribe((res:Response)=>{
+    console.log('response catalogue');
+    
+   let data = res.json();
+   console.log(data);
+    this.cities = data.cityList;
+    this.loctaions=data.locationList;
+    console.log(this.cities);
+  })
   }
 
   search=function (search) {
@@ -36,5 +50,12 @@ export class SearchComponent implements OnInit {
     })
 
   }
+  updateLocations=function(City){
+    // console.log(City);
+     //console.log(this.loctaions)
+     this.loctaionsByCity=this.loctaions[City];
+     console.log(this.loctaionsByCity);
+   }
+ 
 
 }
