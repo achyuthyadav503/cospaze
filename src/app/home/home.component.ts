@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   name:String;
   memberList = [];
   serviceList = [];
+  services=[];
   showDialog = false;
   listYourData:object=[];
   ngOnInit() {
@@ -48,6 +49,16 @@ export class HomeComponent implements OnInit {
    let data = res.json();
     this.serviceList = data.serviceList;
     console.log(this.serviceList);
+  })
+
+  this.http.get("/CoAPI/service-list.php").
+  subscribe((res:Response)=>{
+    console.log('response services');
+    
+   let data = res.json();
+   console.log(data);
+    this.services = data.servicesList;
+    console.log(this.services);
   })
 
 

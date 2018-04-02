@@ -127,10 +127,8 @@
           <div class="form-group">
             <label>Service:</label>
             <select class="form-control" name="Service" id="Service" ngModel #Service="ngModel">
-              <option value="1">Web developer</option>
-              <option value="2">Photographer</option>
-              <option value="3">Marketing</option>
-            </select>
+                <option *ngFor="let item of services; let i = index">{{ item.serviceName }}</option>
+               </select>
           </div> 
           
       <br>
