@@ -55,7 +55,8 @@ export class CompregistrationComponent implements OnInit {
       "typesofseats":this.typesOfSeatsObj,
       "joiningDate":company.joiningDate,
       "Tmrent": company.Tmrent,
-      "Description": company.description
+      "Description": company.description,
+      "officeId" : officeId,
       
     }
     this.userDeatilsObj={
