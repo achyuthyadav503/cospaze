@@ -22,14 +22,18 @@ export class CompregistrationComponent implements OnInit {
   userDeatilsObj:object=[];
   typesOfSeatsObj:object=[];
   types:object[]=[];
+  loginObj:object=[];
   
   ngOnInit() {
+    this.loginObj=JSON.parse(localStorage.getItem("userdata"));
+    
   }
   addData=function (user) {
+
     this.typesOfSeatsObj={
     "typesOfSeats":user.typesOfSeats,
-    "Numberofseats":user.Numberofseats,
-    "Priceperseat":user.Priceperseat
+    "Numberofseats":user.Numberofseats
+   // "Priceperseat":user.Priceperseat
     }
     this.types.push(this.typesOfSeatsObj);
   }
@@ -43,7 +47,10 @@ export class CompregistrationComponent implements OnInit {
   }
   addNewComp=function (companyForm) {
     let company=companyForm.value;
+    let companyId = this.loginObj.companyId; //will get from session
+    let officeId = this.loginObj.officeId; //will get from session
     this.compDetailsObj={
+      "CompanyType":company.CompanyType,
       "CompanyName":company.CompanyName,
       "typesofseats":this.typesOfSeatsObj,
       "joiningDate":company.joiningDate,
@@ -67,8 +74,10 @@ export class CompregistrationComponent implements OnInit {
         "UserName":this.userDeatilsObj.UserName,
         "PassWord":this.userDeatilsObj.PassWord,
         "MobileNo": this.userDeatilsObj.MobileNo,
-        "Email": this.userDeatilsObj.perEmail,
-        "companyId": companyId
+        "Email": this.userDeatilsObj.Email,
+        "companyId": companyId,
+        "officeId" : officeId,
+        "role": 'company'
       }
       this.http.post("/CoAPI/register-employee.php",this.userDeatilsObj).
     subscribe((res:Response)=>{

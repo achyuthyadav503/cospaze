@@ -1,7 +1,8 @@
 <a (click)="home()" class="btn btn-success">Home</a>
-<a (click)="registerOffice()" class="btn btn-success">Register Co Office</a>
-    <a (click)="registerCompany()" class="btn btn-success">Register Company</a>
-    <a (click)="registerEmployee()" class="btn btn-success">Register Employee</a>
+
+<a (click)="registerOffice()" *ngIf="isAdmin" class="btn btn-success">Register Co Office</a>
+    <a (click)="registerCompany()" *ngIf="isOffice" class="btn btn-success">Register Company/Freelancer</a>
+    <a (click)="registerEmployee()" *ngIf="isCompany" class="btn btn-success">Register Employee</a>
      
-    <input type="button" *ngIf="islogedin" class="btn btn-success" (click)="logout()" value="Logout">
-    <input type="button" *ngIf="!islogedin" class="btn btn-success" (click)="logout()" value="Login">
+    <!--<input type="button" *ngIf="islogedin" class="btn btn-success" (click)="logout()" value="Logout">
+    <input type="button" *ngIf="!islogedin" class="btn btn-success" (click)="logout()" value="Login">-->

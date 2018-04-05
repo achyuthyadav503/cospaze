@@ -18,21 +18,26 @@ export class UserregistrationComponent implements OnInit {
   isAdded:boolean=false;
   
   userDeatilsObj:object=[];
+  loginObj:object=[];
   typesOfSeatsObj:object=[];
   types:object[]=[];
   
   ngOnInit() {
+    this.loginObj=JSON.parse(localStorage.getItem("userdata"));
   }
  
   addNewUser=function (userform) {
     let user=userform.value;
-    let companyId = null; //will get from session
+    let companyId = this.loginObj.companyId; //will get from session
+    let officeId = this.loginObj.officeId; //will get from session
     this.userDeatilsObj={
       "UserName":user.FullName,
       "PassWord":user.PassWord,
       "MobileNo": user.MobileNo,
       "Email": user.Email,
-      "companyId": companyId
+      "companyId": companyId,
+      "officeId": officeId,
+      "role": 'employee'
     }
     console.log(this.userDeatilsObj);
     this.http.post("/CoAPI/register-employee.php",this.userDeatilsObj).

@@ -35,8 +35,10 @@ export class SearchComponent implements OnInit {
   search=function (search) {
 
     this.searchDeatilsObj={
+      "City":search.City,
       "location":search.Location,
-      "NoSeats" :search.NoSeats
+      "NoSeats" :search.NoSeats,
+      "typesOfSeats":search.typesOfSeats
     }
     console.log("in search");
     console.log(this.searchDeatilsObj);

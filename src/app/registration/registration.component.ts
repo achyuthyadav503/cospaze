@@ -80,8 +80,9 @@ export class RegistrationComponent implements OnInit {
         "UserName":this.userDeatilsObj.UserName,
         "PassWord":this.userDeatilsObj.PassWord,
         "MobileNo": this.userDeatilsObj.MobileNo,
-        "Email": this.userDeatilsObj.perEmail,
-        "OfficeId": officeId
+        "Email": this.userDeatilsObj.Email,
+        "OfficeId": officeId,
+        "role": 'office'
       }
       this.http.post("/CoAPI/register.php",this.userDeatilsObj).
     subscribe((res:Response)=>{

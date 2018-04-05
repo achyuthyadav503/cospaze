@@ -13,7 +13,11 @@ export class MenuComponent implements OnInit {
   userDetailsObj;
   serviceDetailsObj;
   islogedin:boolean=false;
+  isAdmin:boolean=false;
+  isOffice:boolean=false;
+  isCompany:boolean=false;
   name:String;
+  role:String;
   memberList = [];
   serviceList = [];
   ngOnInit() {
@@ -21,6 +25,19 @@ export class MenuComponent implements OnInit {
     console.log("user name "+this.userDetailsObj.name);
    if(this.userDetailsObj!= null){
     this.islogedin=true;
+    this.role=this.userDetailsObj.role;
+    if(this.role=='admin'){
+      this.isAdmin = true;
+      this.isOffice = true;
+      this.isCompany = true;
+    }
+    if(this.role=='office'){
+      this.isOffice = true;
+      this.isCompany = true;
+    }
+    if(this.role=='company'){
+      this.isCompany = true;
+    }
    }else{
     this.router.navigateByUrl("errorpage");
    }
