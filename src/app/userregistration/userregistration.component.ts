@@ -16,20 +16,50 @@ export class UserregistrationComponent implements OnInit {
   textpattern="^[a-zA-Z\\s]+$";
   mobilepattern="^[2-9]{2}[0-9]{8}$";
   isAdded:boolean=false;
+  isAdmin:boolean=false;
   
   userDeatilsObj:object=[];
   loginObj:object=[];
   typesOfSeatsObj:object=[];
   types:object[]=[];
+  userDetailsObj;
+  islogedin:boolean=false;
+  isOffice:boolean=false;
+  isCompany:boolean=false;
+  role:String;
   
   ngOnInit() {
     this.loginObj=JSON.parse(localStorage.getItem("userdata"));
+    this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
+    console.log("user name "+this.userDetailsObj.name);
+   if(this.userDetailsObj!= null){
+    this.islogedin=true;
+    this.role=this.userDetailsObj.role;
+    if(this.role=='admin'){
+      this.isAdmin = true;
+      this.isOffice = true;
+      this.isCompany = true;
+    }
+    if(this.role=='office'){
+      this.isOffice = true;
+      this.isCompany = true;
+    }
+    }else{
+      this.router.navigateByUrl("errorpage");
+     }
   }
  
   addNewUser=function (userform) {
     let user=userform.value;
     let companyId = this.loginObj.companyId; //will get from session
     let officeId = this.loginObj.officeId; //will get from session
+    if(this.isAdmin){
+      officeId=user.Office;
+    }
+    if(this.isOffice){
+      companyId=user.Company;
+    }
+
     this.userDeatilsObj={
       "UserName":user.FullName,
       "PassWord":user.PassWord,

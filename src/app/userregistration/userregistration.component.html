@@ -6,6 +6,22 @@
 <div class="row">
   <div class="col-md-8">
  <form id="formNewUser" name="formNewUser" #userData="ngForm" (ngSubmit)="userData.valid && addNewUser(userData)">
+  <div *ngIf="isAdmin" class="form-group">
+    <label>Office:</label>
+    <select class="form-control" name="Office" id="Office" ngModel #Office="ngModel">
+      <option value="1">dragon</option>
+      <option value="2">Athena</option>
+      <option value="3">unicorn</option>
+    </select>
+  </div>
+  <div *ngIf="isAdmin || isOffice" class="form-group">
+    <label>Company :</label>
+    <select class="form-control" name="Company" id="Company" ngModel #Company="ngModel">
+      <option value="1">spyland</option>
+      <option value="2">drivekool</option>
+      <option value="3">flipkart</option>
+    </select>
+  </div>
   <div class="form-group">
     <label>Name:</label><input type="text" class="form-control" name="FullName" id="FullName" placeholder="Name" maxlength="20" required [pattern]="textpattern" ngModel #FullName="ngModel"></div>
     <div *ngIf="FullName.errors"> 
@@ -23,6 +39,7 @@
         PassWord required.
       </div>		   	
       </div> 
+      
   
   <div class="form-group">
   <label>Mobile No:</label><input type="text" class="form-control" name="MobileNo" id="MobileNo" placeholder="Mobile No" maxlength="20" required [pattern]="mobilepattern" ngModel #MobileNo="ngModel"></div>

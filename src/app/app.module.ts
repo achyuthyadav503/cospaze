@@ -4,7 +4,7 @@ import{FormsModule} from '@angular/forms';
 import{HttpModule} from '@angular/http';
 import{RouterModule} from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { CustomFormsModule } from 'ng4-validators';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -35,6 +35,7 @@ import { ListyourselfComponent } from './listyourself/listyourself.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    CustomFormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path:"",component:LoginComponent},

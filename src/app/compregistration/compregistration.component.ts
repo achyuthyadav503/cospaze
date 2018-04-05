@@ -23,10 +23,29 @@ export class CompregistrationComponent implements OnInit {
   typesOfSeatsObj:object=[];
   types:object[]=[];
   loginObj:object=[];
+  today:Date=new Date();
+  userDetailsObj;
+  isAdmin:boolean=false;
+  islogedin:boolean=false;
+  isOffice:boolean=false;
+  isCompany:boolean=false;
+  role:String;
   
   ngOnInit() {
     this.loginObj=JSON.parse(localStorage.getItem("userdata"));
-    
+    this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
+    console.log("user name "+this.userDetailsObj.name);
+   if(this.userDetailsObj!= null){
+    this.islogedin=true;
+    this.role=this.userDetailsObj.role;
+    if(this.role=='admin'){
+      this.isAdmin = true;
+      this.isOffice = true;
+      this.isCompany = true;
+    }
+    }else{
+      this.router.navigateByUrl("errorpage");
+     }
   }
   addData=function (user) {
 
@@ -49,13 +68,16 @@ export class CompregistrationComponent implements OnInit {
     let company=companyForm.value;
     let companyId = this.loginObj.companyId; //will get from session
     let officeId = this.loginObj.officeId; //will get from session
+    if(this.isAdmin)
+     officeId = company.Office;
     this.compDetailsObj={
       "CompanyType":company.CompanyType,
       "CompanyName":company.CompanyName,
       "typesofseats":this.typesOfSeatsObj,
       "joiningDate":company.joiningDate,
       "Tmrent": company.Tmrent,
-      "Description": company.description
+      "Description": company.description,
+      "officeId" : officeId,
       
     }
     this.userDeatilsObj={
