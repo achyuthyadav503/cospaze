@@ -16,6 +16,11 @@ export class HomeComponent implements OnInit {
   userDetailsObj;
   serviceDetailsObj;
   islogedin:boolean=false;
+  isAdmin:boolean=false;
+  isOffice:boolean=false;
+  isCompany:boolean=false;
+  isEmployee:boolean=false;
+  role:String;
   name:String;
   memberList = [];
   serviceList = [];
@@ -28,6 +33,22 @@ export class HomeComponent implements OnInit {
     console.log("user name "+this.userDetailsObj.name);
    if(this.userDetailsObj!= null){
     this.islogedin=true;
+    this.role=this.userDetailsObj.role;
+    if(this.role=='admin'){
+      this.isAdmin = true;
+      this.isOffice = true;
+      this.isCompany = true;
+    }
+    if(this.role=='office'){
+      this.isOffice = true;
+      this.isCompany = true;
+    }
+    if(this.role=='company'){
+      this.isCompany = true;
+    }
+    if(this.role=='employee'){
+      this.isEmployee = true;
+    }
    }else{
     this.router.navigateByUrl("errorpage");
    }
@@ -102,6 +123,8 @@ addYourdetails=function (yourdata){
   this.http.post("/CoAPI/list-yourself.php",this.listYourData).
   subscribe((res:Response)=>{
  console.log(res);
+ //here if it is success then the user which we added and service we will get
+ //this.services[] = res.service;
    this.isAdded=true;
    yourdata.reset();
   // this.router.navigateByUrl("/home");

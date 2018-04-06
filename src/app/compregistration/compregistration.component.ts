@@ -29,6 +29,8 @@ export class CompregistrationComponent implements OnInit {
   islogedin:boolean=false;
   isOffice:boolean=false;
   isCompany:boolean=false;
+  isnewCompany:boolean=false;
+  isFreelancer:boolean=false;
   role:String;
   
   ngOnInit() {
