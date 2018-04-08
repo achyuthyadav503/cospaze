@@ -6,5 +6,6 @@ export class UserInfoService {
   constructor() { }
 
   ChatUser:string;
+  id:string;
 
 }

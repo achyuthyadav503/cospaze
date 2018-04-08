@@ -51,7 +51,8 @@ import { UserInfoService } from './shared/userInfo/user-info.service';
      {path:"home/search",component:SearchComponent},
      {path:"register-company",component:CompregistrationComponent},
      {path:"register-employee",component:UserregistrationComponent},
-     {path:"messages",component:UserMessagesComponent}
+     {path:"messages",component:UserMessagesComponent,
+     {path:"inbox",component:InboxComponent}
      ])
     
   ],

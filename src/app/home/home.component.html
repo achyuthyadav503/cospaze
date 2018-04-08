@@ -114,7 +114,7 @@
                    <div class="list-yourself">
                     <ul style="list-style:none" >
                    
-                          <li *ngFor="let item of serviceList; let i = index"><a (click)="messages(item.name)" style="cursor: pointer;">{{ item.serviceName }}-{{item.name}}</a> </li>
+                          <li *ngFor="let item of serviceList; let i = index"><a (click)="messages(item.name,item.userId)" style="cursor: pointer;">{{ item.serviceName }}-{{item.name}}</a> </li>
                      
                  
                    </ul>

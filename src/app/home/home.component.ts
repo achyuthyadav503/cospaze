@@ -110,9 +110,12 @@ export class HomeComponent implements OnInit {
 
   }
 
-  messages(data){
+  messages(data,id){
    console.log(data);
+ 
    this.userinfo.ChatUser=data;
+   this.userinfo.id=id;
+   //localStorage.setItem("chatuserinfo", JSON.stringify(this.userinfo));
    //this.router.navigate(['/messages',{p1:data}]);
    this.router.navigate(['/messages']);
   }

@@ -7,19 +7,24 @@
 
     <div class="col-md-8">
     <div class="messages-mainbox">
-      <div *ngFor="let mymessages of loginUserMessages; let otherUserMessages of chatUserMessages;  ">
+      <!--<div *ngFor="let mymessages of loginUserMessages;let otherUserMessages of chatUserMessages">
         <div class="loginUser">{{loginUser}}:{{mymessages}}</div>
-        <div class="chatUser">{{ChatUser}}:{{otherUserMessages}}</div>
         
+        <div  class="chatUser" >{{ChatUser}}:{{otherUserMessages}}</div>
 
-
+      </div> -->
+      <div *ngFor="let message of userMessages">
+          <div class="loginUser" *ngIf="message.isFrom">{{message.fromUser}}:{{message.message}}</div>
+        
+          <div  class="chatUser" *ngIf="!message.isFrom">{{message.fromUser}}:{{message.message}}</div>
+  
       </div>
   
 
 </div>
 <div class="chat">
-    <input class="chatbox" type="text" id="chat">
-    <input type="button" id="send" value="send">
+    <input class="chatbox" type="text" id="chat" ngModel #chat="ngModel">
+    <input type="button" (click)="sendMessage(chat.value)" id="send" value="send">
   </div>
 
 </div>
