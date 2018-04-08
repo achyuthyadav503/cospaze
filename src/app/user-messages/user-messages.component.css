@@ -1,0 +1,20 @@
+.messages-mainbox{
+    background: white;
+border: 1px solid gray;
+height: 490px;
+}
+.chat{
+    margin-top: 10px;
+    background: white;
+}
+.chatbox{
+    height: 100px;
+    width: 700px;
+    margin-left: 1%;
+}
+.loginUser{
+    text-align: right;
+}
+.chatUser{
+    text-align: left; 
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Http,Response,Headers}from '@angular/http';
+import{UserInfoService} from './../shared/userInfo/user-info.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {Http,Response,Headers}from '@angular/http';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router,private http:Http) { }
+  constructor(private router: Router,private http:Http,private userinfo:UserInfoService) { }
   conformationString:string="Your details has been added";
   isAdded:boolean=false;
   userDetailsObj;
@@ -109,6 +110,12 @@ export class HomeComponent implements OnInit {
 
   }
 
+  messages(data){
+   console.log(data);
+   this.userinfo.ChatUser=data;
+   //this.router.navigate(['/messages',{p1:data}]);
+   this.router.navigate(['/messages']);
+  }
   open(){
    this. showDialog =true;
 }

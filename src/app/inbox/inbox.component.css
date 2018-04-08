@@ -1,0 +1,14 @@
+
+.inbox-mainbox{
+    background: white;
+border: 1px solid gray;
+height: 600px;
+}
+.inbox-heading{
+    background: rgb(179, 209, 170);
+border: 1px solid gray;
+}
+.inbox-messages{
+    background: rgba(167, 224, 222, 0.842);
+border: 1px solid gray;
+}

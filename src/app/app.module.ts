@@ -16,6 +16,9 @@ import { CompregistrationComponent } from './compregistration/compregistration.c
 import { UserregistrationComponent } from './userregistration/userregistration.component';
 import { MenuComponent } from './menu/menu.component';
 import { ListyourselfComponent } from './listyourself/listyourself.component';
+import { UserMessagesComponent } from './user-messages/user-messages.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { UserInfoService } from './shared/userInfo/user-info.service';
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import { ListyourselfComponent } from './listyourself/listyourself.component';
     CompregistrationComponent,
     UserregistrationComponent,
     MenuComponent,
-    ListyourselfComponent
+    ListyourselfComponent,
+    UserMessagesComponent,
+    InboxComponent
   ],
   imports: [
     BrowserModule,
@@ -45,11 +50,12 @@ import { ListyourselfComponent } from './listyourself/listyourself.component';
     {path:"register",component:RegistrationComponent},
      {path:"home/search",component:SearchComponent},
      {path:"register-company",component:CompregistrationComponent},
-     {path:"register-employee",component:UserregistrationComponent}
+     {path:"register-employee",component:UserregistrationComponent},
+     {path:"messages",component:UserMessagesComponent}
      ])
     
   ],
-  providers: [],
+  providers: [UserInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
