@@ -34,7 +34,7 @@ export class UserMessagesComponent implements OnInit {
     //let params = new HttpParams();
    // params.set("userid", this.LoginUserid)
    // let user = {"userid":this.LoginUserid};
-   console.log("/CoAPI/get-user-messages.php?from="+this.LoginUserid+"&to="+this.ChatUSerid);
+ //  console.log("/CoAPI/get-user-messages.php?from="+this.LoginUserid+"&to="+this.ChatUSerid);
     this.http.get("/CoAPI/get-user-messages.php?from="+this.LoginUserid+"&to="+this.ChatUSerid).
   subscribe((res:Response)=>{
     console.log(res);
@@ -48,15 +48,35 @@ export class UserMessagesComponent implements OnInit {
   }
   sendMessage (chat){
     console.log(chat);
+    let message = chat.value;
     this.messageDetailsObj={
       "from":this.LoginUserid,
       "to":this.ChatUSerid,
-      "message":chat
+      "message":message
     };
     this.http.post("/CoAPI/send-message.php",this.messageDetailsObj).
     subscribe((res:Response)=>{
 		console.log(res);
+    this.messageDetailsObj={
+      "message_from":this.LoginUserid,
+      "message_to":this.ChatUSerid,
+      "fromUser":this.loginUser,
+      "toUser":this.ChatUser,
+      "message":message,
+      "isFrom":1
+    };
+    //chat.value = '';
+     chat.reset();
+   //  this.userMessages.push(this.messageDetailsObj);
+
+     this.http.get("/CoAPI/get-user-messages.php?from="+this.LoginUserid+"&to="+this.ChatUSerid).
+  subscribe((res:Response)=>{
+    console.log(res);
     
+   let data = res.json();
+    this.userMessages = data.messages;
+    console.log("messages list"+this.userMessages);
+     })
     // this.router.navigateByUrl("/home");
     })
 

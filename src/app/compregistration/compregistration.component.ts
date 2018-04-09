@@ -32,6 +32,7 @@ export class CompregistrationComponent implements OnInit {
   isnewCompany:boolean=false;
   isFreelancer:boolean=false;
   role:String;
+  offices=[];
   
   ngOnInit() {
     this.loginObj=JSON.parse(localStorage.getItem("userdata"));
@@ -45,6 +46,15 @@ export class CompregistrationComponent implements OnInit {
       this.isOffice = true;
       this.isCompany = true;
     }
+     this.http.post("/CoAPI/search.php",{}).
+  subscribe((res:Response)=>{
+    console.log('response catalogue');
+    
+   let data = res.json();
+   console.log(data);
+    this.offices = data.list;
+    console.log(this.offices);
+  });
     }else{
       this.router.navigateByUrl("errorpage");
      }
@@ -58,6 +68,7 @@ export class CompregistrationComponent implements OnInit {
     }
     this.types.push(this.typesOfSeatsObj);
   }
+ 
   deleteType=function (i){
    // let id=typeOf.id;
    // this.types = this.types.filter(typesOfSeatsObj => typesOfSeatsObj.id !== id);

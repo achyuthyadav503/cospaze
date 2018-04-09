@@ -10,9 +10,7 @@
   <div *ngIf="isAdmin" class="form-group">
     <label>Office:</label>
     <select class="form-control" name="Office" id="Office" ngModel #Office="ngModel">
-      <option value="1">dragon</option>
-      <option value="2">Athena</option>
-      <option value="3">unicorn</option>
+      <option *ngFor="let item of offices; let i = index" value="{{ item.id }}" >{{ item.OfficeName }}</option>
     </select>
   </div>  
   <div class="form-group">

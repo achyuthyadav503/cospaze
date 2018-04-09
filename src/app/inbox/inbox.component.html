@@ -1,12 +1,28 @@
-<div class="col-md-19">
+<div class="jumbotron text-center">
+  <h2>Inbox</h2>
+  <app-menu></app-menu>
+</div>
+<div class="row">
+<div class="col-md-12">
 <div class="inbox-mainbox">
   <div class="inbox-heading">Inbox</div>
   
-      <div class="inbox-messages" *ngFor="let Message of userMessages">
-        {{Message.message}} </div>
+      <div class="inbox-messages"  *ngFor="let Message of userMessages" >
+       
+       <span *ngIf="!Message.isFrom" (click)="sendMessage(Message.fromUser,Message.message_from)">
+        {{Message.fromUser}} ->  {{Message.toUser}} :  {{Message.message}} 
+       </span>
+        <span *ngIf="Message.isFrom" (click)="sendMessage(Message.toUser,Message.message_to)">
+         {{Message.fromUser}} ->  {{Message.toUser}} :  {{Message.message}} 
+       </span>
+        
+        </div>
+
+       
   
 
 
 
+</div>
 </div>
 </div>
