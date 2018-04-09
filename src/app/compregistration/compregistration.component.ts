@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
 import {Router} from '@angular/router';
 
@@ -9,6 +9,8 @@ import {Router} from '@angular/router';
 })
 export class CompregistrationComponent implements OnInit {
 
+  
+  @ViewChild('fileInput') fileInput: ElementRef;
   constructor(private http:Http,private router: Router) { }
 
   
@@ -33,6 +35,7 @@ export class CompregistrationComponent implements OnInit {
   isFreelancer:boolean=false;
   role:String;
   offices=[];
+  logo;
   
   ngOnInit() {
     this.loginObj=JSON.parse(localStorage.getItem("userdata"));
@@ -125,6 +128,19 @@ export class CompregistrationComponent implements OnInit {
   }
   reset=function (Form) {
     Form.reset();
+  }
+
+  onFileChange(event) {
+    if(event.target.files.length > 0) {
+      let file = event.target.files[0];
+      this.logo=file;
+      console.log(this.logo);
+      
+    }
+  }
+  clearFile() {
+    this.logo=null;
+    this.fileInput.nativeElement.value = '';
   }
 
 }

@@ -68,6 +68,12 @@
                       description not valid.
                   </div>	
                   </div> 
+                  <div class="form-group">
+                    <label>Logo:</label>
+                    <input type="file" id="LOGO" (change)="onFileChange($event)" #fileInput>
+                    <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+                  </div>
+                  <br>
                   <div *ngIf="CompanyType=='Freelancer'">
                   <div class="form-group">
                       <label>Email ID:</label><input type="text" name="perEmail" class="form-control" id="perEmail" placeholder="Email ID" required [pattern]="emailPattern" ngModel #perEmail="ngModel"></div>
