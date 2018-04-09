@@ -106,11 +106,15 @@ text-align:center; font-size:20px;border-bottom-color:2px solid red;
 .member-box{
     background: #f6f3f3;
 }
-.offering-services-mainbox{
-	   border:2px solid gray;
+
+list-yourself{
+    line-height: 40px;
+    background: #363030;
 }
 .offering-services-tittle{
-text-align:center; font-size:20px;border-bottom-color:2px solid red;	
+text-align:center; font-size:20px;border-bottom-color:2px solid red;
+padding-top: 15px;	
+color:#d9c002;
 }
 .member-logo{ 
     width: 30%;
@@ -118,7 +122,7 @@ text-align:center; font-size:20px;border-bottom-color:2px solid red;
     margin-top: 10px;
 	}
 .hr{
-	border-top: 2px solid green;
+	border-top: 2px solid #d9c002;
     font-weight: 700;
     width: 50px;
 	margin-top: 10px;
@@ -149,7 +153,7 @@ text-align:center; font-size:20px;border-bottom-color:2px solid red;
 }
 .menu-background{
 	/* background-image: url("dist/img/image-slider.jpeg"); */
-	     padding: 15px 40px 15px 40px;
+	     padding: 5px 40px 5px 40px;
 	 margin-bottom: 5px;
 	 background: #f6ebeb;
 }
@@ -225,7 +229,7 @@ text-align:center; font-size:20px;border-bottom-color:2px solid red;
 }
 .New-Members-Announcement h1{
     margin: 0 auto;
-    color:#d0dc1c;
+    color:#d9c002;
 }
 .New-Members-Announcement p{
     margin: 0 auto;
@@ -237,4 +241,20 @@ text-align:center; font-size:20px;border-bottom-color:2px solid red;
 .search-button{
     margin-top: 10px;
     padding: 1px 30px 1px 30px;
+    background: #d9c002;
+    margin-bottom: 10px;
 }
+.list-yourself{
+    padding-top: 10px;
+    background: #181818;
+    line-height: 40px;
+    font-size: 16px;
+    padding-bottom:10px;
+}
+.offering-services{
+    background: #000;
+    border: 1px solid #000;
+}
+
+
+

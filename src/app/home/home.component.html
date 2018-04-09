@@ -10,16 +10,16 @@
         <div class="logo-description">
             <h1> welcome {{userDetailsObj?.name}}</h1>
             <p>Company</p>
-            <h1 *ngIf="islogedin"  (click)="logout()" value="Logout"><a href="#" style="font-size: 15px;">Logout</a></h1>
+           <!--  <h1 *ngIf="islogedin"  (click)="logout()" value="Logout"><a href="#" style="font-size: 15px;">Logout</a></h1>
             <h1 *ngIf="!islogedin"  (click)="logout()" value="Login"><a href="#" style="font-size: 15px;">Logout</a></h1>
-           <!-- <h1><a href="#">Edit Profile</a></h1>	-->
+           <h1><a href="#">Edit Profile</a></h1>	-->
         </div>
       </div>	
       <div class="col-md-6">
           <div class="New-Members-Announcement">
             <h1>Suggestions & Requests</h1>
             <p>Is there anything you require?</p><p>Please submit your requests here and let us know how we can serve you better</p>
-            <input tpye="text" name="name" value="" class="input-text"><br>
+            <textarea name="message" value="" class="input-text"></textarea><br>
             <button class="search-button">Submit</button>
             
          </div>	
@@ -111,14 +111,14 @@
             </div>
             <div class="col-md-3">
 
-                <div class="offering-services-mainbox">
+                <div class="offering-services">
                     <h1 class="offering-services-tittle">Offerings/Services</h1>
                     <hr class="hr">
-                    <p class="text-center"><a  (click)="open()" style="cursor: pointer;"><u>(list yourself)</u></a></p>
+                    <p class="text-center"><a  (click)="open()" style="cursor: pointer;color:#fff !important;"><u>(list yourself)</u></a></p>
                    <div class="list-yourself">
                     <ul style="list-style:none" >
                    
-                          <li *ngFor="let item of serviceList; let i = index"><a (click)="messages(item.name,item.userId)" style="cursor: pointer;">{{ item.serviceName }}-{{item.name}}</a> </li>
+                          <div *ngFor="let item of serviceList; let i = index"><a (click)="messages(item.name,item.userId)" style="cursor: pointer;">{{ item.serviceName }}-{{item.name}}</a> </div>
                      
                  
                    </ul>

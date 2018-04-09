@@ -1,0 +1,14 @@
+.nav {
+    padding-left: 20%;
+}
+.navbar-default{
+    background: #d9c002;
+}
+ ul li{
+    cursor: pointer;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+    font-size: 18px;
+    font-family: sans-serif;
+}

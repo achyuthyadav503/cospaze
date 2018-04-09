@@ -25,10 +25,15 @@
               </div>
               <ul class="nav navbar-nav">
               
-                <li class="active"> <a (click)="home()">Home</a></li>
+                <li> <a (click)="home()">Home</a></li>
                 <li><a (click)="registerOffice()" *ngIf="isAdmin">Register Co Office</a></li> 
                 <li><a (click)="registerCompany()" *ngIf="isOffice">Register Company/Freelancer</a></li>
                 <li> <a (click)="registerEmployee()" *ngIf="isCompany">Register Employee</a></li>
+                <li><a *ngIf="islogedin"  (click)="logout()" value="Logout">Logout</a></li>
+                <li><a *ngIf="!islogedin"  (click)="logout()" value="Login">Logout</a></li>
               </ul>
             </div>
           </nav>
+
+
+          

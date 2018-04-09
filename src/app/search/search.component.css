@@ -1,6 +1,34 @@
-#City{
-    width:40%
+
+.co-working-offices{
+    margin-top: 100px;
 }
-#Location{
-    width:40%
+.search-box{
+    padding: 10px 10px 10px 10px;
+    background: #fff;
 }
+.Our-Partner{
+    margin-right: -30px;
+    padding: 7px;
+    margin-top: 30px;
+    color: #fff;
+    background: #000;
+}
+.select{
+    margin:2px;
+    width:100%;
+}
+.btn-success{
+    color: #fff;
+    background: #d9c002;
+    border-color: #d9c002;
+    margin-left: 45px;
+}
+ul{
+    list-style: none;
+}
+
+
+
+
+
+
