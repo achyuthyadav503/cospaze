@@ -9,6 +9,7 @@
           </div>
         <div class="logo-description">
             <h1> welcome {{userDetailsObj?.name}}</h1>
+            <p><a (click)="goToinbox()">Inbox</a></p>
             <p>Company</p>
             <h1 *ngIf="islogedin"  (click)="logout()" value="Logout"><a href="#" style="font-size: 15px;">Logout</a></h1>
             <h1 *ngIf="!islogedin"  (click)="logout()" value="Login"><a href="#" style="font-size: 15px;">Logout</a></h1>

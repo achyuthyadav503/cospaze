@@ -119,9 +119,12 @@ export class HomeComponent implements OnInit {
    //this.router.navigate(['/messages',{p1:data}]);
    this.router.navigate(['/messages']);
   }
+  goToinbox(){
+   this.router.navigate(['/inbox']);
+  }
   open(){
    this. showDialog =true;
-}
+  }
 addYourdetails=function (yourdata){
   let x= yourdata.value;
   console.log(x);
