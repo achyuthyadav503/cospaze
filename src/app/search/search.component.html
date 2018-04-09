@@ -56,12 +56,11 @@
             <div class="col-md-4">
                 <img src="assets/meeting_room.jpg" alt ="" style="width:100%; height:120px;margin: 10px;">
             </div>
-            <div class="col-md-4">
-            <div class="office-list-details" style="font-size:15px;margin-top: 20px;">OfficeName:-{{item.OfficeName}}</div>
-          
-               <div class="office-list-details">Address:-{{item.Address}}</div> 
-                <div class="office-list-details">Location:-{{item.Location}}</div>
-               <div class="office-list-details">City:-{{item.City}}</div> 
+            <div class="col-md-8">
+            <div class="office-list-details" style="font-size:20px;">{{item.OfficeName}}</div>
+               <div class="office-address">{{item.Address}}</div> 
+                <div class="office-address">{{item.Location}},{{item.City}}</div>
+               
                </div>
                </div>
           </li>

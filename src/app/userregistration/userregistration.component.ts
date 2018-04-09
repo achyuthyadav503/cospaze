@@ -30,7 +30,6 @@ export class UserregistrationComponent implements OnInit {
   role:String;
   offices=[];
   companies=[];
-  
   ngOnInit() {
     this.loginObj=JSON.parse(localStorage.getItem("userdata"));
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));

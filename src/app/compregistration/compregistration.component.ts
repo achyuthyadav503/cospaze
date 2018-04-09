@@ -33,7 +33,7 @@ export class CompregistrationComponent implements OnInit {
   isFreelancer:boolean=false;
   role:String;
   offices=[];
-  
+  CompanyType = 'company';
   ngOnInit() {
     this.loginObj=JSON.parse(localStorage.getItem("userdata"));
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
