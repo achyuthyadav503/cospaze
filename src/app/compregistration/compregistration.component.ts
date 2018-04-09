@@ -68,6 +68,7 @@ export class CompregistrationComponent implements OnInit {
     }
     this.types.push(this.typesOfSeatsObj);
   }
+ 
   deleteType=function (i){
    // let id=typeOf.id;
    // this.types = this.types.filter(typesOfSeatsObj => typesOfSeatsObj.id !== id);

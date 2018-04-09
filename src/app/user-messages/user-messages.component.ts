@@ -67,7 +67,16 @@ export class UserMessagesComponent implements OnInit {
     };
     //chat.value = '';
      chat.reset();
-     this.userMessages.push(this.messageDetailsObj);
+   //  this.userMessages.push(this.messageDetailsObj);
+
+     this.http.get("/CoAPI/get-user-messages.php?from="+this.LoginUserid+"&to="+this.ChatUSerid).
+  subscribe((res:Response)=>{
+    console.log(res);
+    
+   let data = res.json();
+    this.userMessages = data.messages;
+    console.log("messages list"+this.userMessages);
+     })
     // this.router.navigateByUrl("/home");
     })
 
