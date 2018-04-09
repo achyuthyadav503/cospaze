@@ -36,7 +36,8 @@ export class CompregistrationComponent implements OnInit {
   role:String;
   offices=[];
   logo;
-  
+   CompanyType = 'company';
+
   ngOnInit() {
     this.loginObj=JSON.parse(localStorage.getItem("userdata"));
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
