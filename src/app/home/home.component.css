@@ -91,13 +91,20 @@ body {
 .login-logo a, .register-logo a {
     color: #444;
 }
-
-
+.members-heading h1{
+    font-size:20px;
+    margin-left: 10px;
+}
+.members-heading p{
+    font-size:15px;
+    margin-left: 10px;
+}
 .member-tittle{
 text-align:center; font-size:20px;border-bottom-color:2px solid red;
 }
 .member-mainbox{
-	border:2px solid gray;
+    border:2px solid #cdc4c4;
+   
 }
 .sprit-box{
 	border:2px solid gray;
@@ -152,14 +159,15 @@ color:#d9c002;
 	font-size:25px;
 }
 .menu-background{
-	/* background-image: url("dist/img/image-slider.jpeg"); */
-	     padding: 5px 40px 5px 40px;
-	 margin-bottom: 5px;
-	 background: #f6ebeb;
+	/* background-image: url("dist/img/image-slider.jpeg"); 
+	     padding: 5px 40px 40px 40px;
+	 margin-bottom: 5px;*/
+     background: #f6ebeb;
+     padding: 23px;
 }
 .menu-mainbox{
 	    background: white;
-    border: 1px solid gray;
+    border: 1px solid #d8cccc;
 }
 .menu-description p{
 	text-align:center;
@@ -170,7 +178,8 @@ color:#d9c002;
 }
 .New-Members-Announcement{
 	text-align: center;
-	margin-top: 12%;
+    margin-top: 12%;
+    padding-bottom:32px;
 }
 .img-circle >img {
 	    width: 100%;
@@ -254,6 +263,7 @@ color:#d9c002;
 .offering-services{
     background: #000;
     border: 1px solid #000;
+   
 }
 
 

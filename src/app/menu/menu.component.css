@@ -3,6 +3,7 @@
 }
 .navbar-default{
     background: #d9c002;
+    margin-bottom: 0px;
 }
  ul li{
     cursor: pointer;

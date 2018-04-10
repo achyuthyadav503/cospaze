@@ -16,7 +16,7 @@
            <h1><a href="#">Edit Profile</a></h1>	-->
         </div>
       </div>	
-      <div class="col-md-6">
+      <div class="col-md-6" style="padding: 0px;">
           <div class="New-Members-Announcement">
             <h1>Suggestions & Requests</h1>
             <p>Is there anything you require?</p><p>Please submit your requests here and let us know how we can serve you better</p>
@@ -58,8 +58,10 @@
                     <div class="text-center">
                       <img src="assets/members/{{ item.companyLogo }}" class="member-logo" />
                     </div>
-                    <h1 style=" font-size:20px;margin-left: 50px;">{{ item.companyName }}</h1>
-                    <p style=" font-size:15px;margin-left: 50px;">{{ item.description }}</p>
+                    <div class="members-heading">
+                      <h1>{{ item.companyName }}</h1>
+                      <p>{{ item.description }}</p>
+                    </div>
                   </div>
                 
                
@@ -67,7 +69,7 @@
 
 
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" style="padding: 0px;">
 
 
             <app-search></app-search>
