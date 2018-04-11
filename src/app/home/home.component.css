@@ -238,20 +238,24 @@ color:#d9c002;
 }
 .New-Members-Announcement h1{
     margin: 0 auto;
-    color:#d9c002;
+    padding-top: 18px;
+    color: #000;
+    font-size: 28px;
+    letter-spacing: 1.25px;
 }
 .New-Members-Announcement p{
     margin: 0 auto;
 }
 .input-text{
     width:50%;
+    height:60px;
     margin: 10px;
 }
 .search-button{
-    margin-top: 10px;
+    
     padding: 1px 30px 1px 30px;
     background: #d9c002;
-    margin-bottom: 10px;
+    
 }
 .list-yourself{
     padding-top: 10px;

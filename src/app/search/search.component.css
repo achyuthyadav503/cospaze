@@ -1,20 +1,31 @@
 
 .co-working-offices{
-    margin-top: 100px;
+    margin-top: 70px;
 }
 .search-box{
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 20px 10px;
     background: #fff;
+    opacity: 0.8;
 }
 .Our-Partner{
     margin-right: -30px;
     padding: 7px;
-    margin-top: 30px;
-    color: #fff;
+    margin-top: 45px;
+    opacity: 0.5;
     background: #000;
 }
+.Our-Partner h4{
+    font-size: 18px;
+    margin-left: 20px;
+    color: #fff;
+}
+.Our-Partner h6{
+    font-size: 14px;
+    margin-left: 20px;
+    color: #fff;
+}
 .select{
-    margin:2px;
+    margin:5px;
     width:100%;
 }
 .btn-success{
@@ -30,14 +41,26 @@ ul{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333;
-   
-    
+    color: #333;  
 }
 .office-list-details{
     margin-top: 5px;
     font-size:20px;
 }
+.Featured-spaces {
+      margin-left: 20px
+}
 
-
-
+.Featured-spaces h1{
+     font-size:20px;
+    padding-top: 15px;	
+    color:#000; 
+    letter-spacing: 1.25px;
+}
+.hr{
+	border-top: 2px solid #d9c002;
+    font-weight: 700;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
