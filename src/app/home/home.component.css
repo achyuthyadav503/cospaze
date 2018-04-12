@@ -1,3 +1,10 @@
+@media (min-width: 1200px){
+    .container {
+        width: 1265px;
+        background: #fff;
+    }
+}
+
 body {
     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-weight: 400;
@@ -220,7 +227,7 @@ color:#d9c002;
     margin-top: 8px !important;   
     margin-bottom: 10px !important;
     font-size: 15px !important;
-	padding: 0px 30px 0px 0px;
+	padding: 0px 10px 0px 0px;
 }
 #responsive li span{
 	 float: right;
@@ -230,6 +237,14 @@ color:#d9c002;
 	 text-align: center;
     line-height: 1.9;
 	 padding: 8px;
+}
+.list-yourself{
+    padding-top: 10px;
+    background: #181818;
+    line-height: 40px;
+    font-size: 16px;
+    padding-bottom: 10px;
+    min-height: 665px;
 }
 .New-Members-Announcement{
     background: #e9ecef;
