@@ -1,7 +1,8 @@
 .messages-mainbox{
-    background: white;
-border: 1px solid gray;
+    background: #eceff1;
+border: 0px solid gray;
 height: 490px;
+padding-top: 3px;
 }
 .chat{
     margin-top: 10px;
@@ -11,10 +12,69 @@ height: 490px;
     height: 100px;
     width: 700px;
     margin-left: 1%;
+    background: #eceff1;
+    border:0px;
+}
+.buttonStyle{
+    background: yellowgreen;
+    width: 63px;
+    height: 30px;
+    border-radius: 10px;        
+}
+.user{
+   text-align: right;
+   margin-right: 10px;
+}
+.admin{
+    margin-left: 10px;
+    
 }
 .loginUser{
     text-align: right;
+    border: 0px solid black;
+width: 238px;
+margin-left: 633px;
+height: 46px;
+border-radius: 10px;
+margin-right: 2px;
+margin-top: 15px;
+background: #d6ecf7;
+padding-top: 12px;
+padding-right: 21px;
+position: relative;
 }
 .chatUser{
     text-align: left; 
+    border: 0px solid black;
+width: 238px;
+height: 46px;
+border-radius: 10px;
+margin-left: 10px;
+margin-top: 10px;
+background: #86BB71;
+padding-top: 12px;
+padding-left: 21px;
+position: relative;
+}
+.chatUser:after{
+content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 10px solid #86BB71 ;
+left: 15px;
+top: -9px; 
+}
+.loginUser:after{
+content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 10px solid #d6ecf7 ;
+right: 15px;
+top: -9px; 
 }

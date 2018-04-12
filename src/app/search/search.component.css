@@ -42,10 +42,25 @@ ul{
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;  
+    margin-bottom: 6px;
+    text-align: center;
+    
 }
 .office-list-details{
     margin-top: 5px;
     font-size:20px;
+    text-transform:capitalize;
+    font-weight: bold;
+    color: #b2a10d;
+    text-align: center;
+    
+}
+.office-cost{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;  
+    margin-bottom: 6px;
 }
 .Featured-spaces {
       margin-left: 20px

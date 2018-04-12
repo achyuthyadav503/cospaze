@@ -48,3 +48,11 @@ td { border: 1px solid black;
     border: 1px solid black !important;
     width:100% !important;
   }
+  .removePadding{
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.paddingContainer{
+padding-left: 0px !important;
+    padding-right: 0px !important;
+}

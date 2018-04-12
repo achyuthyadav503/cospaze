@@ -17,9 +17,14 @@
 
       </div> -->
       <div *ngFor="let message of userMessages">
-          <div class="loginUser" *ngIf="message.isFrom">{{message.fromUser}}:{{message.message}}</div>
-        
-          <div  class="chatUser" *ngIf="!message.isFrom">{{message.fromUser}}:{{message.message}}</div>
+          <div *ngIf="message.isFrom">
+            <div class="user">{{message.fromUser}}</div>
+          <div class="loginUser" >{{message.message}}</div>
+          </div>
+          <div *ngIf="!message.isFrom">
+            <div class="admin">{{message.fromUser}}</div>
+          <div  class="chatUser" >{{message.message}}</div>
+          </div>
   
       </div>
   
@@ -27,7 +32,7 @@
 </div>
 <div class="chat">
     <input class="chatbox" type="text" id="chat" ngModel #chat="ngModel">
-    <input type="button" (click)="sendMessage(chat)" id="send" value="send">
+    <input type="button" class="buttonStyle" (click)="sendMessage(chat)" id="send" value="send">
   </div>
 
 </div>

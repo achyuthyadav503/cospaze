@@ -2,6 +2,7 @@
     .container {
         width: 1265px;
         background: #fff;
+        padding-top:5px;
     }
 }
 
@@ -284,6 +285,22 @@ color:#d9c002;
     border: 1px solid #000;
    
 }
-
+.shadowEffect{
+    -webkit-box-shadow: 7px 8px 6px -6px black;
+	   -moz-box-shadow: 7px 8px 6px -6px black;
+	        box-shadow: 7px 8px 6px -6px black;
+            background: white !important;
+}
+.removeBorder{
+    border:0px !important;
+   
+}
+.shadowPadding{
+     -webkit-box-shadow: 0px 8px 6px -6px black;
+	   -moz-box-shadow: 0px 8px 6px -6px black;
+	        box-shadow: 0px 8px 6px -6px black;
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+}
 
 
