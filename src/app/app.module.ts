@@ -19,6 +19,7 @@ import { ListyourselfComponent } from './listyourself/listyourself.component';
 import { UserMessagesComponent } from './user-messages/user-messages.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { UserInfoService } from './shared/userInfo/user-info.service';
+import { PaymentsComponent } from './payments/payments.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { UserInfoService } from './shared/userInfo/user-info.service';
     MenuComponent,
     ListyourselfComponent,
     UserMessagesComponent,
-    InboxComponent
+    InboxComponent,
+    PaymentsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { UserInfoService } from './shared/userInfo/user-info.service';
      {path:"register-company",component:CompregistrationComponent},
      {path:"register-employee",component:UserregistrationComponent},
      {path:"messages",component:UserMessagesComponent},
-     {path:"inbox",component:InboxComponent}
+     {path:"inbox",component:InboxComponent},
+     {path:"payment",component:PaymentsComponent}
      ])
     
   ],
