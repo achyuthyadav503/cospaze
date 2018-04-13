@@ -3,6 +3,8 @@
 border: 0px solid gray;
 height: 490px;
 padding-top: 3px;
+margin-top: 10px;
+border-radius:10px;
 }
 .chat{
     margin-top: 10px;
@@ -14,9 +16,10 @@ padding-top: 3px;
     margin-left: 1%;
     background: #eceff1;
     border:0px;
+    border-radius:10px;
 }
 .buttonStyle{
-    background: yellowgreen;
+    background: #d9c002;
     width: 63px;
     height: 30px;
     border-radius: 10px;        
@@ -24,10 +27,11 @@ padding-top: 3px;
 .user{
    text-align: right;
    margin-right: 10px;
+   text-transform:capitalize;
 }
 .admin{
     margin-left: 10px;
-    
+    text-transform:capitalize;
 }
 .loginUser{
     text-align: right;
@@ -77,4 +81,20 @@ border-right: 10px solid transparent;
 border-bottom: 10px solid #d6ecf7 ;
 right: 15px;
 top: -9px; 
+}
+
+.menuResize{
+    height:10px ! important;
+}
+.msgChatUser{
+    margin-top: 0px !important;
+}
+.user-indox{
+       background: #eceff1;
+border: 0px solid gray;
+height: 490px;
+padding-top: 3px;
+margin-top: 10px;
+margin-left: 15px;
+border-radius:10px;
 }

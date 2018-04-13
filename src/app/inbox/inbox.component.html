@@ -4,25 +4,7 @@
 </div>
 <div class="row">
 <div class="col-md-12">
-<div class="inbox-mainbox">
-  <div class="inbox-heading">Inbox</div>
-  
-      <div class="inbox-messages"  *ngFor="let Message of userMessages" >
-       
-       <span *ngIf="!Message.isFrom" (click)="sendMessage(Message.fromUser,Message.message_from)">
-        {{Message.fromUser}} ->  {{Message.toUser}} :  {{Message.message}} 
-       </span>
-        <span *ngIf="Message.isFrom" (click)="sendMessage(Message.toUser,Message.message_to)">
-         {{Message.fromUser}} ->  {{Message.toUser}} :  {{Message.message}} 
-       </span>
-        
-        </div>
-
-       
-  
-
-
-
+<app-messagelog></app-messagelog>
 </div>
 </div>
-</div>
+

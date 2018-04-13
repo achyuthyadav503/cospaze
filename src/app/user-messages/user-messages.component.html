@@ -1,10 +1,12 @@
-<div class="jumbotron text-center">
-  <h2>Message to {{ ChatUser }}</h2>
+<div class="jumbotron text-center menuResize">
+  <h2 class="msgChatUser">Message to {{ ChatUser }}</h2>
   <app-menu></app-menu>
 </div>
 <div class="row">
     <div class="col-md-3">
-        
+    <div class="user-indox">
+<app-messagelog></app-messagelog>
+      </div>    
     </div>
 
 
@@ -18,11 +20,11 @@
       </div> -->
       <div *ngFor="let message of userMessages">
           <div *ngIf="message.isFrom">
-            <div class="user">{{message.fromUser}}</div>
+            <div class="user"><b>{{message.fromUser}}</b></div>
           <div class="loginUser" >{{message.message}}</div>
           </div>
           <div *ngIf="!message.isFrom">
-            <div class="admin">{{message.fromUser}}</div>
+            <div class="admin"><b>{{message.fromUser}}</b></div>
           <div  class="chatUser" >{{message.message}}</div>
           </div>
   

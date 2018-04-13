@@ -1,0 +1,46 @@
+<div class="jumbotron text-center">
+  <h2>Employee Registration</h2>
+  <app-menu></app-menu>
+</div>
+<div class="container" >
+<div class="row">
+  <div class="col-md-8">
+ <table>
+         <tr>
+         <th>
+  Name
+  </th>
+   <th>
+  Email
+  </th>
+  <th>
+  Mobile
+  </th>
+  <th>
+  Status
+  </th>
+  <th>
+  Role
+  </th>
+      </tr>
+      <tr *ngFor="let item of employeeList; let i = index">
+        <td>
+ {{ item.name }}
+        </td>
+         <td>
+ {{ item.email }}
+        </td>
+         <td>
+ {{ item.mobile }}
+        </td>
+         <td>
+           <span *ngIf="item.status"> Yes </span>
+           <span *ngIf="!item.status"> No </span>
+        </td>
+        <td>
+ {{ item.role }}
+        </td>
+        </tr></table>
+
+</div></div>
+</div>

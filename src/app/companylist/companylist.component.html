@@ -1,0 +1,49 @@
+<div class="jumbotron text-center">
+  <h2>Employee Registration</h2>
+  <app-menu></app-menu>
+</div>
+<div class="container" >
+<div class="row">
+  <div class="col-md-12">
+    <table>
+      
+      <tr>
+         <th>
+  companyName
+  </th>
+   <th>
+  Description
+  </th>
+  <th>
+  Joining Date
+  </th>
+  <th>
+  Total Monthly Rent
+  </th>
+  <th>
+  Company Type
+  </th>
+      </tr>
+     
+<tr *ngFor="let item of companies; let i = index">
+  <td>
+  {{ item.companyName }}
+  </td> 
+   <td>
+  {{ item.description }}
+  </td> 
+
+  <td>
+  {{ item.joiningDate }}
+  </td>
+  <td>
+  {{ item.totalMonthlyRent }}
+  </td>
+  <td>
+  {{ item.companyType}}
+  </td> 
+  </tr>
+      
+    </table>
+</div></div>
+</div>

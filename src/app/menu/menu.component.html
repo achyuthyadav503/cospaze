@@ -29,6 +29,17 @@
                 <li><a (click)="registerOffice()" *ngIf="isAdmin">Register Co Office</a></li> 
                 <li><a (click)="registerCompany()" *ngIf="isOffice">Register Company/Freelancer</a></li>
                 <li> <a (click)="registerEmployee()" *ngIf="isCompany">Register Employee</a></li>
+                <li> <a (click)="payment()" *ngIf="isCompany">Payment</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
+                        <ul class="dropdown-menu">
+                          <li><a (click)="companyList()">Company List</a></li>
+                          <li><a (click)="employeeList()"> Employee List</a></li>
+                          <li><a (click)="officeList()">Office List</a></li>
+                        </ul>
+                      </li>
+
+
+
                 <li><a *ngIf="islogedin"  (click)="logout()" value="Logout">Logout</a></li>
                 <li><a *ngIf="!islogedin"  (click)="logout()" value="Login">Logout</a></li>
               </ul>

@@ -1,0 +1,40 @@
+<div class="jumbotron text-center">
+  <h2>Employee Registration</h2>
+  <app-menu></app-menu>
+</div>
+<div class="container" >
+<div class="row">
+  <div class="col-md-8">
+    <table>
+         <tr>
+         <th>
+  OfficeName
+  </th>
+   <th>
+  Address
+  </th>
+  <th>
+  Location
+  </th>
+  <th>
+  City
+  </th>
+      </tr>
+      <tr *ngFor="let item of offices; let i = index">
+        <td>
+ {{ item.OfficeName }}
+        </td>
+         <td>
+ {{ item.Address }}
+        </td>
+         <td>
+ {{ item.Location }}
+        </td>
+         <td>
+ {{ item.City }}
+        </td>
+        </tr></table>
+
+
+</div></div>
+</div>

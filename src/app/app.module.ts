@@ -18,10 +18,12 @@ import { MenuComponent } from './menu/menu.component';
 import { ListyourselfComponent } from './listyourself/listyourself.component';
 import { UserMessagesComponent } from './user-messages/user-messages.component';
 import { InboxComponent } from './inbox/inbox.component';
+import { MessagelogComponent } from './messagelog/messagelog.component';
 import { UserInfoService } from './shared/userInfo/user-info.service';
 import { PaymentsComponent } from './payments/payments.component';
-
-
+import { CompanylistComponent } from './companylist/companylist.component';
+import { OfficelistComponent } from './officelist/officelist.component';
+import { EmployeelistComponent } from './employeelist/employeelist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,11 @@ import { PaymentsComponent } from './payments/payments.component';
     ListyourselfComponent,
     UserMessagesComponent,
     InboxComponent,
-    PaymentsComponent
+    MessagelogComponent,
+    PaymentsComponent,
+    CompanylistComponent,
+    OfficelistComponent,
+    EmployeelistComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,10 @@ import { PaymentsComponent } from './payments/payments.component';
      {path:"register-employee",component:UserregistrationComponent},
      {path:"messages",component:UserMessagesComponent},
      {path:"inbox",component:InboxComponent},
-     {path:"payment",component:PaymentsComponent}
+     {path:"payment",component:PaymentsComponent},
+     {path:"employeelist",component:EmployeelistComponent},
+     {path:"officelist",component:OfficelistComponent},
+     {path:"companylist",component:CompanylistComponent}
      ])
     
   ],

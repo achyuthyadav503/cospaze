@@ -1,0 +1,43 @@
+
+<div class="row">
+<div class="col-md-12">
+<div class="inbox-mainbox">
+  <div class="inbox-heading">Inbox</div>
+  
+      <div class="inbox-messages"  *ngFor="let Message of userMessages" >
+        
+       <span *ngIf="!Message.isFrom" (click)="sendMessage(Message.fromUser,Message.message_from)">
+         <div class="col-md-12 paddingContainer">
+           <div class="col-md-4 fromUser">
+              <b>{{Message.toUser}}</b>
+           </div>
+           <div class="col-md-8 toUser">
+             <div class="col-md-12 messageTo">
+            <b>{{Message.fromUser}}</b>
+            </div>
+            <div class="col-md-12 message">
+           {{Message.message}}
+            </div>
+             </div>
+         </div>
+         
+       </span>
+        <span *ngIf="Message.isFrom" (click)="sendMessage(Message.toUser,Message.message_to)">
+          <div class="col-md-12 paddingContainer">
+           <div class="col-md-4 fromUser">
+              <b>{{Message.fromUser}}</b>
+           </div>
+           <div class="col-md-8 toUser">
+             <div class="col-md-12 messageTo">
+            <b>{{Message.toUser}}</b>
+            </div>
+            <div class="col-md-12 message">
+           {{Message.message}}
+            </div>
+             </div>
+         </div>
+       </span>
+        
+        </div>
+</div>
+</div>
