@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class PaymentsComponent implements OnInit {
 
   constructor(private http:Http,private router: Router) { }
-  conformationString:string="payment successful";
+  conformationString:string="payment details added successful";
   textpattern="^[a-zA-Z\\s]+$";
   isAdded:boolean=false;
   isAdmin:boolean=false;
@@ -76,6 +76,17 @@ export class PaymentsComponent implements OnInit {
 		"modeOfPayment":paymentData.modeOfPayment,
 		"TransCheqNO":paymentData.TransCheqNO
     }
+    console.log(this.paymentDetailsObj);
+    this.http.post("/CoAPI/payment.php",this.paymentDetailsObj).
+    subscribe((res:Response)=>{
+		console.log(res);
+     this.isAdded=true;
+     payment.value.Office=null;
+     payment.value.Company=null;
+     payment.value.modeOfPayment=null;
+     payment.reset();
+    // this.router.navigateByUrl("/home");
+    })
 
   }
   reset=function (Form) {
