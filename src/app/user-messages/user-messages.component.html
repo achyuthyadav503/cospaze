@@ -33,8 +33,8 @@
 
 </div>
 <div class="chat">
-    <input class="chatbox" type="text" id="chat" ngModel #chat="ngModel">
-    <input type="button" class="buttonStyle" (click)="sendMessage(chat)" id="send" value="send">
+    <input class="chatbox" type="text" id="chat" ngModel required #chat="ngModel">
+    <input type="button" class="buttonStyle" (click)="chat.valid && sendMessage(chat)" id="send" value="send">
   </div>
 
 </div>
