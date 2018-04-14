@@ -13,21 +13,21 @@ export class SearchComponent implements OnInit {
   textpattern="^[a-zA-Z\\s]+$";
   searchDeatilsObj:object=[];
   list = [];
-  data=JSON;
+  data;
   cities=[];
   loctaions=[];
   loctaionsByCity=[];
 
   ngOnInit() {
-
+    
     this.http.get("/CoAPI/catalouge-list.php").
   subscribe((res:Response)=>{
     console.log('response catalogue');
     
-   let data = res.json();
-   console.log(data);
-    this.cities = data.cityList;
-    this.loctaions=data.locationList;
+   let data1 = res.json();
+   console.log(data1);
+    this.cities = data1.cityList;
+    this.loctaions=data1.locationList;
    
     console.log(this.cities);
 
@@ -42,9 +42,9 @@ export class SearchComponent implements OnInit {
     console.log(this.searchDeatilsObj);
     this.http.post("/CoAPI/search.php",this.searchDeatilsObj).
     subscribe((res:Response)=>{
-      console.log('response');
+      console.log('response'+res);
      this.data = res.json();
-     this.list = data.list;
+    this.list = this.data.list;
       console.log(this.data);
     })
   })

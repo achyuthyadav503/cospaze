@@ -37,14 +37,14 @@
 
             <div class="form-group">
               <label>mode of payment:</label>
-              <select class="form-control"  name="modeOfPayment" id="modeOfPayment" ngModel>
+              <select class="form-control"  name="modeOfPayment" id="modeOfPayment" ngModel #modeOfPayment="ngModel">
                 <option [value]="null">-- select --</option> 
                 <option value="Online">Online </option>
                 <option value="Cash">Cash</option>
                 <option value="Check">Check</option>
               </select>
               </div>
-  
+  <div *ngIf="!(modeOfPayment.value=='Cash')">
   <div class="form-group">
   <label>Transaction / Cheque number:</label><input type="text" class="form-control" name="TransCheqNO" id="TransCheqNO" placeholder="Transaction / Cheque number" maxlength="20" required ngModel #TransCheqNO="ngModel"></div>
   <div *ngIf="TransCheqNO.errors"> 
@@ -52,6 +52,7 @@
       Transaction / Cheque Number required.
     </div>		   
     </div>
+  </div>
         <br>
   <input type="submit" class="btn btn-success" value="submit">
   <input type="Reset" class="btn btn-success" value="Reset"(click)="reset(paymentData)">
