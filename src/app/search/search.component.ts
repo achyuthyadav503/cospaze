@@ -28,7 +28,25 @@ export class SearchComponent implements OnInit {
    console.log(data);
     this.cities = data.cityList;
     this.loctaions=data.locationList;
+   
     console.log(this.cities);
+
+    this.searchDeatilsObj={
+      "City":1,
+      "location":1,
+       "NoSeats" :"",
+      "typesOfSeats":""
+     
+    }
+    console.log("in search");
+    console.log(this.searchDeatilsObj);
+    this.http.post("/CoAPI/search.php",this.searchDeatilsObj).
+    subscribe((res:Response)=>{
+      console.log('response');
+     this.data = res.json();
+     this.list = data.list;
+      console.log(this.data);
+    })
   })
   }
 
