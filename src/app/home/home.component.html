@@ -32,14 +32,23 @@
               
           <div class="menu-mainbox removeBorder"  >
              <h1 class="menu" *ngIf = "isCompany">Payment Status</h1>
-               <h1 class="menu" *ngIf ="!isCompany">Today's Menu</h1>
+               <h1 class="menu" *ngIf ="!isCompany">Latest Updates</h1>
             <div class="menu-description" *ngIf ="isCompany">
               
                <ul style="list-style:none" id="responsive">
-                <li>Total Rent<span>{{userDetailsObj?.company.total_monthly_rent}}</span></li>
-                <li>Amount Paid<span>{{userDetailsObj?.payment.amountPaid}}</span></li>
-                <li>Due <span>{{userDetailsObj?.payment.due}}</span></li>
+                <li>Total Rent<span>Rs {{userDetailsObj?.company.total_monthly_rent}}</span></li>
+                <li>Amount Paid<span>Rs {{userDetailsObj?.payment.amountPaid}}</span></li>
+                <li>Due <span>Rs {{userDetailsObj?.payment.due}}</span></li>
                 <li>Due Date<span>{{userDetailsObj?.payment.dueDate}}</span></li>
+              </ul>	
+            </div>
+             <div class="menu-description" *ngIf ="!isCompany">
+              
+               <ul style="list-style:none" id="responsive">
+                <li>New office space near koramagala</li>
+                <li>Get free rewards on monthly rent payment</li>
+                <li>Startup meet at Cafe Mongo</li>
+                
               </ul>	
             </div>
             </div>

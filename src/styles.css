@@ -56,3 +56,6 @@ td { border: 1px solid black;
 padding-left: 0px !important;
     padding-right: 0px !important;
 }
+.autowidth th,.autowidth td{
+  width: auto;
+}
