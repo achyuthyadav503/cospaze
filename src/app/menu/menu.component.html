@@ -30,12 +30,12 @@
                 <li><a (click)="registerCompany()" *ngIf="isOffice">Register Company/Freelancer</a></li>
                 <li> <a (click)="registerEmployee()" *ngIf="isCompany">Register Employee</a></li>
                 <li> <a (click)="payment()" *ngIf="isCompany">Payment</a></li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
+                <li class="dropdown" *ngIf="isCompany"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage</a>
                         <ul class="dropdown-menu">
-                          <li><a (click)="companyList()">Company List</a></li>
-                          <li><a (click)="employeeList()"> Employee List</a></li>
-                          <li><a (click)="officeList()">Office List</a></li>
-                          <li><a (click)="paymentList()">Payment List</a></li>
+                           <li><a (click)="officeList()" *ngIf="isAdmin">Office List</a></li>
+                          <li><a (click)="companyList()" *ngIf="isOffice">Company List</a></li>
+                          <li><a (click)="employeeList()" *ngIf="isCompany"> Employee List</a></li>                        
+                          <li><a (click)="paymentList()" *ngIf="isCompany">Payment List</a></li>
                         </ul>
                       </li>
 
