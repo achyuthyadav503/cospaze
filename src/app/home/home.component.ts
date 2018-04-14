@@ -32,13 +32,15 @@ export class HomeComponent implements OnInit {
     
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
     console.log("user name "+this.userDetailsObj.name);
+    //console.log("user name "+localStorage.getItem("userdata"));
+   // console.log("user name "+this.userDetailsObj.payment.amountPaid);
    if(this.userDetailsObj!= null){
     this.islogedin=true;
     this.role=this.userDetailsObj.role;
     if(this.role=='admin'){
       this.isAdmin = true;
       this.isOffice = true;
-      this.isCompany = true;
+     // this.isCompany = true;
     }
     if(this.role=='office'){
       this.isOffice = true;

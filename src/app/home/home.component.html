@@ -30,15 +30,16 @@
           <div [hidden]="isEmployee">
           <div class="menu-background shadowEffect">
               
-          <div class="menu-mainbox removeBorder">
-             <h1 class="menu">Payment Status</h1>
-            <div class="menu-description">
+          <div class="menu-mainbox removeBorder"  >
+             <h1 class="menu" *ngIf = "isCompany">Payment Status</h1>
+               <h1 class="menu" *ngIf ="!isCompany">Today's Menu</h1>
+            <div class="menu-description" *ngIf ="isCompany">
               
                <ul style="list-style:none" id="responsive">
-                <li>Total Rent<span> RS 20000</span></li>
-                <li>Amount Paid<span>RS 10000</span></li>
-                <li>Due <span>RS 10000</span></li>
-                <li>Due Date<span>05/04/2018</span></li>
+                <li>Total Rent<span>{{userDetailsObj?.company.total_monthly_rent}}</span></li>
+                <li>Amount Paid<span>{{userDetailsObj?.payment.amountPaid}}</span></li>
+                <li>Due <span>{{userDetailsObj?.payment.due}}</span></li>
+                <li>Due Date<span>{{userDetailsObj?.payment.dueDate}}</span></li>
               </ul>	
             </div>
             </div>

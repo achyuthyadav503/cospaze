@@ -79,5 +79,9 @@ export class MenuComponent implements OnInit {
     this.router.navigateByUrl("/employeelist");
 
   }
+  paymentList(){
+    this.router.navigateByUrl("/paymentlist");
+
+  }
 
 }

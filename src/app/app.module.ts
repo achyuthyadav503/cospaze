@@ -24,6 +24,8 @@ import { PaymentsComponent } from './payments/payments.component';
 import { CompanylistComponent } from './companylist/companylist.component';
 import { OfficelistComponent } from './officelist/officelist.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
+import { PaymentlistComponent } from './paymentlist/paymentlist.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ import { EmployeelistComponent } from './employeelist/employeelist.component';
     PaymentsComponent,
     CompanylistComponent,
     OfficelistComponent,
-    EmployeelistComponent
+    EmployeelistComponent,
+    PaymentlistComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ import { EmployeelistComponent } from './employeelist/employeelist.component';
      {path:"payment",component:PaymentsComponent},
      {path:"employeelist",component:EmployeelistComponent},
      {path:"officelist",component:OfficelistComponent},
-     {path:"companylist",component:CompanylistComponent}
+     {path:"companylist",component:CompanylistComponent},
+      {path:"paymentlist",component:PaymentlistComponent}
      ])
     
   ],

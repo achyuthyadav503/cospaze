@@ -1,0 +1,51 @@
+<div class="jumbotron text-center">
+  <h2>Employee Registration</h2>
+  <app-menu></app-menu>
+</div>
+<div class="container" >
+<div class="row">
+  <div class="col-md-8">
+ <table>
+         <tr>
+         <th>
+  OfficeName
+  </th>
+   <th>
+  CompanyName
+  </th>
+  <th>
+  AmountPaid
+  </th>
+  <th>
+  DateOfPayment
+  </th>
+  <th>
+  ModeOfPayment
+  </th>
+  <th>
+  TranCheqNumber
+  </th>
+      </tr>
+      <tr *ngFor="let item of paymentList; let i = index">
+        <td>
+ {{ item.OfficeName }}
+        </td>
+         <td>
+ {{ item.company_name }}
+        </td>
+         <td>
+ {{ item.amount_paid }}
+        </td>
+        <td>
+ {{ item.date_of_payment }}
+        </td>
+        <td>
+ {{ item.mode_of_payment }}
+        </td>
+        <td>
+ {{ item.tran_cheq_number }}
+        </td>
+        </tr></table>
+
+</div></div>
+</div>
