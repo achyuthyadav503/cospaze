@@ -22,7 +22,9 @@ export class CompregistrationComponent implements OnInit {
   isAdded:boolean=false;
   compDetailsObj:object=[];
   userDeatilsObj:object=[];
-  typesOfSeatsObj:object=[];
+  typesOfSeats:object=[];
+  Numberofseats:object=[];
+  typesOfSeatsObj;
   types:object[]=[];
   loginObj:object=[];
   today:Date=new Date();
@@ -36,7 +38,9 @@ export class CompregistrationComponent implements OnInit {
   role:String;
   offices=[];
   logo;
-   CompanyType = 'company';
+   CompanyType = 'Company';
+   rowcount=1;
+   count=[this.rowcount]; 
 
   ngOnInit() {
     this.loginObj=JSON.parse(localStorage.getItem("userdata"));
@@ -59,27 +63,35 @@ export class CompregistrationComponent implements OnInit {
     this.offices = data.list;
     console.log(this.offices);
   });
+  this.typesOfSeatsObj={
+    "typesOfSeats":'',
+    "Numberofseats":0
+   // "Priceperseat":user.Priceperseat
+    }
+    this.types.push(this.typesOfSeatsObj);
     }else{
       this.router.navigateByUrl("errorpage");
      }
   }
   addData=function (user) {
-
+   
     this.typesOfSeatsObj={
     "typesOfSeats":user.typesOfSeats,
     "Numberofseats":user.Numberofseats
    // "Priceperseat":user.Priceperseat
     }
-    this.types.push(this.typesOfSeatsObj);
+    this.types.push(this.typesOfSeatsObj); 
+    
+
   }
  
   deleteType=function (i){
-   // let id=typeOf.id;
-   // this.types = this.types.filter(typesOfSeatsObj => typesOfSeatsObj.id !== id);
-   //delete[this.types.indexOf(typeOf)];
+  // let id=typeOf.id;
+  // this.types = this.types.filter(typesOfSeatsObj => typesOfSeatsObj.id !== id);
+  // delete[this.types.indexOf(typeOf)];
    console.log("entry");
    console.log(i);
-   this.types.splice(i, 1);
+ this.types.splice(i, 1);
   }
   addNewComp=function (companyForm) {
     let company=companyForm.value;
@@ -87,18 +99,34 @@ export class CompregistrationComponent implements OnInit {
     let officeId = this.loginObj.officeId; //will get from session
     if(this.isAdmin)
      officeId = company.Office;
+   
+     this.typesOfSeatsObj={
+      "typesOfSeats":company.typesOfSeats,
+      "Numberofseats":company.Numberofseats
+     // "Priceperseat":user.Priceperseat
+      }
+      this.types.push(this.typesOfSeatsObj); 
+
+    let name = company.FullName;
+    let companyName = company.CompanyName;
+    let companyType = company.CompanyType;
+    if(companyType=='Freelancer')
+      companyName = name;
+    else
+      name = company.UserName;
     this.compDetailsObj={
       "CompanyType":company.CompanyType,
-      "CompanyName":company.CompanyName,
-      "typesofseats":this.typesOfSeatsObj,
+      "CompanyName":companyName,
+      "typesofseats":this.types,
       "joiningDate":company.joiningDate,
       "Tmrent": company.Tmrent,
       "Description": company.description,
       "officeId" : officeId,
       
     }
+    console.log(this.compDetailsObj);
     this.userDeatilsObj={
-      "UserName":company.UserName,
+      "UserName":name,
       "PassWord":company.PassWord,
       "MobileNo": company.MobileNo,
       "Email": company.perEmail
@@ -118,6 +146,7 @@ export class CompregistrationComponent implements OnInit {
         "officeId" : officeId,
         "role": 'company'
       }
+      console.log(this.userDeatilsObj)
       this.http.post("/CoAPI/register-employee.php",this.userDeatilsObj).
     subscribe((res:Response)=>{
 		console.log(res);
