@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.min.css";
 .btn-success{
  color: #FFF !important;
 }
@@ -58,4 +59,13 @@ padding-left: 0px !important;
 }
 .autowidth th,.autowidth td{
   width: auto;
+}
+.menuResize{
+        padding-top: 5px;
+    padding-bottom: 5px;
+}
+.banner{
+  background: url(assets/topBanner.jpg);
+  height: 80px;
+  opacity: 0.8;
 }

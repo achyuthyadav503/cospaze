@@ -1,11 +1,13 @@
-<div class="jumbotron text-center">
-  <h2>Employee Registration</h2>
+<div class="menuResize text-center">
   <app-menu></app-menu>
+  <h2>Payment List</h2>
+  
 </div>
 <div class="container" >
 <div class="row">
   <div class="col-md-10">
- <table class="autowidth">
+ <table class=" table table-bordered autowidth">
+       <thead class="blue-grey lighten-4">
          <tr>
          <th>
   Office Name
@@ -26,6 +28,8 @@
   Transaction / Cheque no
   </th>
       </tr>
+       </thead>
+       <tbody>
       <tr *ngFor="let item of paymentList; let i = index">
         <td>
  {{ item.OfficeName }}
@@ -45,7 +49,8 @@
         <td>
  {{ item.tran_cheq_number }}
         </td>
-        </tr></table>
+        </tr>
+       </tbody></table>
 
 </div></div>
 </div>

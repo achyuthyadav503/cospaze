@@ -75,13 +75,12 @@ export class CompregistrationComponent implements OnInit {
   }
   addData=function (user) {
    
-    this.typesOfSeatsObj={
+    /*this.typesOfSeatsObj={
     "typesOfSeats":user.typesOfSeats,
     "Numberofseats":user.Numberofseats
    // "Priceperseat":user.Priceperseat
     }
-    this.types.push(this.typesOfSeatsObj); 
-    
+    this.types.push(user);*/
 
   }
  

@@ -63,7 +63,8 @@ export class RegistrationComponent implements OnInit {
       "OfficeName":user.OfficeName,
       "Address":user.Address,
       "Location": user.Location,
-      "City": user.City
+      "City": user.City,
+       "Description": user.Description
     }
     this.userDeatilsObj={
       "UserName":user.UserName,

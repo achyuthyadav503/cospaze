@@ -1,11 +1,12 @@
-<div class="jumbotron text-center">
-  <h2>Employee Registration</h2>
+<div class="menuResize text-center">
   <app-menu></app-menu>
+  <h2>Employee List</h2>
 </div>
 <div class="container" >
 <div class="row">
-  <div class="col-md-8">
- <table class="autowidth">
+  <div class="col-md-10">
+ <table class=" table table-bordered autowidth">
+       <thead class="blue-grey lighten-4">
          <tr>
          <th>
   Name
@@ -23,6 +24,8 @@
   Role
   </th>
       </tr>
+       </thead>
+       <tbody>
       <tr *ngFor="let item of employeeList; let i = index">
         <td>
  {{ item.name }}
@@ -40,7 +43,8 @@
         <td>
  {{ item.role }}
         </td>
-        </tr></table>
+        </tr>
+       </tbody></table>
 
 </div></div>
 </div>
