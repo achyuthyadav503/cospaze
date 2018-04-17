@@ -106,6 +106,13 @@ export class CompregistrationComponent implements OnInit {
       }
       this.types.push(this.typesOfSeatsObj); 
 
+      let fi = this.fileInput.nativeElement;
+    let fileToUpload = fi.files[0];
+    let input = new FormData();
+    input.append("file", fileToUpload);
+    let headers = new Headers();
+    headers.append('Content-Type', 'multipart/form-data');
+
     let name = company.FullName;
     let companyName = company.CompanyName;
     let companyType = company.CompanyType;
@@ -120,7 +127,7 @@ export class CompregistrationComponent implements OnInit {
       "joiningDate":company.joiningDate,
       "Tmrent": company.Tmrent,
       "Description": company.description,
-      "officeId" : officeId,
+      "officeId" : officeId
       
     }
     console.log(this.compDetailsObj);
@@ -130,9 +137,15 @@ export class CompregistrationComponent implements OnInit {
       "MobileNo": company.MobileNo,
       "Email": company.perEmail
     }
+   
+
     this.http.post("/CoAPI/register-company.php",this.compDetailsObj).
     subscribe((res:Response)=>{
       console.log(res);
+      this.http.post("/CoAPI/uploadfile.php",input, { headers: headers, method: 'POST'}).subscribe((res:Response)=>{
+        console.log("file upload response"+res);
+      })
+
       let data = res.json();
       let officeData = data.details;
       let companyId = officeData.companyId;
