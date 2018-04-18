@@ -137,10 +137,10 @@ form: FormGroup;
       "MobileNo": company.MobileNo,
       "Email": company.perEmail
     }
-   let headers = new Headers({
+   /*let headers = new Headers({
         'Content-Type': 'multipart/form-data'
     });
-
+*/
 /* let inputEl = this.fileInput.nativeElement;
 let fileCount: number = inputEl.files.length;
 let formData = new FormData();
