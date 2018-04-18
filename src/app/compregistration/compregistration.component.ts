@@ -107,6 +107,13 @@ form: FormGroup;
       this.types.push(this.typesOfSeatsObj); 
       */
 
+      let fi = this.fileInput.nativeElement;
+    let fileToUpload = fi.files[0];
+    let input = new FormData();
+    input.append("file", fileToUpload);
+    let headers = new Headers();
+    headers.append('Content-Type', 'multipart/form-data');
+
     let name = company.FullName;
     let companyName = company.CompanyName;
     let companyType = company.CompanyType;
@@ -121,7 +128,7 @@ form: FormGroup;
       "joiningDate":company.joiningDate,
       "Tmrent": company.Tmrent,
       "Description": company.description,
-      "officeId" : officeId,
+       "officeId" : officeId,
       "logo":this.logo.name,
     }
     this.userDeatilsObj={
@@ -130,7 +137,7 @@ form: FormGroup;
       "MobileNo": company.MobileNo,
       "Email": company.perEmail
     }
-      let headers = new Headers({
+   let headers = new Headers({
         'Content-Type': 'multipart/form-data'
     });
 
@@ -144,6 +151,12 @@ let formData = new FormData();
 
     this.http.post("/CoAPI/register-company.php",this.compDetailsObj,headers).
     subscribe((res:Response)=>{
+
+      console.log(res);
+      this.http.post("/CoAPI/uploadfile.php",input, { headers: headers, method: 'POST'}).subscribe((res:Response)=>{
+        console.log("file upload response"+res);
+      })
+
       let data = res.json();
       let officeData = data.details;
       let companyId = officeData.companyId;
