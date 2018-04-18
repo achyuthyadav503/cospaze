@@ -1,14 +1,15 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
 import {Router} from '@angular/router';
-
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 @Component({
   selector: 'app-compregistration',
   templateUrl: './compregistration.component.html',
   styleUrls: ['./compregistration.component.css']
 })
 export class CompregistrationComponent implements OnInit {
-
+form: FormGroup;
+  loading: boolean = false;
   
   @ViewChild('fileInput') fileInput: ElementRef;
   constructor(private http:Http,private router: Router) { }
@@ -43,6 +44,10 @@ export class CompregistrationComponent implements OnInit {
    count=[this.rowcount]; 
 
   ngOnInit() {
+
+   /* this.datepickerOptions = new DatePickerOptions({
+    format: 'DD-MM-YYYY'
+});*/
     this.loginObj=JSON.parse(localStorage.getItem("userdata"));
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
     console.log("user name "+this.userDetailsObj.name);
@@ -56,16 +61,13 @@ export class CompregistrationComponent implements OnInit {
     }
      this.http.post("/CoAPI/search.php",{}).
   subscribe((res:Response)=>{
-    console.log('response catalogue');
     
    let data = res.json();
-   console.log(data);
     this.offices = data.list;
-    console.log(this.offices);
   });
   this.typesOfSeatsObj={
     "typesOfSeats":'',
-    "Numberofseats":0
+    "numberofseats":0
    // "Priceperseat":user.Priceperseat
     }
     this.types.push(this.typesOfSeatsObj);
@@ -73,14 +75,14 @@ export class CompregistrationComponent implements OnInit {
       this.router.navigateByUrl("errorpage");
      }
   }
-  addData=function (user) {
+  addData=function (kaspy) {
    
-    /*this.typesOfSeatsObj={
-    "typesOfSeats":user.typesOfSeats,
-    "Numberofseats":user.Numberofseats
+    this.typesOfSeatsObj={
+    "typesOfSeats":'',
+    "numberofseats":'',
    // "Priceperseat":user.Priceperseat
     }
-    this.types.push(user);*/
+    this.types.push(this.typesOfSeatsObj);
 
   }
  
@@ -88,8 +90,6 @@ export class CompregistrationComponent implements OnInit {
   // let id=typeOf.id;
   // this.types = this.types.filter(typesOfSeatsObj => typesOfSeatsObj.id !== id);
   // delete[this.types.indexOf(typeOf)];
-   console.log("entry");
-   console.log(i);
  this.types.splice(i, 1);
   }
   addNewComp=function (companyForm) {
@@ -99,12 +99,13 @@ export class CompregistrationComponent implements OnInit {
     if(this.isAdmin)
      officeId = company.Office;
    
-     this.typesOfSeatsObj={
+   /*  this.typesOfSeatsObj={
       "typesOfSeats":company.typesOfSeats,
-      "Numberofseats":company.Numberofseats
+      "numberofseats":company.Numberofseats
      // "Priceperseat":user.Priceperseat
       }
       this.types.push(this.typesOfSeatsObj); 
+      */
 
     let name = company.FullName;
     let companyName = company.CompanyName;
@@ -121,18 +122,28 @@ export class CompregistrationComponent implements OnInit {
       "Tmrent": company.Tmrent,
       "Description": company.description,
       "officeId" : officeId,
-      
+      "logo":this.logo.name,
     }
-    console.log(this.compDetailsObj);
     this.userDeatilsObj={
       "UserName":name,
       "PassWord":company.PassWord,
       "MobileNo": company.MobileNo,
       "Email": company.perEmail
     }
-    this.http.post("/CoAPI/register-company.php",this.compDetailsObj).
+      let headers = new Headers({
+        'Content-Type': 'multipart/form-data'
+    });
+
+/* let inputEl = this.fileInput.nativeElement;
+let fileCount: number = inputEl.files.length;
+let formData = new FormData();
+        if (fileCount > 0) { // a file was selected
+            for (let i = 0; i < fileCount; i++) {
+                formData.append('file[]', inputEl.files.item(i));
+            }*/
+
+    this.http.post("/CoAPI/register-company.php",this.compDetailsObj,headers).
     subscribe((res:Response)=>{
-      console.log(res);
       let data = res.json();
       let officeData = data.details;
       let companyId = officeData.companyId;
@@ -145,10 +156,8 @@ export class CompregistrationComponent implements OnInit {
         "officeId" : officeId,
         "role": 'company'
       }
-      console.log(this.userDeatilsObj)
       this.http.post("/CoAPI/register-employee.php",this.userDeatilsObj).
     subscribe((res:Response)=>{
-		console.log(res);
      this.isAdded=true;
      companyForm.reset();
     // this.router.navigateByUrl("/home");
@@ -160,12 +169,25 @@ export class CompregistrationComponent implements OnInit {
   }
 
   onFileChange(event) {
+    let reader = new FileReader();
+    this.logo=event.target.files[0];
+    var files = event.srcElement.files;
+    /*if(event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.form.get('logo').setValue({
+          filename: file.name,
+          filetype: file.type,
+          value: reader.result.split(',')[1]
+        })
+      };
+    }
     if(event.target.files.length > 0) {
       let file = event.target.files[0];
       this.logo=file;
-      console.log(this.logo);
       
-    }
+    }*/
   }
   clearFile() {
     this.logo=null;

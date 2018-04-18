@@ -25,7 +25,8 @@ import { CompanylistComponent } from './companylist/companylist.component';
 import { OfficelistComponent } from './officelist/officelist.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { PaymentlistComponent } from './paymentlist/paymentlist.component';
-
+import { CalendarModule } from 'angular-calendar';
+import { NgDatepickerModule } from 'ng2-datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,8 @@ import { PaymentlistComponent } from './paymentlist/paymentlist.component';
     HttpModule,
     CustomFormsModule,
     BrowserAnimationsModule,
+    CalendarModule,
+    NgDatepickerModule,
     RouterModule.forRoot([
       {path:"",component:LoginComponent},
      {path:"home",component:HomeComponent},

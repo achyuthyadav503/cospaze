@@ -42,15 +42,20 @@
           </div>
       </div>
       <div class="form-group">
-          <label>Joining Date:</label><input type="Date" class="form-control" name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}"></div>
-          <div *ngIf="joiningDate.errors"> 
+          <label>Joining Date:</label>
+          <ng-datepicker [(ngModel)]="date" name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}">
+          </ng-datepicker>
+          </div>
+            <!--<angular-calendar name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}"></angular-calendar></div>-->
+          <!--<input type="Date" class="form-control" name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}"></div>-->
+         <!-- <div *ngIf="joiningDate.errors"> 
               <div [hidden]="!(joiningDate.errors.required) || joiningDate.pristine" class="alert alert-danger"> 
                   Joining Date required.
               </div>
               <div [hidden]="!(joiningDate.errors?.minDate)" class="alert alert-danger"> 
                   Joining Date should not less than current date.
               </div>
-              </div> 
+              </div>--> 
              <div class="form-group">
           <label>Total Monthly Rent:</label><input type="text" class="form-control" name="Tmrent" id="Total monthly rent" placeholder="Total Monthly Rent" maxlength="20" required ngModel #Tmrent="ngModel"></div>
           <div *ngIf="Tmrent.errors"> 
@@ -71,7 +76,7 @@
                   <div *ngIf="CompanyType=='Company'">
                   <div class="form-group">
                     <label>Logo:</label>
-                    <input type="file" id="LOGO" (change)="onFileChange($event)" #fileInput>
+                    <input type="file" id="logo" (change)="onFileChange($event)" #fileInput>
                     <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
                   </div>
                   </div>
@@ -80,13 +85,13 @@
       <div *ngFor="let seats of types;let i = index">
       <div class="form-group">
         <label>Types of seats:</label>
-        <select  name="typesOfSeats" id="typesOfSeats" ngmodel>
+        <select  name="typesOfSeats{{i}}" [(ngModel)]="types[i].typesOfSeats"  #typesOfSeats="ngModel">
           <option value="Openworkstation">Open workstation</option>
           <option value="PrivateCabin">Private Cabin</option>
           <option value="Semi-privateCabin">Semi-private cabin</option>
           <option value="ManagerialCabin">Managerial Cabin</option>
         </select>
-          <label>Number of seats:</label><input type="text" name="Numberofseats" id="Numberofseats" maxlength="20" ngmodel>
+          <label>Number of seats:</label><input type="text" name="numberOfSeats{{i}}"  maxlength="20" [(ngModel)]="types[i].numberofseats"  #numberOfSeats="ngModel">
          <!-- <label>Price per seat:</label><input type="text" name="Priceperseat" id="Priceperseat" maxlength="20" required ngModel #Priceperseat="ngModel">-->
          <input type="button" value="X" (click)="deleteType(i)">
         </div> 
