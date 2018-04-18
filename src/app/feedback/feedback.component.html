@@ -1,0 +1,22 @@
+<div class="row">
+  <form id="feedbackData" name="feedbackData" #feedbackData="ngForm" (ngSubmit)="feedbackData.valid && addFeedback(feedbackData)">
+            <div class="col-md-12">
+                <div class="form-group">
+                   
+                  <h3>Suggestions & Requests</h3>
+            <p>Is there anything you require?</p><p>Please submit your requests here and let us know how we can serve you better</p>
+           <!-- <textarea name="message" value="" class="input-text" placeholder="Suggestion" [pattern]="textpattern" ngModel #message="ngModel"></textarea><br>
+            <button class="search-button" (click)="open()">Submit</button> -->
+
+                
+                    <textarea id="form_message" name="message" class="form-control msgBox" placeholder="Message for me *" rows="4"  cols="20" required="required" data-error="Please,leave us a message." [pattern]="textpattern" ngModel #message="ngModel" style="width:500px;"></textarea>
+                    <div class="help-block with-errors"></div>
+                    <input type="submit" class="btn btn-success btn-send" value="Send message">
+                </div>
+            </div>
+            <!--<div class="col-md-12">
+                <input type="submit" class="btn btn-success btn-send" value="Send message">
+            </div>-->
+  </form>
+</div>
+  

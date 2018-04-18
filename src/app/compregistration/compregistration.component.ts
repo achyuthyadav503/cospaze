@@ -75,7 +75,7 @@ form: FormGroup;
       this.router.navigateByUrl("errorpage");
      }
   }
-  addData=function (kaspy) {
+  addData=function (user) {
    
     this.typesOfSeatsObj={
     "typesOfSeats":'',

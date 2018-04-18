@@ -50,31 +50,23 @@
              </select>
           
     </div> 
-
-    <div class="form-group">
-      <label>Types of seats:</label>
-      <select  name="typesOfSeats" id="typesOfSeats" ngModel>
-        <option value="Openworkstation">Open workstation</option>
-        <option value="PrivateCabin">Private Cabin</option>
-        <option value="Semi-privateCabin">Semi-private cabin</option>
-        <option value="ManagerialCabin">Managerial Cabin</option>
-      </select>
-        <label>Number of seats:</label><input type="text" name="Numberofseats" id="Numberofseats" maxlength="20" required ngModel #Numberofseats="ngModel">
-        <label>Price per seat:</label><input type="text" name="Priceperseat" id="Priceperseat" maxlength="20" required ngModel #Priceperseat="ngModel">
-        <input type="button" value="+" (click)="addData(userData.value)">
-    </div>
-    <table>
-    <div *ngFor="let type of types; let i = index">
-      <tr border="1">
-       <td> {{type.typesOfSeats}} </td>
-       <td>  {{type.Numberofseats}}  </td>
-       <td> {{type.Priceperseat}} </td>
-       <td> <input type="button" value="X" (click)="deleteType(i)"> </td>
-      </tr>
-      
-  </div>
-</table>
-<br><br>
+        <div *ngFor="let seats of types;let i = index">
+      <div class="form-group">
+        <label>Types of seats:</label>
+        <select  name="typesOfSeats{{i}}" [(ngModel)]="types[i].typesOfSeats"  #typesOfSeats="ngModel">
+          <option value="Openworkstation">Open workstation</option>
+          <option value="PrivateCabin">Private Cabin</option>
+          <option value="Semi-privateCabin">Semi-private cabin</option>
+          <option value="ManagerialCabin">Managerial Cabin</option>
+        </select>
+          <label>Number of seats:</label><input type="text" name="numberOfSeats{{i}}"  maxlength="20" [(ngModel)]="types[i].numberOfSeats"  #numberOfSeats="ngModel">
+          <label>Price per seat:</label><input type="text" name="pricePerSeat{{i}}"  maxlength="20" [(ngModel)]="types[i].pricePerSeat" #pricePerSeat="ngModel">
+         <input type="button" value="X" (click)="deleteType(i)">
+        </div> 
+        
+      </div>
+      <input type="button" value="+" (click)="addData(userData.value)">
+  <br><br>
 <div class="panel panel-primary" style="border: 2px solid black">
     <div class="panel-heading"  style="text-align:center">
         <h4>Authorized Personnel</h4>

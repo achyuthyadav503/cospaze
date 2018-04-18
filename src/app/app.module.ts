@@ -25,6 +25,7 @@ import { CompanylistComponent } from './companylist/companylist.component';
 import { OfficelistComponent } from './officelist/officelist.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { PaymentlistComponent } from './paymentlist/paymentlist.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 import { CalendarModule } from 'angular-calendar';
 import { NgDatepickerModule } from 'ng2-datepicker';
 @NgModule({
@@ -46,7 +47,8 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     CompanylistComponent,
     OfficelistComponent,
     EmployeelistComponent,
-    PaymentlistComponent
+    PaymentlistComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,

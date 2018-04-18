@@ -12,8 +12,8 @@ border-radius:10px;
     background: white;
 }
 .chatbox{
-    height: 100px;
-    width: 700px;
+    height: 72px;
+    width: 800px;
     margin-left: 1%;
     background: #eceff1;
     border:0px;
@@ -21,8 +21,8 @@ border-radius:10px;
 }
 .buttonStyle{
     background: #d9c002;
-    width: 63px;
-    height: 30px;
+    width: 75px;
+    height: 72px;
     border-radius: 10px;        
 }
 .user{

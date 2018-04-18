@@ -34,16 +34,23 @@ export class RegistrationComponent implements OnInit {
     this.cities = data.cityList;
     this.loctaions=data.locationList;
     console.log(this.cities);
-  })
+  });
+
+    this.typesOfSeatsObj={
+    "typesOfSeats":"",
+    "numberOfSeats":"",
+    "pricePerSeat":"",
+    }
+    this.types.push(this.typesOfSeatsObj);
 
 
 
   }
   addData=function (user) {
     this.typesOfSeatsObj={
-    "typesOfSeats":user.typesOfSeats,
-    "Numberofseats":user.Numberofseats,
-    "Priceperseat":user.Priceperseat
+    "typesOfSeats":"",
+    "numberOfSeats":"",
+    "pricePerSeat":"",
     }
     this.types.push(this.typesOfSeatsObj);
   }
@@ -64,7 +71,8 @@ export class RegistrationComponent implements OnInit {
       "Address":user.Address,
       "Location": user.Location,
       "City": user.City,
-       "Description": user.Description
+       "Description": user.Description,
+       "typesofseats":this.types,
     }
     this.userDeatilsObj={
       "UserName":user.UserName,

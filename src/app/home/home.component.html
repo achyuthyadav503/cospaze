@@ -19,11 +19,11 @@
       </div>	
       <div class="col-md-6 shadowPadding">
           <div class="New-Members-Announcement">
-            <h1>Suggestions & Requests</h1>
+            <app-feedback></app-feedback>
+            <!--<h1>Suggestions & Requests</h1>
             <p>Is there anything you require?</p><p>Please submit your requests here and let us know how we can serve you better</p>
-            <textarea name="message" value="" class="input-text"></textarea><br>
-            <button class="search-button">Submit</button>
-            
+            <textarea name="message" value="" class="input-text" placeholder="Suggestion" [pattern]="textpattern" ngModel #message="ngModel"></textarea><br>
+            <button class="search-button" (click)="open()">Submit</button>  -->         
          </div>	
       </div>
       <div class="col-md-3 removePadding">
