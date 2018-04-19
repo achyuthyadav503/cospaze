@@ -113,7 +113,7 @@ form: FormGroup;
     this.input = new FormData();
     this.input.append("file", fileToUpload);
     let headers = new Headers();
-    headers.append('Content-Type', 'multipart/form-data');
+    //headers.append('Content-Type', 'multipart/form-data');
 
     let name = company.FullName;
     let companyName = company.CompanyName;
@@ -153,14 +153,17 @@ let formData = new FormData();
     this.http.post("/CoAPI/register-company.php",this.compDetailsObj,headers).
     subscribe((res:Response)=>{
 
-      console.log(res);
-      this.http.post("/CoAPI/uploadfile.php",this.input, { headers: headers, method: 'POST'}).subscribe((res:Response)=>{
-        console.log("file upload response"+res);
-      })
+      
 
       let data = res.json();
       let officeData = data.details;
       let companyId = officeData.companyId;
+ this.input.append("companyId", companyId);
+console.log(res);
+      this.http.post("/CoAPI/uploadfile.php",this.input, { headers: headers, method: 'POST'}).subscribe((res:Response)=>{
+        console.log("file upload response"+res);
+      })
+
       this.userDeatilsObj={
         "UserName":this.userDeatilsObj.UserName,
         "PassWord":this.userDeatilsObj.PassWord,
@@ -185,7 +188,9 @@ let formData = new FormData();
   onFileChange(event) {
     let reader = new FileReader();
     this.logo=event.target.files[0];
-    var files = event.srcElement.files;
+    //var files = event.srcElement.files;
+    var target = event.target || event.srcElement;
+     var files = target.files;
     /*if(event.target.files && event.target.files.length > 0) {
       let file = event.target.files[0];
       reader.readAsDataURL(file);
