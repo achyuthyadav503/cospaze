@@ -67,6 +67,32 @@
       </div>
       <input type="button" value="+" (click)="addData(userData.value)">
   <br><br>
+
+  <div *ngFor="let amenitie of amenities;let i = index">
+      <div class="form-group">
+             <label>Amenities:</label><input type="text" name="officeAmenities{{i}}"  maxlength="20" [(ngModel)]="amenities[i].officeAmenities"  #officeAmenities="ngModel">
+         
+         <input type="button" value="X" (click)="deleteAmenities(i)">
+        </div> 
+        
+      </div>
+      <input type="button" value="+" (click)="addAmenities(userData.value)">
+  <br><br>
+
+<!--<div *ngFor="let amenitie of amenities;let i = index">
+      <div class="form-group">
+          <label>Amenities:</label><input type="text" name="officeAmenities{{i}}"  maxlength="20" [(ngModel)]="amenities[i].officeAmenities"  #officeAmenities="ngModel">
+         <input type="button" value="X" (click)="deleteType(i)">
+        </div> 
+        
+      </div>
+      <input type="button" value="+" (click)="addAmenities(userData.value)">
+<br>-->
+
+
+
+
+
 <div class="panel panel-primary" style="border: 2px solid black">
     <div class="panel-heading"  style="text-align:center">
         <h4>Authorized Personnel</h4>

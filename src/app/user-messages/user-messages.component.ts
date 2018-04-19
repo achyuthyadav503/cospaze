@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
 import{UserInfoService} from './../shared/userInfo/user-info.service';
-
-
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/observable/interval';
 @Component({
   selector: 'app-user-messages',
   templateUrl: './user-messages.component.html',
@@ -21,6 +21,18 @@ export class UserMessagesComponent implements OnInit {
   loginUserMessages:String[]=["Hi","How are you?","I'm fine.","what else?"];
   chatUserMessages:String[]=["Hi","I'm fine.","How are you?"];
   ngOnInit() {
+
+    Observable.interval(20 * 60).subscribe(messageDetailsObj => {
+      console.log('called');
+       this.http.get("/CoAPI/get-user-messages.php?from="+this.LoginUserid+"&to="+this.ChatUSerid).
+  subscribe((res:Response)=>{
+    console.log(res);
+    
+   let data = res.json();
+    this.userMessages = data.messages;
+    console.log("messages list"+this.userMessages);
+     })
+    });
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
     console.log("user name "+this.userDetailsObj.name);
    // this.userinfo=JSON.parse(localStorage.getItem("userdata"));

@@ -22,7 +22,8 @@ export class RegistrationComponent implements OnInit {
   cities=[];
   loctaions=[];
   loctaionsByCity=[];
-  
+  officeAmenitiesObj:object=[];
+  amenities:object[]=[];
   ngOnInit() {
 
     this.http.get("/CoAPI/catalouge-list.php").
@@ -43,7 +44,11 @@ export class RegistrationComponent implements OnInit {
     }
     this.types.push(this.typesOfSeatsObj);
 
+ this.officeAmenitiesObj ={
+      "officeAmenities":""
+    }
 
+    this.amenities.push(this.officeAmenitiesObj);
 
   }
   addData=function (user) {
@@ -54,6 +59,14 @@ export class RegistrationComponent implements OnInit {
     }
     this.types.push(this.typesOfSeatsObj);
   }
+
+  addAmenities= function(user){
+    this.officeAmenitiesObj ={
+      "officeAmenities":""
+    }
+
+    this.amenities.push(this.officeAmenitiesObj);
+  }
   deleteType=function (i){
    // let id=typeOf.id;
    // this.types = this.types.filter(typesOfSeatsObj => typesOfSeatsObj.id !== id);
@@ -61,6 +74,9 @@ export class RegistrationComponent implements OnInit {
    console.log("entry");
    console.log(i);
    this.types.splice(i, 1);
+  }
+  deleteAmenities = function(i){
+     this.amenities.splice(i, 1);
   }
   addNewUser=function (regform) {
     let user=regform.value;
@@ -73,6 +89,7 @@ export class RegistrationComponent implements OnInit {
       "City": user.City,
        "Description": user.Description,
        "typesofseats":this.types,
+       "amenities":this.amenities,
     }
     this.userDeatilsObj={
       "UserName":user.UserName,

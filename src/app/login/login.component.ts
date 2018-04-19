@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private http:Http,private router: Router) { }
   userDeatilsObj:object=[];
+  message:string="";
 
   ngOnInit() {
   }
@@ -29,7 +30,8 @@ export class LoginComponent implements OnInit {
       
       //console.log(res.json());
       let data = res.json();
-      //let k = JSON.parse(data);
+      let status = data.status;
+      if(status==1){
       console.log("form user name"+data);
       console.log("form user name"+res);
       let userData = data.details;
@@ -39,6 +41,9 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("userdata", JSON.stringify(userData));
       //keep this line in hold for sometime I mean delay in navigation
       this.router.navigateByUrl("/home");
+      }else{
+          this.message=data.msg;
+      }
 
     })
        

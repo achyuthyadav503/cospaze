@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: 'app-officedetails',
+  templateUrl: './officedetails.component.html',
+  styleUrls: ['./officedetails.component.css']
 })
-export class SearchComponent implements OnInit {
+export class OfficeDetailsComponent implements OnInit {
 
   constructor(private http:Http) { }
 
@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     
-    this.http.get("/CoAPI/catalouge-list.php").
+    this.http.get("/CoAPI/office-details.php").
   subscribe((res:Response)=>{
     console.log('response catalogue');
     
@@ -75,14 +75,6 @@ export class SearchComponent implements OnInit {
      //console.log(this.loctaions)
      this.loctaionsByCity=this.loctaions[City];
      console.log(this.loctaionsByCity);
-   }
-
-   officeDetails = function(officeId){
-     /* this.userinfo.ChatUser=data;
-   this.userinfo.id=id;*/
-   //localStorage.setItem("chatuserinfo", JSON.stringify(this.userinfo));
-   //this.router.navigate(['/messages',{p1:data}]);
-   this.router.navigate(['/officedetails']);
    }
  
 

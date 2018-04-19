@@ -39,6 +39,7 @@ form: FormGroup;
   role:String;
   offices=[];
   logo;
+  input:FormData;
    CompanyType = 'Company';
    rowcount=1;
    count=[this.rowcount]; 
@@ -109,8 +110,8 @@ form: FormGroup;
 
       let fi = this.fileInput.nativeElement;
     let fileToUpload = fi.files[0];
-    let input = new FormData();
-    input.append("file", fileToUpload);
+    this.input = new FormData();
+    this.input.append("file", fileToUpload);
     let headers = new Headers();
     headers.append('Content-Type', 'multipart/form-data');
 
@@ -153,7 +154,7 @@ let formData = new FormData();
     subscribe((res:Response)=>{
 
       console.log(res);
-      this.http.post("/CoAPI/uploadfile.php",input, { headers: headers, method: 'POST'}).subscribe((res:Response)=>{
+      this.http.post("/CoAPI/uploadfile.php",this.input, { headers: headers, method: 'POST'}).subscribe((res:Response)=>{
         console.log("file upload response"+res);
       })
 
