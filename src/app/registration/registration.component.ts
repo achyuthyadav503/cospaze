@@ -24,6 +24,7 @@ export class RegistrationComponent implements OnInit {
   loctaionsByCity=[];
   officeAmenitiesObj:object=[];
   amenities:object[]=[];
+  logo;
   ngOnInit() {
 
     this.http.get("/CoAPI/catalouge-list.php").
@@ -79,6 +80,13 @@ export class RegistrationComponent implements OnInit {
      this.amenities.splice(i, 1);
   }
   addNewUser=function (regform) {
+
+    let fi = this.fileInput.nativeElement;
+    let fileToUpload = fi.files[0];
+    this.input = new FormData();
+    this.input.append("file", fileToUpload);
+    let headers = new Headers();
+
     let user=regform.value;
     console.log('click add');
     this.OfficeDetailsObj={
@@ -99,9 +107,19 @@ export class RegistrationComponent implements OnInit {
     }
     this.http.post("/CoAPI/register-office.php",this.OfficeDetailsObj).
     subscribe((res:Response)=>{
+/*      let data = res.json();
+      let officeData = data.details;
+      let companyId = officeData.companyId;
+       this.input.append("companyId", companyId);*/
+console.log(res);
+      
       let data = res.json();
       let officeData = data.details;
       let officeId = officeData.officeID;
+      this.input.append("officeId", officeId);
+      this.http.post("/CoAPI/officeuploadfile.php",this.input, { headers: headers, method: 'POST'}).subscribe((res:Response)=>{
+        console.log("file upload response"+res);
+      })
       this.userDeatilsObj={
         "UserName":this.userDeatilsObj.UserName,
         "PassWord":this.userDeatilsObj.PassWord,
@@ -129,6 +147,18 @@ export class RegistrationComponent implements OnInit {
     if(City!='')
     this.loctaionsByCity=this.loctaions[City];
     console.log(this.loctaionsByCity);
+  }
+
+  onFileChange(event) {
+    let reader = new FileReader();
+    this.logo =event.target.files[0];
+    //var files = event.srcElement.files;
+    var target = event.target || event.srcElement;
+     var files = target.files;
+  }
+  clearFile() {
+    this.logo=null;
+   // this.fileInput.nativeElement.value = '';
   }
 
 }

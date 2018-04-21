@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -8,7 +8,7 @@ import {Http,Response,Headers}from '@angular/http';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private http:Http) { }
+  constructor(private http:Http,private router: Router) { }
 
   textpattern="^[a-zA-Z\\s]+$";
   searchDeatilsObj:object=[];
@@ -82,7 +82,7 @@ export class SearchComponent implements OnInit {
    this.userinfo.id=id;*/
    //localStorage.setItem("chatuserinfo", JSON.stringify(this.userinfo));
    //this.router.navigate(['/messages',{p1:data}]);
-   this.router.navigate(['/officedetails']);
+   this.router.navigate(['/office-details'], officeId);
    }
  
 

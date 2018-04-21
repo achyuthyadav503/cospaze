@@ -77,7 +77,7 @@ import { NgDatepickerModule } from 'ng2-datepicker';
      {path:"officelist",component:OfficelistComponent},
      {path:"companylist",component:CompanylistComponent},
       {path:"paymentlist",component:PaymentlistComponent},
-      {path:"officedetails",component:OfficeDetailsComponent}
+      {path:"office-details",component:OfficeDetailsComponent}
      ])
     
   ],

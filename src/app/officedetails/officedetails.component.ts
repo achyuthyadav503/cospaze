@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
-
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-officedetails',
   templateUrl: './officedetails.component.html',
@@ -8,74 +8,47 @@ import {Http,Response,Headers}from '@angular/http';
 })
 export class OfficeDetailsComponent implements OnInit {
 
-  constructor(private http:Http) { }
+  constructor(private http:Http,private route: ActivatedRoute,
+    private router: Router) { }
 
   textpattern="^[a-zA-Z\\s]+$";
-  searchDeatilsObj:object=[];
+  officeInput:object=[];
   list = [];
   data;
   cities=[];
   loctaions=[];
   loctaionsByCity=[];
+  office;
+ input;
 
   ngOnInit() {
-    
-    this.http.get("/CoAPI/office-details.php").
-  subscribe((res:Response)=>{
+
+this.input = this.route.params.subscribe(params => {
+     // PARAMS CHANGED .. TO SOMETHING REALLY COOL HERE ..
+
+     // for example extract the id..
+     let id = +params['officeId']; // (+) converts string 'id' to a number
+
+   });
+
+
+    this.officeInput={
+      "officeId":1,
+    }
+
+     /*let headers = new Headers();
+        this.input = new FormData();
+    this.input.append("officeId", 1);*/
+    //this.http.get("/CoAPI/office-details.php",this.input, { headers: headers, method: 'POST'}).subscribe((res:Response)=>{
+    this.http.get("/CoAPI/office-details.php?officeId=1",this.officeInput).subscribe((res:Response)=>{
     console.log('response catalogue');
     
    let data1 = res.json();
    console.log(data1);
-    this.cities = data1.cityList;
-    this.loctaions=data1.locationList;
+    this.office = data1.office;
    
-    console.log(this.cities);
 
-    this.searchDeatilsObj={
-      "City":1,
-      "location":1,
-       "NoSeats" :"",
-      "typesOfSeats":""
-     
-    }
-    console.log("in search");
-    console.log(this.searchDeatilsObj);
-    this.http.post("/CoAPI/search.php",this.searchDeatilsObj).
-    subscribe((res:Response)=>{
-      console.log('response'+res);
-     this.data = res.json();
-    this.list = this.data.list;
-      console.log(this.data);
-    })
   })
   }
-
-  search=function (search) {
-
-    this.searchDeatilsObj={
-      "City":search.City,
-      "location":search.Location,
-      "NoSeats" :search.NoSeats,
-      "typesOfSeats":search.typesOfSeats
-    }
-    console.log("in search");
-    console.log(this.searchDeatilsObj);
-    this.http.post("/CoAPI/search.php",this.searchDeatilsObj).
-    subscribe((res:Response)=>{
-      console.log('response');
-      
-     this.data = res.json();
-      this.list = this.data.list;
-      console.log(this.list);
-    })
-
-  }
-  updateLocations=function(City){
-    // console.log(City);
-     //console.log(this.loctaions)
-     this.loctaionsByCity=this.loctaions[City];
-     console.log(this.loctaionsByCity);
-   }
- 
 
 }

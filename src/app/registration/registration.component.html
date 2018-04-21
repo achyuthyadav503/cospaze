@@ -50,6 +50,16 @@
              </select>
           
     </div> 
+
+    <!-- <div *ngIf="CompanyType=='Company'">-->
+                  <div class="form-group">
+                    <label>Logo:</label>
+                    <input type="file" id="logo" (change)="onFileChange($event)" #fileInput>
+                    <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+                  </div>
+                 <!-- </div>-->
+                  <br>
+
         <div *ngFor="let seats of types;let i = index">
       <div class="form-group">
         <label>Types of seats:</label>
