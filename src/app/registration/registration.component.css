@@ -1,0 +1,19 @@
+.location ng2-completer{
+    width: 100%;
+}
+
+.officeAmenities{
+    width:80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 34px;
+    margin-left: 1px;
+    margin-right: 7px;
+    margin-bottom: 12px;
+}
+.upload{
+    display: inline !important;
+   }
+.cusLable label{
+   margin-left:34px;
+}

@@ -43,12 +43,12 @@
       </div>
       <div class="form-group">
           <label>Joining Date:</label>
-          <!--<ng-datepicker [(ngModel)]="date" name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}">
+        <ng-datepicker format= "DD-MM-YYYY"  [(ngModel)]="date" name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}">
           </ng-datepicker>
-          </div>-->
-             <!-- <angular-calendar name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}"></angular-calendar></div>-->
+          </div>
+             <!-- <angular-calendar name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}"></angular-calendar></div>-
         <input type="Date" class="form-control" name="joiningDate" id="joining Date" placeholder="Joining Date"  required  ngModel #joiningDate="ngModel"></div>
-          <!--<div *ngIf="joiningDate.errors"> 
+          <div *ngIf="joiningDate.errors"> 
               <div [hidden]="!(joiningDate.errors.required) || joiningDate.pristine" class="alert alert-danger"> 
                   Joining Date required.
               </div>
@@ -81,8 +81,40 @@
                   </div>
                   </div>
                   <br>
+
+<div>
+  <div class="col-md-12 cusLable">
+    <div class="col-md-3">
+ <label>Types of seats </label>
+    </div>
+    <div class="col-md-3">
+ <label>Number of seats </label>
+    </div>
+  </div>
+  <div *ngFor="let seats of types;let i = index">
+  <div class="col-md-12">
+    <div class="col-md-3">
+ <select  class="officeSeats" name="typesOfSeats{{i}}" [(ngModel)]="types[i].typesOfSeats"  #typesOfSeats="ngModel">
+          <option value="Openworkstation">Open workstation</option>
+          <option value="PrivateCabin">Private Cabin</option>
+          <option value="Semi-privateCabin">Semi-private cabin</option>
+          <option value="ManagerialCabin">Managerial Cabin</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+ <input type="text" class="officeSeats" name="numberOfSeats{{i}}"  maxlength="20" [(ngModel)]="types[i].numberofseats"  #numberOfSeats="ngModel">
+    </div>
+    
+    <div class="col-md-3">
+      <input type="button" class="btn btn-danger" value="X" (click)="deleteType(i)">
+    </div>
+  </div>
+</div>
+</div>
+
+
                   
-      <div *ngFor="let seats of types;let i = index">
+     <!-- <div *ngFor="let seats of types;let i = index">
       <div class="form-group">
         <label>Types of seats:</label>
         <select  name="typesOfSeats{{i}}" [(ngModel)]="types[i].typesOfSeats"  #typesOfSeats="ngModel">
@@ -92,24 +124,11 @@
           <option value="ManagerialCabin">Managerial Cabin</option>
         </select>
           <label>Number of seats:</label><input type="text" name="numberOfSeats{{i}}"  maxlength="20" [(ngModel)]="types[i].numberofseats"  #numberOfSeats="ngModel">
-         <!-- <label>Price per seat:</label><input type="text" name="Priceperseat" id="Priceperseat" maxlength="20" required ngModel #Priceperseat="ngModel">-->
          <input type="button" value="X" (click)="deleteType(i)">
         </div> 
         
-      </div>
-      <input type="button" value="+" (click)="addData(compData.value)">
-           
-    <!--   <table>
-     <div *ngFor="let type of types; let i = index">
-        <tr border="1">
-         <td> {{type.typesOfSeats}} </td>
-         <td>  {{type.Numberofseats}}  </td>
-         <td> {{type.Priceperseat}} </td>
-         <td> <input type="button" value="X" (click)="deleteType(i)"> </td>
-        </tr>
-        
-    </div>
-  </table> -->
+      </div>-->
+      <input type="button" class="btn btn-success" value="Add" (click)="addData(compData.value)">
   <br><br>
 
 

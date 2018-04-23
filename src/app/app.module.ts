@@ -29,7 +29,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import {OfficeDetailsComponent} from './officedetails/officedetails.component';
 import { CalendarModule } from 'angular-calendar';
 import { NgDatepickerModule } from 'ng2-datepicker';
-
+import { Ng2CompleterModule } from "ng2-completer";
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +61,7 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     BrowserAnimationsModule,
     CalendarModule,
     NgDatepickerModule,
+    Ng2CompleterModule,
     RouterModule.forRoot([
       {path:"",component:LoginComponent},
      {path:"home",component:HomeComponent},

@@ -42,51 +42,105 @@
             <option *ngFor="let item of cities; let i = index" value="{{ item.id }}">{{ item.city }}</option>
              </select>
             </div> 
-      <div class="form-group">
+      <div class="form-group location">
           <label>Location:</label>
-          <select  class="form-control" name="Location" id="Location" ngModel #Location="ngModel">
-             <option [value]="null">-- select --</option>
+           <ng2-completer [(ngModel)]="searchStr" name="Location" [datasource]="dataService" [minSearchLength]="0"></ng2-completer>
+          <!--<select  class="form-control" name="Location" id="Location" ngModel #Location="ngModel">
+             <option [value]="null"> select </option>
               <option *ngFor="let item of loctaionsByCity; let i = index" value="{{ item.id }}" >{{ item.location }}</option>
-             </select>
+             </select>-->
           
     </div> 
 
     <!-- <div *ngIf="CompanyType=='Company'">-->
                   <div class="form-group">
                     <label>Logo:</label>
-                    <input type="file" id="logo" (change)="onFileChange($event)" #fileInput>
-                    <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+                    <input class="upload" type="file" id="logo" (change)="onFileChange($event)" #fileInput>
+                    <button type="button" class="btn btn-info" (click)="clearFile()">clear file</button>
                   </div>
+
                  <!-- </div>-->
                   <br>
-
-        <div *ngFor="let seats of types;let i = index">
-      <div class="form-group">
-        <label>Types of seats:</label>
-        <select  name="typesOfSeats{{i}}" [(ngModel)]="types[i].typesOfSeats"  #typesOfSeats="ngModel">
+<div>
+  <div class="col-md-12 cusLable">
+    <div class="col-md-3">
+ <label>Types of seats </label>
+    </div>
+    <div class="col-md-3">
+ <label>Number of seats </label>
+    </div>
+    <div class="col-md-3">
+ <label>Price per seat </label>
+    </div>
+  </div>
+  <div *ngFor="let seats of types;let i = index">
+  <div class="col-md-12">
+    <div class="col-md-3">
+ <select  class="officeSeats" name="typesOfSeats{{i}}" [(ngModel)]="types[i].typesOfSeats"  #typesOfSeats="ngModel">
           <option value="Openworkstation">Open workstation</option>
           <option value="PrivateCabin">Private Cabin</option>
           <option value="Semi-privateCabin">Semi-private cabin</option>
           <option value="ManagerialCabin">Managerial Cabin</option>
         </select>
-          <label>Number of seats:</label><input type="text" name="numberOfSeats{{i}}"  maxlength="20" [(ngModel)]="types[i].numberOfSeats"  #numberOfSeats="ngModel">
-          <label>Price per seat:</label><input type="text" name="pricePerSeat{{i}}"  maxlength="20" [(ngModel)]="types[i].pricePerSeat" #pricePerSeat="ngModel">
-         <input type="button" value="X" (click)="deleteType(i)">
+    </div>
+    <div class="col-md-3">
+ <input class="officeSeats" type="text" name="numberOfSeats{{i}}"   [(ngModel)]="types[i].numberOfSeats"  #numberOfSeats="ngModel">
+    </div>
+    <div class="col-md-3">
+ <input  class="officeSeats" type="text" name="pricePerSeat{{i}}"  [(ngModel)]="types[i].pricePerSeat" #pricePerSeat="ngModel">
+    </div>
+    <div class="col-md-3">
+      <input type="button" class="btn btn-danger" value="X" (click)="deleteType(i)">
+    </div>
+  </div>
+</div>
+</div>
+       <!-- <div *ngFor="let seats of types;let i = index">
+      <div class="form-group">
+        <label>Types of seats:</label>
+        <select  class="officeSeats" name="typesOfSeats{{i}}" [(ngModel)]="types[i].typesOfSeats"  #typesOfSeats="ngModel">
+          <option value="Openworkstation">Open workstation</option>
+          <option value="PrivateCabin">Private Cabin</option>
+          <option value="Semi-privateCabin">Semi-private cabin</option>
+          <option value="ManagerialCabin">Managerial Cabin</option>
+        </select>
+          <label>Number of seats:</label><input class="officeSeats" type="text" name="numberOfSeats{{i}}"   [(ngModel)]="types[i].numberOfSeats"  #numberOfSeats="ngModel">
+          <label>Price per seat:</label><input  class="officeSeats" type="text" name="pricePerSeat{{i}}"  [(ngModel)]="types[i].pricePerSeat" #pricePerSeat="ngModel">
+         <input type="button" class="btn btn-danger" value="X" (click)="deleteType(i)">
         </div> 
         
-      </div>
-      <input type="button" value="+" (click)="addData(userData.value)">
+      </div>-->
+      <input class="btn btn-success" type="button" value="Add" (click)="addData(userData.value)">
   <br><br>
 
-  <div *ngFor="let amenitie of amenities;let i = index">
+ <!-- <div *ngFor="let amenitie of amenities;let i = index">
       <div class="form-group">
-             <label>Amenities:</label><input type="text" name="officeAmenities{{i}}"  maxlength="20" [(ngModel)]="amenities[i].officeAmenities"  #officeAmenities="ngModel">
+             <label>Amenities:</label><input  class="officeAmenities" type="text" name="officeAmenities{{i}}"  maxlength="20" [(ngModel)]="amenities[i].officeAmenities"  #officeAmenities="ngModel">
          
-         <input type="button" value="X" (click)="deleteAmenities(i)">
+         <input type="button" class="btn btn-danger" value="X" (click)="deleteAmenities(i)">
         </div> 
         
+      </div>-->
+      <div>
+  <div class="col-md-12 cusLable">
+    <div class="col-md-3">
+ <label>Amenities</label>
+    </div>
+  </div>
+
+<div *ngFor="let amenitie of amenities;let i = index">
+   <div class="col-md-12">
+    <div class="col-md-3">
+ <input  class="officeAmenities" type="text" name="officeAmenities{{i}}"  maxlength="20" [(ngModel)]="amenities[i].officeAmenities"  #officeAmenities="ngModel">
+        
+    </div>
+    <div class="col-md-3">
+       <input type="button" class="btn btn-danger" value="X" (click)="deleteAmenities(i)">
+    </div>
+  </div>
       </div>
-      <input type="button" value="+" (click)="addAmenities(userData.value)">
+      </div>
+      <input type="button"  class="btn btn-success" value="Add" (click)="addAmenities(userData.value)">
   <br><br>
 
 <!--<div *ngFor="let amenitie of amenities;let i = index">

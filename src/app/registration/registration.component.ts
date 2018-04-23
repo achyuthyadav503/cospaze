@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
 import {Router} from '@angular/router';
-
+import { CompleterService, CompleterData } from 'ng2-completer';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
-  constructor(private http:Http,private router: Router) { }
+ @ViewChild('fileInput') fileInput: ElementRef;
+  protected searchStr: string;
+ protected dataService: CompleterData;
+  constructor(private http:Http,private router: Router,private completerService: CompleterService) {
+     this.dataService = completerService.local(this.loctaionsByCity, 'id', 'location');
+   }
   conformationString:string="New Co space details has been added";
   emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\.-]?\\w+)*(\\.\\w{2,3})+$";
   textpattern="^[a-zA-Z\\s]+$";
@@ -21,10 +25,12 @@ export class RegistrationComponent implements OnInit {
   types:object[]=[];
   cities=[];
   loctaions=[];
+  tLoctaions=[];
   loctaionsByCity=[];
   officeAmenitiesObj:object=[];
   amenities:object[]=[];
   logo;
+ // protected dataService: CompleterData;
   ngOnInit() {
 
     this.http.get("/CoAPI/catalouge-list.php").
@@ -146,15 +152,29 @@ console.log(res);
     console.log(this.loctaions);
     if(City!='')
     this.loctaionsByCity=this.loctaions[City];
-    console.log(this.loctaionsByCity);
+
+
+for (let entry of this.loctaionsByCity) {
+  
+    let loc ={
+        "location":entry.location,
+        "value":entry.id,
+      }
+      this.tLoctaions.push(loc);
+}
+
+     this.dataService = this.completerService.local(this.tLoctaions, 'location', 'location');
   }
 
   onFileChange(event) {
     let reader = new FileReader();
-    this.logo =event.target.files[0];
+   // this.logo =event.target.files[0];
     //var files = event.srcElement.files;
     var target = event.target || event.srcElement;
-     var files = target.files;
+     var logo = target.files;
+
+
+     
   }
   clearFile() {
     this.logo=null;
