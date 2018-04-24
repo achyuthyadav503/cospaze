@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
 import {Router} from '@angular/router';
+import{OfficeInfoService} from './../shared/officeInfo/office-info.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -8,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private http:Http,private router: Router) { }
+  constructor(private http:Http,private router: Router,private officeinfo:OfficeInfoService) { }
 
   textpattern="^[a-zA-Z\\s]+$";
   searchDeatilsObj:object=[];
@@ -78,11 +79,13 @@ export class SearchComponent implements OnInit {
    }
 
    officeDetails = function(officeId){
+    
+   this.officeinfo.id=officeId;
      /* this.userinfo.ChatUser=data;
    this.userinfo.id=id;*/
    //localStorage.setItem("chatuserinfo", JSON.stringify(this.userinfo));
    //this.router.navigate(['/messages',{p1:data}]);
-   this.router.navigate(['/office-details'], officeId);
+   this.router.navigate(['/office-details']);
    }
  
 

@@ -20,6 +20,7 @@ import { UserMessagesComponent } from './user-messages/user-messages.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { MessagelogComponent } from './messagelog/messagelog.component';
 import { UserInfoService } from './shared/userInfo/user-info.service';
+import { OfficeInfoService } from './shared/officeInfo/office-info.service';
 import { PaymentsComponent } from './payments/payments.component';
 import { CompanylistComponent } from './companylist/companylist.component';
 import { OfficelistComponent } from './officelist/officelist.component';
@@ -30,6 +31,7 @@ import {OfficeDetailsComponent} from './officedetails/officedetails.component';
 import { CalendarModule } from 'angular-calendar';
 import { NgDatepickerModule } from 'ng2-datepicker';
 import { Ng2CompleterModule } from "ng2-completer";
+import { SuggestionListComponent } from './suggestion-list/suggestion-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +54,7 @@ import { Ng2CompleterModule } from "ng2-completer";
     PaymentlistComponent,
     FeedbackComponent,
     OfficeDetailsComponent,
+    SuggestionListComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,11 +81,12 @@ import { Ng2CompleterModule } from "ng2-completer";
      {path:"officelist",component:OfficelistComponent},
      {path:"companylist",component:CompanylistComponent},
       {path:"paymentlist",component:PaymentlistComponent},
-      {path:"office-details",component:OfficeDetailsComponent}
+      {path:"office-details",component:OfficeDetailsComponent},
+       {path:"suggestionDetails",component:SuggestionListComponent}
      ])
     
   ],
-  providers: [UserInfoService],
+  providers: [UserInfoService,OfficeInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

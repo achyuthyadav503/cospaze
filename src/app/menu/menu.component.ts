@@ -83,5 +83,8 @@ export class MenuComponent implements OnInit {
     this.router.navigateByUrl("/paymentlist");
 
   }
+  suggestionList(){
+     this.router.navigateByUrl("/suggestionDetails");
+  }
 
 }
