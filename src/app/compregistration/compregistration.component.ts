@@ -1,6 +1,9 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
 import {Router} from '@angular/router';
+import { IMyDpOptions } from '../../../node_modules/angular4-datepicker/src/my-date-picker';
+
+
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 @Component({
   selector: 'app-compregistration',
@@ -42,7 +45,13 @@ form: FormGroup;
   input:FormData;
    CompanyType = 'Company';
    rowcount=1;
-   count=[this.rowcount]; 
+   count=[this.rowcount];
+   myDatePickerOptions: IMyDpOptions = {
+    maxYear: 2030,
+    dateFormat:'dd-mm-yyyy',
+    disableUntil: {year: this.today.getFullYear(), month: this.today.getMonth()+1, day:this.today.getDate()-1 }
+  };
+  public date: any = { date: { year: this.today.getFullYear(), month: this.today.getMonth()+1, day: this.today.getDate() } };
 
   ngOnInit() {
 

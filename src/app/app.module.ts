@@ -5,6 +5,7 @@ import{HttpModule} from '@angular/http';
 import{RouterModule} from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomFormsModule } from 'ng4-validators';
+import { MyDatePickerModule } from '../../node_modules/angular4-datepicker/src/my-date-picker';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -63,6 +64,7 @@ import { SuggestionListComponent } from './suggestion-list/suggestion-list.compo
     CustomFormsModule,
     BrowserAnimationsModule,
     CalendarModule,
+    MyDatePickerModule,
     NgDatepickerModule,
     Ng2CompleterModule,
     RouterModule.forRoot([

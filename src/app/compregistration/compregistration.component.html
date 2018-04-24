@@ -43,8 +43,13 @@
       </div>
       <div class="form-group">
           <label>Joining Date:</label>
-        <ng-datepicker format= "DD-MM-YYYY"  [(ngModel)]="date" name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}">
-          </ng-datepicker>
+          <my-date-picker name="mydate" [options]="myDatePickerOptions"
+          [(ngModel)]="date" required #joiningDate="ngModel"></my-date-picker> 
+        </div> 
+        <div *ngIf="joiningDate.errors"> 
+          <div [hidden]="!(joiningDate.errors.required) || joiningDate.pristine" class="alert alert-danger"> 
+              Joining Date required.
+          </div>
           </div>
              <!-- <angular-calendar name="joiningDate" id="joining Date" placeholder="Joining Date" maxlength="20" required  ngModel #joiningDate="ngModel" minDate="{{today}}"></angular-calendar></div>-
         <input type="Date" class="form-control" name="joiningDate" id="joining Date" placeholder="Joining Date"  required  ngModel #joiningDate="ngModel"></div>
