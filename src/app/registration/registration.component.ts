@@ -9,8 +9,8 @@ import { CompleterService, CompleterData } from 'ng2-completer';
 })
 export class RegistrationComponent implements OnInit {
  @ViewChild('fileInput') fileInput: ElementRef;
-  protected searchStr: string;
- protected dataService: CompleterData;
+  searchStr: string;
+ dataService: CompleterData;
   constructor(private http:Http,private router: Router,private completerService: CompleterService) {
      this.dataService = completerService.local(this.loctaionsByCity, 'id', 'location');
    }
