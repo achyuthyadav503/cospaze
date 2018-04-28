@@ -1,15 +1,22 @@
+<div class="row">
+    <div class="col-md-12 removePadding">
 <div class="member-mainbox">
   <h1 class="member-tittle">Members</h1>
   <hr class="hr">
   <div class="member-box-space member-box" *ngFor="let item of memberList; let i = index">
+    <div class="col-md-3">
       <div class="text-center">
-        <img src="{{ item.companyLogo }}" class="member-logo" />
+        <img src="{{ item.companyLogo }}" class="member-logo"/>
       </div>
+    </div>
+    <div class="col-md-3">
       <div class="members-heading">
         <h1>{{ item.companyName }}</h1>
         <p>{{ item.description }}</p>
       </div>
     </div>
-  
+    </div>
+  </div>
  
+</div>
 </div>

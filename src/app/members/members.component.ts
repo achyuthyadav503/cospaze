@@ -33,7 +33,7 @@ export class MembersComponent implements OnInit {
     console.log("user name "+this.userDetailsObj.name);
     //console.log("user name "+localStorage.getItem("userdata"));
    // console.log("user name "+this.userDetailsObj.payment.amountPaid);
-   if(this.userDetailsObj!= null){
+ /*  if(this.userDetailsObj!= null){
     this.islogedin=true;
     this.role=this.userDetailsObj.role;
     if(this.role=='admin'){
@@ -53,7 +53,7 @@ export class MembersComponent implements OnInit {
     }
    }else{
     this.router.navigateByUrl("errorpage");
-   }
+   }*/
 
 
   this.http.get("/CoAPI/members.php").
@@ -74,7 +74,7 @@ export class MembersComponent implements OnInit {
     console.log(this.serviceList);
   })
 
-  this.http.get("/CoAPI/service-list.php").
+  this.http.get("/CoAPI/company-list.php").
   subscribe((res:Response)=>{
     console.log('response services');
     
