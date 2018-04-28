@@ -85,6 +85,9 @@ export class MenuComponent implements OnInit {
   }
   suggestionList(){
      this.router.navigateByUrl("/suggestionDetails");
-  }
+  };
+  MembersComponent(){
+    this.router.navigateByUrl("/membersDetails");
+ }
 
 }

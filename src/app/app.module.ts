@@ -33,6 +33,7 @@ import { CalendarModule } from 'angular-calendar';
 import { NgDatepickerModule } from 'ng2-datepicker';
 import { Ng2CompleterModule } from "ng2-completer";
 import { SuggestionListComponent } from './suggestion-list/suggestion-list.component';
+import { MembersComponent } from './members/members.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ import { SuggestionListComponent } from './suggestion-list/suggestion-list.compo
     FeedbackComponent,
     OfficeDetailsComponent,
     SuggestionListComponent,
+    MembersComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,7 +86,8 @@ import { SuggestionListComponent } from './suggestion-list/suggestion-list.compo
      {path:"companylist",component:CompanylistComponent},
       {path:"paymentlist",component:PaymentlistComponent},
       {path:"office-details",component:OfficeDetailsComponent},
-       {path:"suggestionDetails",component:SuggestionListComponent}
+       {path:"suggestionDetails",component:SuggestionListComponent},
+       {path:"membersDetails",component:MembersComponent}
      ])
     
   ],
