@@ -89,5 +89,8 @@ export class MenuComponent implements OnInit {
   MembersComponent(){
     this.router.navigateByUrl("/membersDetails");
  }
+ ActivateAccountComponent(){
+  this.router.navigateByUrl("/activateAccount");
+}
 
 }

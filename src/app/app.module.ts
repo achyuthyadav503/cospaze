@@ -34,6 +34,7 @@ import { NgDatepickerModule } from 'ng2-datepicker';
 import { Ng2CompleterModule } from "ng2-completer";
 import { SuggestionListComponent } from './suggestion-list/suggestion-list.component';
 import { MembersComponent } from './members/members.component';
+import { ActivateAccountComponent } from './activate-account/activate-account.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +59,7 @@ import { MembersComponent } from './members/members.component';
     OfficeDetailsComponent,
     SuggestionListComponent,
     MembersComponent,
+    ActivateAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +89,8 @@ import { MembersComponent } from './members/members.component';
       {path:"paymentlist",component:PaymentlistComponent},
       {path:"office-details/:id",component:OfficeDetailsComponent},
        {path:"suggestionDetails",component:SuggestionListComponent},
-       {path:"membersDetails",component:MembersComponent}
+       {path:"membersDetails",component:MembersComponent},
+       {path:"activateAccount",component:ActivateAccountComponent}
      ])
     
   ],
