@@ -78,14 +78,14 @@ import { MembersComponent } from './members/members.component';
      {path:"home/search",component:SearchComponent},
      {path:"register-company",component:CompregistrationComponent},
      {path:"register-employee",component:UserregistrationComponent},
-     {path:"messages",component:UserMessagesComponent},
+     {path:"messages/:userId/:userName",component:UserMessagesComponent},
      {path:"inbox",component:InboxComponent},
      {path:"payment",component:PaymentsComponent},
      {path:"employeelist",component:EmployeelistComponent},
      {path:"officelist",component:OfficelistComponent},
      {path:"companylist",component:CompanylistComponent},
       {path:"paymentlist",component:PaymentlistComponent},
-      {path:"office-details",component:OfficeDetailsComponent},
+      {path:"office-details/:id",component:OfficeDetailsComponent},
        {path:"suggestionDetails",component:SuggestionListComponent},
        {path:"membersDetails",component:MembersComponent}
      ])

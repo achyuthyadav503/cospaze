@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
 import{UserInfoService} from './../shared/userInfo/user-info.service';
 import {Observable} from 'rxjs/Rx';
+import { ActivatedRoute, Router } from '@angular/router';
 import 'rxjs/add/observable/interval';
 @Component({
   selector: 'app-user-messages',
@@ -10,8 +11,7 @@ import 'rxjs/add/observable/interval';
 })
 export class UserMessagesComponent implements OnInit {
 
-  constructor(private http:Http,private userinfo:UserInfoService) { }
-  ChatUser:string;
+   ChatUser:string;
   userDetailsObj;
   loginUser:string;
   ChatUSerid;
@@ -20,6 +20,16 @@ export class UserMessagesComponent implements OnInit {
   messageDetailsObj:object=[];
   loginUserMessages:String[]=["Hi","How are you?","I'm fine.","what else?"];
   chatUserMessages:String[]=["Hi","I'm fine.","How are you?"];
+
+  constructor(private http:Http,private userinfo:UserInfoService,private route: ActivatedRoute) {
+      this.route.params.subscribe( params =>{
+    //console.log(params);
+    this.ChatUSerid=params.userId;
+     this.ChatUser =params.userName;
+    
+      }); 
+   }
+ 
   ngOnInit() {
 
     Observable.interval(20 * 60).subscribe(messageDetailsObj => {
@@ -40,8 +50,8 @@ export class UserMessagesComponent implements OnInit {
     
     this.loginUser=this.userDetailsObj.name;
     this.LoginUserid=this.userDetailsObj.id;
-    this.ChatUser=this.userinfo.ChatUser;
-   this.ChatUSerid=this.userinfo.id;
+    //this.ChatUser=this.userinfo.ChatUser;
+ //  this.ChatUSerid=this.userinfo.id;
     //call API here
     //let params = new HttpParams();
    // params.set("userid", this.LoginUserid)

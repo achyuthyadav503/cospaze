@@ -9,10 +9,7 @@ import{OfficeInfoService} from './../shared/officeInfo/office-info.service';
 })
 export class OfficeDetailsComponent implements OnInit {
 
-  constructor(private http:Http,private route: ActivatedRoute,private router: Router,private officeinfo:OfficeInfoService) {
-     }
-
-  textpattern="^[a-zA-Z\\s]+$";
+ textpattern="^[a-zA-Z\\s]+$";
   officeInput:object=[];
   list = [];
   data;
@@ -21,10 +18,18 @@ export class OfficeDetailsComponent implements OnInit {
   loctaionsByCity=[];
   office;
  input;
+  constructor(private http:Http,private route: ActivatedRoute,private router: Router,private officeinfo:OfficeInfoService) {
+   this.route.params.subscribe( params =>
+    //console.log(params);
+    this.office = params.id
+     );  
+   }
+
+ 
 
   ngOnInit() {
 
-this.office = this.officeinfo.id;
+//this.office = this.officeinfo.id;
     this.officeInput={
       "officeId":1,
     }

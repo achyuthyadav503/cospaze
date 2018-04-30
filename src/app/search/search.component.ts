@@ -84,8 +84,8 @@ export class SearchComponent implements OnInit {
      /* this.userinfo.ChatUser=data;
    this.userinfo.id=id;*/
    //localStorage.setItem("chatuserinfo", JSON.stringify(this.userinfo));
-   //this.router.navigate(['/messages',{p1:data}]);
-   this.router.navigate(['/office-details']);
+   this.router.navigate(['/office-details/'+officeId]);
+  // this.router.navigate(['/office-details/']);
    }
  
 
