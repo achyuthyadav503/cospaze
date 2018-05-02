@@ -29,6 +29,9 @@ export class RegistrationComponent implements OnInit {
   loctaionsByCity=[];
   officeAmenitiesObj:object=[];
   amenities:object[]=[];
+  officeImagesObj:object=[];
+  images:object[]=[];
+  officeImageFiles:object[]=[];
   logo;
  // protected dataService: CompleterData;
   ngOnInit() {
@@ -57,6 +60,11 @@ export class RegistrationComponent implements OnInit {
 
     this.amenities.push(this.officeAmenitiesObj);
 
+    this.officeImagesObj ={
+      "officeImages":""
+    }
+
+    this.images.push(this.officeImagesObj);
   }
   addData=function (user) {
     this.typesOfSeatsObj={
@@ -74,17 +82,22 @@ export class RegistrationComponent implements OnInit {
 
     this.amenities.push(this.officeAmenitiesObj);
   }
+  addImages= function(user){
+    this.officeImagesObj ={
+      "officeImages":""
+    }
+
+    this.images.push(this.officeImagesObj);
+  }
   deleteType=function (i){
-   // let id=typeOf.id;
-   // this.types = this.types.filter(typesOfSeatsObj => typesOfSeatsObj.id !== id);
-   //delete[this.types.indexOf(typeOf)];
-   console.log("entry");
-   console.log(i);
    this.types.splice(i, 1);
   }
   deleteAmenities = function(i){
      this.amenities.splice(i, 1);
   }
+  deleteImages = function(i){
+    this.images.splice(i, 1);
+ }
   addNewUser=function (regform) {
 
     let fi = this.fileInput.nativeElement;
@@ -104,6 +117,7 @@ export class RegistrationComponent implements OnInit {
        "Description": user.Description,
        "typesofseats":this.types,
        "amenities":this.amenities,
+       "images":this.images,
     }
     this.userDeatilsObj={
       "UserName":user.UserName,
@@ -167,18 +181,25 @@ for (let entry of this.loctaionsByCity) {
   }
 
   onFileChange(event) {
-    let reader = new FileReader();
+   // let reader = new FileReader();
    // this.logo =event.target.files[0];
     //var files = event.srcElement.files;
     var target = event.target || event.srcElement;
      var logo = target.files;
 
-
-     
   }
+  addOfficeImages(event) {
+    // let reader = new FileReader();
+    // this.logo =event.target.files[0];
+     //var files = event.srcElement.files;
+     var target = event.target || event.srcElement;
+      this.officeImageFiles.push(target.files[0]);
+      
+   }
   clearFile() {
     this.logo=null;
    // this.fileInput.nativeElement.value = '';
   }
+  
 
 }

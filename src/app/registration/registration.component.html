@@ -110,7 +110,7 @@
         </div> 
         
       </div>-->
-      <input class="btn btn-success" type="button" value="Add" (click)="addData(userData.value)">
+      <input class="btn btn-success" type="button" value="Add" (click)="addData(userData.value)" id="addSeates">
   <br><br>
 
  <!-- <div *ngFor="let amenitie of amenities;let i = index">
@@ -140,8 +140,29 @@
   </div>
       </div>
       </div>
-      <input type="button"  class="btn btn-success" value="Add" (click)="addAmenities(userData.value)">
+      <input type="button"  class="btn btn-success" value="Add" (click)="addAmenities(userData.value)" id="addImages">
   <br><br>
+  <div>
+    <div class="col-md-12 cusLable">
+      <div class="col-md-3">
+   <label>Images</label>
+      </div>
+    </div>
+  
+  <div *ngFor="let image of images;let i = index">
+     <div class="col-md-12">
+      <div class="col-md-3">
+   <input  class="officeImages" type="file" name="officeImages{{i}}"  maxlength="20" [(ngModel)]="images[i].officeImages"  #officeImages="ngModel" (change)="addOfficeImages($event)">
+          
+      </div>
+      <div class="col-md-3">
+         <input type="button" class="btn btn-danger" value="X" (click)="deleteImages(i)" style="margin-bottom: 12px;">
+      </div>
+    </div>
+        </div>
+        </div>
+        <input type="button"  class="btn btn-success" value="Add" (click)="addImages(userData.value)"id="addImages" >
+    <br><br>
 
 <!--<div *ngFor="let amenitie of amenities;let i = index">
       <div class="form-group">
