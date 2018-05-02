@@ -101,9 +101,9 @@ export class RegistrationComponent implements OnInit {
   addNewUser=function (regform) {
 
     let fi = this.fileInput.nativeElement;
-    let fileToUpload = fi.files[0];
+    //let fileToUpload = fi.files[0];
     this.input = new FormData();
-    this.input.append("file", fileToUpload);
+    this.input.append("file", fi.files);
     let headers = new Headers();
 
     let user=regform.value;
