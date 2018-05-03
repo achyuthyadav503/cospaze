@@ -9,6 +9,7 @@ import { CompleterService, CompleterData } from 'ng2-completer';
 })
 export class RegistrationComponent implements OnInit {
  @ViewChild('fileInput') fileInput: ElementRef;
+ @ViewChild('officeImages') officeImages: ElementRef;
   searchStr: string;
  dataService: CompleterData;
   constructor(private http:Http,private router: Router,private completerService: CompleterService) {
@@ -101,10 +102,15 @@ export class RegistrationComponent implements OnInit {
   addNewUser=function (regform) {
 
     let fi = this.fileInput.nativeElement;
-    //let fileToUpload = fi.files[0];
+    let fileToUpload = fi.files[0];
     this.input = new FormData();
-    this.input.append("file", fi.files);
+    this.input.append("file", fileToUpload);
     let headers = new Headers();
+
+    let officeFiles = this.officeImages.nativeElement;
+    for (let officeFile of officeFiles.files) {
+    this.input.append("officeFiles[]", officeFile);
+    }
 
     let user=regform.value;
     console.log('click add');

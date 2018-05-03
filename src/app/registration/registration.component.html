@@ -6,7 +6,7 @@
 <div class="container">
 <div class="row">
   <div class="col-md-10">
- <form id="formNewUser" name="formNewUser" #userData="ngForm" (ngSubmit)="userData.valid && addNewUser(userData)">
+ <form id="formNewUser" name="formNewUser" #userData="ngForm" (ngSubmit)="addNewUser(userData)">
   <div class="form-group">
     <label>Office Name:</label><input type="text" class="form-control" name="OfficeName" id="OfficeName" placeholder="Office Name" maxlength="20" required [pattern]="textpattern" ngModel #OfficeName="ngModel"></div>
     <div *ngIf="OfficeName.errors"> 
@@ -57,10 +57,17 @@
                     <label>Logo:</label>
                     <input class="upload" type="file" id="logo" (change)="onFileChange($event)" #fileInput>
                     <button type="button" class="btn btn-info" (click)="clearFile()">clear file</button>
-                  </div>
+                  </div><br>
 
                  <!-- </div>-->
-                  <br>
+                  
+                  <div class="form-group">
+                    <label>Office Images:</label>
+                    <input  class="officeImages" type="file" name="officeImages"   [(ngModel)]="images.officeImages"  #officeImages (change)="addOfficeImages($event)"  multiple/>
+                    <button type="button" class="btn btn-info" (click)="clearFile()">clear file</button>
+                    </div><br>
+                  
+                  
 <div>
   <div class="col-md-12 cusLable">
     <div class="col-md-3">
@@ -110,7 +117,7 @@
         </div> 
         
       </div>-->
-      <input class="btn btn-success" type="button" value="Add" (click)="addData(userData.value)" id="addSeates">
+      <input class="btn btn-success btn-Seates" type="button" value="Add" (click)="addData(userData.value)">
   <br><br>
 
  <!-- <div *ngFor="let amenitie of amenities;let i = index">
@@ -140,19 +147,17 @@
   </div>
       </div>
       </div>
-      <input type="button"  class="btn btn-success" value="Add" (click)="addAmenities(userData.value)" id="addImages">
+      <input type="button"  class="btn btn-success btn-add" value="Add" (click)="addAmenities(userData.value)">
   <br><br>
   <div>
-    <div class="col-md-12 cusLable">
-      <div class="col-md-3">
-   <label>Images</label>
-      </div>
-    </div>
-  
-  <div *ngFor="let image of images;let i = index">
+    
+    <!--<input  class="officeImages" type="file" name="officeImages{{i}}"  maxlength="20" [(ngModel)]="images[i].officeImages"  #officeImages (change)="addOfficeImages($event)" file-upload multiple>-->
+  </div>
+
+ <!-- <div *ngFor="let image of images;let i = index">
      <div class="col-md-12">
       <div class="col-md-3">
-   <input  class="officeImages" type="file" name="officeImages{{i}}"  maxlength="20" [(ngModel)]="images[i].officeImages"  #officeImages="ngModel" (change)="addOfficeImages($event)">
+   <input  class="officeImages" type="file" name="officeImages{{i}}"  maxlength="20" [(ngModel)]="images[i].officeImages"  #officeImages (change)="addOfficeImages($event)" file-upload multiple>
           
       </div>
       <div class="col-md-3">
@@ -161,7 +166,7 @@
     </div>
         </div>
         </div>
-        <input type="button"  class="btn btn-success" value="Add" (click)="addImages(userData.value)"id="addImages" >
+        <input type="button"  class="btn btn-success btn-add" value="Add" (click)="addImages(userData.value)">-->
     <br><br>
 
 <!--<div *ngFor="let amenitie of amenities;let i = index">
@@ -173,10 +178,6 @@
       </div>
       <input type="button" value="+" (click)="addAmenities(userData.value)">
 <br>-->
-
-
-
-
 
 <div class="panel panel-primary" style="border: 2px solid black">
     <div class="panel-heading"  style="text-align:center">

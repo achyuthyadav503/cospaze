@@ -23,9 +23,12 @@
     margin-right: 7px;
     
 }
-#addImages{
+.btn-add{
     margin-left:27%;
 }
-#addSeates{
+.btn-Seates{
     margin-left:75%;
+}
+.officeImages{
+    display: inline !important;
 }
