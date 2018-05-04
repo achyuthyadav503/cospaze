@@ -1,6 +1,6 @@
 <div class="menuResize text-center">
   <app-menu></app-menu>
-  <h2>Co working Office Registration</h2>
+  <h2>{{office.OfficeName}}</h2>
   
 </div>
 
@@ -10,36 +10,72 @@
              
                   <div class="col-md-6">
               <div class="row">
-            <div class="col-md-12">
-                <img src="/assets/meeting_room.jpg" alt ="" style="width:100%; height:155px;">
-            </div>
+
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                     <!-- Indicators    -->
+                     <ol class="carousel-indicators" >
+                     <li data-target="#myCarousel" data-slide-to="0" [ngClass]="{active: i===0}"  *ngFor="let image of office.officeImages; let i = index"></li>
+                     
+                  <!--   <li data-target="#myCarousel" data-slide-to="1"></li>
+                     <li data-target="#myCarousel" data-slide-to="2"></li> -->
+                     </ol>
+                     
+                     <!-- Wrapper for slides -->
+                     <div class="carousel-inner">
+
+
+                        <div class="item" [ngClass]="{active: i===0}"  *ngFor="let image of office.officeImages; let i = index">
+                        <div class="col-md-12">
+                            <img src="{{ image.imagePath }}" alt ="" style="width:100%; height:270px;">
+                        </div>
+                        </div>
+
+                        <!--
+                   <div class="item">
+                        <div class="col-md-12">
+                            <img src="/assets/meeting_room.jpg" alt ="" style="width:100%; height:155px;">
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="col-md-12">
+                            <img src="/assets/meeting_room.jpg" alt ="" style="width:100%; height:155px;">
+                        </div>
+                     </div>
+                    -->
+
+                     </div>
+                    </div>
+                 
             <div class="col-md-12">
             <div class="office-list-details" style="font-size:20px;">{{office.OfficeName}}</div>
-             <div class="office-address">{{office.Address}}</div>
-             <div class="office-address">{{office.Location}},{{office.City}}</div><br>
+             <div class="office-address">{{office.Address}},{{office.Location}},{{office.City}}</div>
+             <br>
+             <div class="office-address">{{office.Description}}</div>
+             <br>
              <div class="col-md-12">
- <div *ngFor="let officeSeat of office.officeSeats; let i = index">
+            <div *ngFor="let officeSeat of office.officeSeats; let i = index">
                 <div class="col-md-7 office-cost">
-                 <b> {{ officeSeat.typeOfSeats}} </b>
+                    <b> {{ officeSeat.typeOfSeats}} </b>
                 </div>
-               <div class="col-md-5 office-cost">
-                <i class='fa fa-inr'></i>{{ officeSeat.pricePerSeats}} 
-                </div>
+                <div class="col-md-5 office-cost">
+                    <i class='fa fa-inr'></i>{{ officeSeat.pricePerSeats}} 
+                </div>              
+            </div>
+                <h3>Amenities</h3>
+                <div *ngFor="let amenities of office.officeAmenities; let i = index">
+                                <ul>
+                                <li> {{ amenities.amenities}} </li>
+                                </ul>
+                              
 
-</div>
-<h3>Amenities</h3>
- <div *ngFor="let amenities of office.officeAmenities; let i = index">
-                <ul>
-                 <li> {{ amenities.amenities}} </li>
-                </ul>
-              
-
-</div>
-                
                 </div>
-               </div>
-               </div>
-               </div>
+              </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-3">
+          <img src="{{office.officeLogo}}"  alt ="" style="width:100%;height:150px;margin-left: 60%;">
+      </div>
   
   </div>
 </section>

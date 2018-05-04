@@ -37,6 +37,7 @@ export class SearchComponent implements OnInit {
       "location":1,
        "NoSeats" :"",
       "typesOfSeats":""
+      
      
     }
     console.log("in search");
