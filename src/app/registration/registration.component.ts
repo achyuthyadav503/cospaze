@@ -2,19 +2,24 @@ import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 import {Http,Response,Headers}from '@angular/http';
 import {Router} from '@angular/router';
 import { CompleterService, CompleterData } from 'ng2-completer';
+import { GooglePlaceDirective } from "ngx-google-places-autocomplete";
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
+  
 })
 export class RegistrationComponent implements OnInit {
  @ViewChild('fileInput') fileInput: ElementRef;
  @ViewChild('officeImages') officeImages: ElementRef;
+ @ViewChild("placesRef") placesRef : GooglePlaceDirective;
   searchStr: string;
  dataService: CompleterData;
   constructor(private http:Http,private router: Router,private completerService: CompleterService) {
      this.dataService = completerService.local(this.loctaionsByCity, 'id', 'location');
    }
+   
   conformationString:string="New Co space details has been added";
   emailPattern ="^\\w+([\\.-]?\\w+)*@\\w+([\.-]?\\w+)*(\\.\\w{2,3})+$";
   textpattern="^[a-zA-Z\\s]+$";
@@ -34,6 +39,8 @@ export class RegistrationComponent implements OnInit {
   images:object[]=[];
   officeImageFiles:object[]=[];
   logo;
+  lat;
+  lng;
  // protected dataService: CompleterData;
   ngOnInit() {
 
@@ -124,6 +131,8 @@ export class RegistrationComponent implements OnInit {
        "typesofseats":this.types,
        "amenities":this.amenities,
        "images":this.images,
+       "lat":this.lat,
+       "lng":this.lng,
     }
     this.userDeatilsObj={
       "UserName":user.UserName,
@@ -163,7 +172,16 @@ console.log(res);
     })
     })
   }
+  public handleAddressChange(address) {
+    // Do some stuff
+   
+    console.log(address);
+    console.log(address.geometry.location);
+    console.log(address.geometry.location.lng);
 
+  this.lat='34.83434';
+  this.lng='34.83434';
+}
   reset=function (Form) {
     Form.reset();
   }

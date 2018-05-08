@@ -35,6 +35,7 @@ import { Ng2CompleterModule } from "ng2-completer";
 import { SuggestionListComponent } from './suggestion-list/suggestion-list.component';
 import { MembersComponent } from './members/members.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,7 @@ import { ActivateAccountComponent } from './activate-account/activate-account.co
     SuggestionListComponent,
     MembersComponent,
     ActivateAccountComponent,
-  ],
+  ], 
   imports: [
     BrowserModule,
     FormsModule,
@@ -71,6 +72,7 @@ import { ActivateAccountComponent } from './activate-account/activate-account.co
     MyDatePickerModule,
     NgDatepickerModule,
     Ng2CompleterModule,
+    GooglePlaceModule,
     RouterModule.forRoot([
       {path:"",component:LoginComponent},
      {path:"home",component:HomeComponent},
@@ -96,5 +98,6 @@ import { ActivateAccountComponent } from './activate-account/activate-account.co
   ],
   providers: [UserInfoService,OfficeInfoService],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
