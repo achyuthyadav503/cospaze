@@ -177,10 +177,11 @@ console.log(res);
    
     console.log(address);
     console.log(address.geometry.location);
-    console.log(address.geometry.location.lng);
+    console.log(address.geometry.location.lat());
+    console.log(address.geometry.location.lng());
 
-  this.lat='34.83434';
-  this.lng='34.83434';
+  this.lat=address.geometry.location.lat();
+  this.lng=address.geometry.location.lng();
 }
   reset=function (Form) {
     Form.reset();
