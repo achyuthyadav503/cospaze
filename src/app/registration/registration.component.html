@@ -44,12 +44,12 @@
             </div> -->
       <div class="form-group location">
           <label>Location:</label>
-          <input ngx-google-places-autocomplete [options]='options' name="Location" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+          <input ngx-google-places-autocomplete  name="Location" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
           <!--  <ng2-completer [(ngModel)]="searchStr" name="Location" [datasource]="dataService" [minSearchLength]="0"></ng2-completer>
          <select  class="form-control" name="Location" id="Location" ngModel #Location="ngModel">
              <option [value]="null"> select </option>
               <option *ngFor="let item of loctaionsByCity; let i = index" value="{{ item.id }}" >{{ item.location }}</option>
-             </select>-->
+             </select> [options]='options'-->
           
     </div> 
 

@@ -41,6 +41,8 @@ export class RegistrationComponent implements OnInit {
   logo;
   lat;
   lng;
+  location;
+  city;
  // protected dataService: CompleterData;
   ngOnInit() {
 
@@ -125,14 +127,14 @@ export class RegistrationComponent implements OnInit {
       "":user.id,
       "OfficeName":user.OfficeName,
       "Address":user.Address,
-      "Location": user.Location,
-      "City": user.City,
        "Description": user.Description,
        "typesofseats":this.types,
        "amenities":this.amenities,
        "images":this.images,
        "lat":this.lat,
        "lng":this.lng,
+       "Location":this.location,
+       "City":this.city,
     }
     this.userDeatilsObj={
       "UserName":user.UserName,
@@ -174,14 +176,18 @@ console.log(res);
   }
   public handleAddressChange(address) {
     // Do some stuff
-   
-    console.log(address);
-    console.log(address.geometry.location);
-    console.log(address.geometry.location.lat());
-    console.log(address.geometry.location.lng());
+  
+  // console.log(address.address_components[0].short_name);
+   //console.log(address.address_components[1].short_name);
+    //console.log(address.geometry.location);
+    //console.log(address.geometry.location.lat());
+    //console.log(address.geometry.location.lng());
 
   this.lat=address.geometry.location.lat();
   this.lng=address.geometry.location.lng();
+  this.location=address.address_components[0].short_name;
+  this.city=address.address_components[1].short_name;
+  
 }
   reset=function (Form) {
     Form.reset();
