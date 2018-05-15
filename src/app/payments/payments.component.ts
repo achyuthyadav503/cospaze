@@ -14,6 +14,7 @@ export class PaymentsComponent implements OnInit {
   textpattern="^[a-zA-Z\\s]+$";
   isAdded:boolean=false;
   isAdmin:boolean=false;
+  showDialog = false;
   loginObj:object=[];
   userDetailsObj;
   officeDetails;
@@ -84,6 +85,7 @@ export class PaymentsComponent implements OnInit {
      payment.value.Office=null;
      payment.value.Company=null;
      payment.value.modeOfPayment=null;
+     this.showDialog =true;
      payment.reset();
     // this.router.navigateByUrl("/home");
     })

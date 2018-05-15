@@ -28,12 +28,12 @@
       </div>	-->
       </div> 
   <div class="form-group">
-    <label>Address:</label><input type="text" class="form-control" name="Address" id="Address" placeholder="Address" maxlength="20" required  ngModel #Address="ngModel"></div>
-    <div *ngIf="Address.errors"> 
+    <label>Address:</label><textarea rows="4" cols="50" class="form-control" name="Address" id="Address" placeholder="Address" maxlength="20" required [pattern]="textpattern"  ngModel #Address="ngModel"></textarea></div>
+    <!--<div *ngIf="Address.errors"> 
       <div [hidden]="!(Address.errors.required) || Address.pristine" class="alert alert-danger"> 
         Address required.
       </div>		   
-      </div> 
+      </div> -->
   
      <!-- <div class="form-group">
           <label>City:</label>
@@ -238,15 +238,26 @@
  </div></div>
  
    
-  <input type="submit" class="btn btn-success" value="Register">
+ <input type="submit" class="btn btn-success " value="Register">
   <input type="Reset" class="btn btn-success" value="Reset"(click)="reset(userData)">
 
 </form>
 <br>
-<h3 *ngIf="isAdded">
-  {{conformationString}}
-</h3>
 
+<div class="container">
+  
+  <app-listyourself id="mymodel" [(visible)]="showDialog">
+      <div class="showmessage">
+    <h3>{{conformationString}}</h3>
+    
+    <input type="cancel"  (click)="showDialog = !showDialog" class="btn btn-success" value="Ok" style="margin:0 auto;padding: 6px 0px;">
+  </div>
+  </app-listyourself>
+  
+</div>
+<!--<h3 *ngIf="isAdded">
+  {{conformationString}}
+</h3>-->
 
 </div></div>
 </div>

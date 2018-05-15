@@ -24,6 +24,7 @@ form: FormGroup;
   textpattern="^[a-zA-Z\\s]+$";
   mobilepattern="^[2-9]{2}[0-9]{8}$";
   isAdded:boolean=false;
+  showDialog = false;
   compDetailsObj:object=[];
   userDeatilsObj:object=[];
   typesOfSeats:object=[];
@@ -39,6 +40,7 @@ form: FormGroup;
   isCompany:boolean=false;
   isnewCompany:boolean=false;
   isFreelancer:boolean=false;
+  
   role:String;
   offices=[];
   logo;
@@ -185,6 +187,7 @@ console.log(res);
       this.http.post("/CoAPI/register-employee.php",this.userDeatilsObj).
     subscribe((res:Response)=>{
      this.isAdded=true;
+     this.showDialog =true;
      companyForm.reset();
     // this.router.navigateByUrl("/home");
     })

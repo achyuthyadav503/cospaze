@@ -17,7 +17,7 @@ export class UserregistrationComponent implements OnInit {
   mobilepattern="^[2-9]{2}[0-9]{8}$";
   isAdded:boolean=false;
   isAdmin:boolean=false;
-  
+  showDialog = false;
   userDeatilsObj:object=[];
   loginObj:object=[];
   typesOfSeatsObj:object=[];
@@ -116,6 +116,7 @@ export class UserregistrationComponent implements OnInit {
     subscribe((res:Response)=>{
 		console.log(res);
      this.isAdded=true;
+     this.showDialog =true;
      userform.reset();
     // this.router.navigateByUrl("/home");
     })

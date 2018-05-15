@@ -59,10 +59,16 @@
 
 </form>
 <br>
-<h3 *ngIf="isAdded">
-  {{conformationString}}
-</h3>
-
+<div class="container">
+    <app-listyourself id="mymodel" [(visible)]="showDialog">
+        <div class="showmessage">
+      <h3>{{conformationString}}</h3>
+      
+      <input type="cancel"  (click)="showDialog = !showDialog" class="btn btn-success" value="Ok" style="margin:0 auto;padding: 6px 0px;">
+    </div>
+    </app-listyourself>
+    </div>
+    
 
 </div></div>
 </div>

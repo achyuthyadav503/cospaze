@@ -25,6 +25,7 @@ export class RegistrationComponent implements OnInit {
   textpattern="^[a-zA-Z\\s]+$";
   mobilepattern="^[2-9]{2}[0-9]{8}$";
   isAdded:boolean=false;
+  showDialog = false;
   OfficeDetailsObj:object=[];
   userDeatilsObj:object=[];
   typesOfSeatsObj:object=[];
@@ -169,6 +170,9 @@ console.log(res);
     subscribe((res:Response)=>{
 		console.log(res);
      this.isAdded=true;
+      this.showDialog =true;
+     
+
      regform.reset();
     // this.router.navigateByUrl("/home");
     })

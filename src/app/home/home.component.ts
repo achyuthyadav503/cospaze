@@ -125,7 +125,7 @@ export class HomeComponent implements OnInit {
    this.router.navigate(['/inbox']);
   }
   open(){
-   this. showDialog =true;
+   this.showDialog =true;
   }
 addYourdetails=function (yourdata){
   let x= yourdata.value;
