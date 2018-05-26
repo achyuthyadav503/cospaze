@@ -15,14 +15,19 @@
     background: #000;
 }
 .Our-Partner h4{
-    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Source Sans Pro';
     margin-left: 20px;
     color: #fff;
 }
-.Our-Partner h6{
-    font-size: 14px;
+.Our-Partner p{
+    font-size: 13px;
     margin-left: 20px;
     color: #fff;
+    font-family: 'Source Sans Pro';
+    line-height: 25px;
 }
 .select{
     margin:5px;
@@ -66,11 +71,18 @@ ul{
       margin-left: 20px
 }
 
-.Featured-spaces h1{
-     font-size:20px;
+.Featured-spaces h5{
+    padding-top: 15px;
+    font-size: 16px;
+    color: #727272;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro';
+    /* font-size:20px;
     padding-top: 15px;	
     color:#000; 
-    letter-spacing: 1.25px;
+    letter-spacing: 1.25px;*/
 }
 .hr{
 	border-top: 2px solid #d9c002;
@@ -81,4 +93,74 @@ ul{
 }
 .officeList{
     min-height:230px;
+}
+
+
+
+
+
+.process-item {
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.process-item .process-inner {
+    padding-left: 200px;
+    position: relative;
+}
+.process-item .process-inner:after {
+    content: "";
+    border: 1px solid #fff;
+    height: 3px;
+    width: 170px;
+    background: #727272;
+    position: absolute;
+    top: 20px;
+    left: -65px;
+}
+.process-item .process-inner span {
+    background: #000000;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
+.process-item .process-inner h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 0 53px;
+    position: relative;
+    display: table;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #212121;
+    font-family: 'Source Sans Pro';
+}
+p {
+    font-size: 13px;
+    margin-bottom: 0px;
+    font-family: 'Source Sans Pro';
+    color: #727272;
+    line-height: 25px;
+}
+.process-item .process-inner h4:after {
+    content: "";
+    height: 2px;
+    width: 52%;
+    background: #212121;
+    position: absolute;
+    bottom: -29px;
+    left: 0;
 }

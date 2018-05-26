@@ -58,18 +58,18 @@
     </div>
   
     <app-menu></app-menu>
-    <div class="row">
+    <div class="row" style="background-color: #efefef;">
         <div class="col-md-3 removePadding">
 
             <div class="member-mainbox">
                 <h1 class="member-tittle">Members</h1>
                 <hr class="hr">
                 <div class="member-box-space member-box" *ngFor="let item of memberList; let i = index">
-                    <div class="text-center">
+                   <!-- <div class="text-center">
                       <img src="{{ item.companyLogo }}" class="member-logo" />
-                    </div>
-                    <div class="members-heading">
-                      <h1>{{ item.companyName }}</h1>
+                    </div>-->
+                    <div class="members-heading ">
+                      <h4>{{ item.companyName }}</h4>
                       <p>{{ item.description }}</p>
                     </div>
                   </div>
@@ -126,7 +126,8 @@
 
                 <div class="offering-services">
                     <h1 class="offering-services-tittle">Offerings/Services</h1>
-                    <p class="text-center"><a  (click)="open()"><u>List YourSelf</u></a></p>
+                    <hr class="hr">
+                    <p class="text-center"><a  (click)="open()"><u class="message-list">List YourSelf</u></a></p>
                    <div class="list-yourself">
                     <ul class="list-name" style="list-style:none" >
                    
@@ -166,5 +167,9 @@
  
    
     </app-listyourself> 
+
+
+
+    
   </div>
 </body>

@@ -6,8 +6,8 @@
     <div class="col-md-6">
         <div class="Our-Partner">
           <h4>Our Partner co-working offices</h4>
-          <h6>Work out of any of our partner co-working offices
-              Free for two days*</h6>
+          <p>Work out of any of our partner co-working offices
+              Free for two days*</p>
         </div>
       </div> 
       
@@ -45,14 +45,14 @@
   </div>
   <section>
     <div class="Featured-spaces">
-      <h1>Featured spaces</h1>
+      <h5>Featured spaces</h5>
       <hr class="hr">
     </div>
-    <div class="row">
+   <!-- <div class="row">
              
-                  <div class="col-md-6" *ngFor="let item of list; let i = index">
+                  <div class="col-md-6" *ngFor="let item of list ; let i = index">
               <div class="row">
-            <div class="col-md-12"><!--{{ officeImages.imagePath}}-->
+            <div class="col-md-12"><!--{{ officeImages.imagePath}}
                 <img src="{{ item.officeImages[0].imagePath}}" *ngIf="item.officeImages.length>0" alt ="" style="width:100%; height:155px;">
                 <img src="/assets/meeting_room.jpg" *ngIf="item.officeImages.length<1" alt ="" style="width:100%; height:155px;">
             </div>
@@ -76,6 +76,24 @@
                </div>
                </div>
   
+  </div>-->
+
+
+
+  <div class="container process-item">
+    <div class="row" *ngFor="let item of list; let i = index">
+      <div class="col-md-4">
+        <img src="{{ item.officeImages[0].imagePath}}" *ngIf="item.officeImages.length>0" alt ="" style="width:100%; height:155px;margin-bottom: 20px;">
+        <img src="/assets/meeting_room.jpg" *ngIf="item.officeImages.length<1" alt ="" style="width:100%; height:155px;">
+      </div>
+      <div class="col-md-8">
+        <div class="process-inner">
+          <span>01</span>
+          <h4>{{item.OfficeName}}</h4>
+          <p>{{item.Address}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
   <!--<ul>
