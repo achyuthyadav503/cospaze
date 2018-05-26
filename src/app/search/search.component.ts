@@ -7,10 +7,10 @@ import { GooglePlaceDirective } from "ngx-google-places-autocomplete";
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
+
 })
 export class SearchComponent implements OnInit {
   @ViewChild("placesRef") placesRef : GooglePlaceDirective;
-
   constructor(private http:Http,private router: Router,private officeinfo:OfficeInfoService) { }
 
   textpattern="^[a-zA-Z\\s]+$";

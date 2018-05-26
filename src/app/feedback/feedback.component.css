@@ -1,3 +1,54 @@
 .msgBox{
     margin-left: 88px;
 }
+.section-head h4 {
+    font-size: 30px;
+    color: #212121;
+    line-height: 30px;
+    font-family: Crimson Text;
+    font-weight: 600;
+    margin: 16px 0 1px;
+}
+.section-head p {
+    font-size: 16px;
+    line-height: 25px;
+    color: #727272;
+    font-family: Crimson Text;
+    font-style: italic;
+    margin-bottom:20px;
+    margin-top: 20px;
+}
+.contact-form textarea{
+padding: 0;
+color: #727272;
+font-size: 16px;
+font-family: 'Crimson Text', sans-serif;
+font-style: italic;
+margin-bottom: 25px;
+border: none;
+background: transparent;
+border-bottom: 1px solid #efefef;
+}
+.contact-form .button:hover {
+    color: #fff !important;
+    border-color: #212121 !important ;
+    background: #212121 !important;
+}
+.contact-form .button{
+    border: 2px solid #000000;
+    display: table;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 25px auto 0;
+    padding: 0px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: all .4s ease 0s;
+    line-height: 52px;
+    border-radius: 40px;
+    letter-spacing: 0.10em;
+
+}
+.btn-success{
+    background: #212121 !important;
+}

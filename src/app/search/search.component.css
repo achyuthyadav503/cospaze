@@ -11,7 +11,6 @@
     margin-right: -30px;
     padding: 7px;
     margin-top: 45px;
-    opacity: 0.5;
     background: #000;
 }
 .Our-Partner h4{
@@ -25,7 +24,7 @@
 .Our-Partner p{
     font-size: 13px;
     margin-left: 20px;
-    color: #fff;
+    color: #727272;
     font-family: 'Source Sans Pro';
     line-height: 25px;
 }

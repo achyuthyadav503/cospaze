@@ -28,6 +28,11 @@ export class HomeComponent implements OnInit {
   services=[];
   showDialog = false;
   listYourData:object=[];
+  searchDeatilsObj:object=[];
+  list = [];
+  data;
+  
+  
   ngOnInit() {
     
     this.userDetailsObj=JSON.parse(localStorage.getItem("userdata"));
@@ -85,6 +90,23 @@ export class HomeComponent implements OnInit {
     console.log(this.services);
   })
 
+  this.searchDeatilsObj={
+    "City":1,
+    "location":1,
+     "NoSeats" :"",
+    "typesOfSeats":""
+    
+   
+  }
+  console.log("in search");
+  console.log(this.searchDeatilsObj);
+  this.http.post("/CoAPI/search.php",this.searchDeatilsObj).
+  subscribe((res:Response)=>{
+    console.log('response'+res);
+   this.data = res.json();
+  this.list = this.data.list;
+    console.log(this.data);
+  })
 
   }
 
@@ -147,6 +169,15 @@ addYourdetails=function (yourdata){
  
 
  }
+ 
+ officeDetails = function(officeId){
   
+ //this.officeinfo.id=officeId;
+   /* this.userinfo.ChatUser=data;
+ this.userinfo.id=id;*/
+ //localStorage.setItem("chatuserinfo", JSON.stringify(this.userinfo));
+ this.router.navigate(['/office-details/'+officeId]);
+// this.router.navigate(['/office-details/']);
+ }
 
 }
