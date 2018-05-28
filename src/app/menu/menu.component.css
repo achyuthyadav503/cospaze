@@ -1,15 +1,50 @@
 .nav {
     padding-left: 10%;
+    margin-top: 10px;
 }
-.navbar-default{
-    background: #d9c002;
-    margin-bottom: 0px;
-}
+
  ul li{
     cursor: pointer;
 }
+
 .navbar-default .navbar-nav > li > a {
-    color: #000;
+    color: #fff;
     font-size: 18px;
     font-family: sans-serif;
 }
+.nav.navbar-nav > li.active > a {
+    border: 2px solid #000;
+}
+li active a{
+    border: 2px solid #fff;
+}
+.ow-navigation .nav.navbar-nav > li > a {
+    font-size: 12px !important;
+    padding: 0;
+    position: relative;
+    text-transform: capitalize;
+    position: relative;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    padding: 7px 14px !important;
+   
+    line-height: 16px;
+   /* margin-bottom: 21px;*/
+}
+
+.ow-navigation .nav.navbar-nav > li > a:hover, .ow-navigation .nav.navbar-nav > li.active > a {
+    border: 2px solid #fff;
+}
+.ow-navigation .nav.navbar-nav > li.active > a, .ow-navigation .nav.navbar-nav > li.active:hover > a, .ow-navigation .nav.navbar-nav > li.active:focus > a, .ow-navigation .nav.navbar-nav > li:hover > a, .ow-navigation .nav.navbar-nav > li:focus > a, .ow-navigation .nav.navbar-nav > li > a:hover, .ow-navigation .nav.navbar-nav > li > a:focus, .ow-navigation .dropdown-menu li:hover > a, .ow-navigation .dropdown-menu li > a:hover, .ow-navigation .dropdown-menu > li:hover > a, .ow-navigation .dropdown-menu > li:focus > a, .ow-navigation .dropdown-menu > li > a:hover, .ow-navigation .dropdown-menu > li > a:focus {
+    /* background-color: transparent; */
+    color: #fff;
+}
+.ow-navigation .nav.navbar-nav > li > a:hover, .ow-navigation .nav.navbar-nav > li.active > a {
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+/*.ow-navigation .nav.navbar-nav > li > a, .ow-navigation .nav.navbar-nav > li.active > a, .ow-navigation .nav.navbar-nav > li.active:hover > a, .ow-navigation .nav.navbar-nav > li.active:focus > a, .ow-navigation .nav.navbar-nav > li:hover > a, .ow-navigation .nav.navbar-nav > li:focus > a,.ow-navigation .nav.navbar-nav > li > a:hover, .ow-navigation .nav.navbar-nav > li > a:focus, .ow-navigation .dropdown-menu li:hover > a, .ow-navigation .dropdown-menu li > a:hover, .ow-navigation .dropdown-menu > li:hover > a,  .ow-navigation .dropdown-menu > li:focus > a,  .ow-navigation .dropdown-menu > li > a:hover, .ow-navigation .dropdown-menu > li > a:focus {
+    color: #212121;
+}*/

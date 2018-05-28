@@ -18,14 +18,14 @@
      
     <input type="button" *ngIf="islogedin" class="btn btn-success" (click)="logout()" value="Logout">
     <input type="button" *ngIf="!islogedin" class="btn btn-success" (click)="logout()" value="Login">-->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default ow-navigation">
             <div class="container-fluid">
               <div class="navbar-header">
                
               </div>
               <ul class="nav navbar-nav">
               
-                <li> <a (click)="home()">Home</a></li>
+                <li class="active"> <a (click)="home()">Home</a></li>
                 <li><a (click)="registerOffice()" *ngIf="isAdmin">Register Co Office</a></li> 
                 <li><a (click)="registerCompany()" *ngIf="isOffice">Register Company/Freelancer</a></li>
                 <li> <a (click)="registerEmployee()" *ngIf="isCompany">Register Employee</a></li>

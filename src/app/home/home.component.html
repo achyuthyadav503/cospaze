@@ -67,7 +67,7 @@
         <div class="col-md-3 removePadding">
 
             <div class="member-mainbox">
-                <h1 class="member-tittle">Members</h1>
+                <h4 class="member-tittle"><span>Members</span></h4>
                 <hr class="hr">
                 <div class="member-box-space member-box" *ngFor="let item of memberList; let i = index">
                    <!-- <div class="text-center">
@@ -130,7 +130,7 @@
             <div class="col-md-3 removePadding">
 
                 <div class="offering-services">
-                    <h1 class="offering-services-tittle">Offerings/Services</h1>
+                    <h4 class="offering-services-tittle"><span>Offerings/Services</span></h4>
                     <hr class="hr">
                     <p class="text-center"><a  (click)="open()"><u class="message-list">List YourSelf</u></a></p>
                    <div class="list-yourself">
@@ -171,7 +171,7 @@
         </div>
      </div>
      </div>
-        <div class="container process-item-left" *ngIf = "isOdd">
+       <!-- <div class="container process-item-left" *ngIf = "isOdd">
             <div class="row"> 
         <div >
             <div class="col-md-4 col-md-push-7">
@@ -182,7 +182,6 @@
             <div class="process-inner">
                 <span>{{ i+1 }}</span>
               <h4 class="office-list-details"><a (click)="officeDetails(item.id)" style="cursor: pointer; color:#000">{{item.OfficeName}}</a></h4>
-              <!--<h4>{{item.OfficeName}}</h4>-->
               <div class="clearfix"></div>
               <p>{{item.Address}}</p>
             </div>
@@ -191,7 +190,7 @@
         
 
       </div>
-    </div>
+    </div>-->
   </div>
   </section>    
    
