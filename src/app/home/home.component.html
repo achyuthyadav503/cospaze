@@ -152,8 +152,8 @@
         <hr class="hr-row">
       </div>
 
-  <div *ngFor="let item of list; let i = index; even as isEven; odd as isOdd;">
-  <div class="container process-item" *ngIf = "isEven">
+  <div *ngFor="let item of list; let i = index;">
+  <div class="container process-item">
       <div class="row"> 
         <div >
             <div class="col-md-4">
@@ -171,7 +171,7 @@
         </div>
      </div>
      </div>
-       <!-- <div class="container process-item-left" *ngIf = "isOdd">
+       <!-- <div class="container process-item-left" *ngIf = "isOdd" even as isEven; odd as isOdd;>
             <div class="row"> 
         <div >
             <div class="col-md-4 col-md-push-7">
