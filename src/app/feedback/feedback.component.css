@@ -2,26 +2,27 @@
     margin-left: 88px;
 }
 .section-head h4 {
-    font-size: 30px;
-    color: #212121;
-    line-height: 30px;
-    font-family: Crimson Text;
-    font-weight: 600;
-    margin: 16px 0 1px;
+    margin: 0;
+font-size: 14px;
+color: #727272;
+font-weight: 700;
+letter-spacing: 0.10em;
+text-transform: uppercase;
+text-align: left;
 }
 .section-head p {
-    font-size: 16px;
-    line-height: 25px;
-    color: #727272;
-    font-family: Crimson Text;
-    font-style: italic;
-    margin-bottom:20px;
-    margin-top: 20px;
+  font-size: 22px;
+line-height: 30px;
+font-family: Crimson Text;
+font-weight: 600;
+margin: 16px 0 1px;
+color: #000;
+text-align: left;
 }
 .contact-form textarea{
 padding: 0;
 color: #727272;
-font-size: 16px;
+font-size: 13px;
 font-family: 'Crimson Text', sans-serif;
 font-style: italic;
 margin-bottom: 25px;
@@ -37,7 +38,7 @@ border-bottom: 1px solid #efefef;
 .contact-form .button{
     border: 2px solid #000000;
     display: table;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 700;
     margin: 25px auto 0;
     padding: 0px 30px;
@@ -49,6 +50,8 @@ border-bottom: 1px solid #efefef;
     letter-spacing: 0.10em;
 
 }
-.btn-success{
-    background: #212121 !important;
+
+.form-group {
+    margin-bottom: 15px;
+    margin-top: 15px;
 }

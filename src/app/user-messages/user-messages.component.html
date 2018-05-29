@@ -21,11 +21,11 @@
       </div> -->
       <div *ngFor="let message of userMessages">
           <div *ngIf="message.isFrom">
-            <div class="user"><b>{{message.fromUser}}</b></div>
+           <!-- <div class="user"><b>{{message.fromUser}}</b></div>-->
           <div class="loginUser" >{{message.message}}</div>
           </div>
           <div *ngIf="!message.isFrom">
-            <div class="admin"><b>{{message.fromUser}}</b></div>
+           <!-- <div class="admin"><b>{{message.fromUser}}</b></div> -->
           <div  class="chatUser" >{{message.message}}</div>
           </div>
   

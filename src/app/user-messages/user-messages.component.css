@@ -1,5 +1,5 @@
 .messages-mainbox{
-    background: #eceff1;
+    background: #efefef;
 border: 0px solid gray;
 height: 490px;
 overflow-y: scroll;
@@ -15,15 +15,27 @@ border-radius:10px;
     height: 72px;
     width: 800px;
     margin-left: 1%;
-    background: #eceff1;
+    background: #efefef;
     border:0px;
     border-radius:10px;
 }
 .buttonStyle{
-    background: #d9c002;
-    width: 75px;
-    height: 72px;
-    border-radius: 10px;        
+    width: 76px;
+height: 72px;
+border: 2px solid #000000;
+color: #FFF;
+background: #212121;
+font-size: 16px;
+font-weight: 700;
+text-decoration: none;
+text-transform: uppercase;
+transition: all .4s ease 0s;
+-webkit-transition: all .4s ease 0s;
+-moz-transition: all .4s ease 0s;
+-o-transition: all .4s ease 0s;
+line-height: 52px;
+border-radius: 15px;
+letter-spacing: 0.10em;  
 }
 .user{
    text-align: right;
@@ -43,10 +55,11 @@ height: 46px;
 border-radius: 10px;
 margin-right: 2px;
 margin-top: 15px;
-background: #d6ecf7;
+background: #FFf;
 padding-top: 12px;
 padding-right: 21px;
 position: relative;
+color: #000;
 }
 .chatUser{
     text-align: left; 
@@ -56,19 +69,20 @@ height: 46px;
 border-radius: 10px;
 margin-left: 10px;
 margin-top: 10px;
-background: #86BB71;
+background: #727272;
 padding-top: 12px;
 padding-left: 21px;
 position: relative;
+color: #FFF;
 }
-.chatUser:after{
+/*.chatUser:after{
 content: "";
   position: absolute;
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
 border-right: 10px solid transparent;
-border-bottom: 10px solid #86BB71 ;
+border-bottom: 10px solid #727272;
 left: 15px;
 top: -9px; 
 }
@@ -79,16 +93,19 @@ content: "";
   height: 0;
   border-left: 10px solid transparent;
 border-right: 10px solid transparent;
-border-bottom: 10px solid #d6ecf7 ;
+border-bottom: 10px solid #727272 ;
 right: 15px;
 top: -9px; 
-}
+}*/
 
 .msgChatUser{
-    margin-top: 0px !important;
+    text-transform: uppercase;
+font-size: 16px;
+color: #727272;
+font-weight: 700;
+letter-spacing: 0.10em;
 }
 .user-indox{
-       background: #eceff1;
 border: 0px solid gray;
 height: 490px;
 padding-top: 3px;

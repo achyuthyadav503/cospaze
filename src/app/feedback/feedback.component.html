@@ -1,22 +1,23 @@
-<div class="row">
-  <form id="feedbackData" name="feedbackData" #feedbackData="ngForm" (ngSubmit)="feedbackData.valid && addFeedback(feedbackData)">
+
+
+
+ <div class="row">
+                 <div class="col-md-4" style="width: 30%;">
+                <h4>Suggestions & Requests</h4>
+            <p>Is there anything you require? Please submit your requests here and let us know how we can serve you better</p>
+                 </div>
+                  <div class="col-md-8">
+                    <form id="feedbackData" name="feedbackData" #feedbackData="ngForm" (ngSubmit)="feedbackData.valid && addFeedback(feedbackData)">
             <div class="col-md-12">
                 <div class="form-group section-head contact-form">
-                   
-                  <h4>Suggestions & Requests</h4>
-            <p>Is there anything you require? Please submit your requests here and let us know how we can serve you better</p>
-           <!-- <textarea name="message" value="" class="input-text" placeholder="Suggestion" [pattern]="textpattern" ngModel #message="ngModel"></textarea><br>
-            <button class="search-button" (click)="open()">Submit</button> -->
 
                 
-                    <textarea id="form_message" name="message" class="form-control msgBox" placeholder="Message for me *" rows="4"  cols="20" required="required" data-error="Please,leave us a message." [pattern]="textpattern" ngModel #message="ngModel" style="width:800px; height: 68px;"></textarea>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Your Message here*" rows="4"  cols="20" required="required" data-error="Please,leave us a message." [pattern]="textpattern" ngModel #message="ngModel" align="BOTTOM" style="border-bottom: 1px solid #000;"></textarea>
                     <div class="help-block with-errors"></div>
-                    <input type="submit" class="btn btn-success btn-send button" value="Send message">
+                    <input type="submit" class="btn btn-send button" (click)="open()" value="Send message">
                 </div>
             </div>
-            <!--<div class="col-md-12">
-                <input type="submit" class="btn btn-success btn-send" value="Send message">
-            </div>-->
   </form>
-</div>
+                 </div>
+           </div>
   

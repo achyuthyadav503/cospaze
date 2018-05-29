@@ -1,39 +1,41 @@
 <body style="background-color: #ccc; background-repeat: no-repeat; background-size: cover;">
 <div class="container paddingContainer">
+  
     <div class="cospace-header-banner">
+
+      <div class="row">
+      
+      <div class="col-md-1">
+         <img src="assets/cospaze-network2.png" alt="cospace" style="height: 92px;margin: 10px;">
+      </div>
+      <div class="col-md-8">
         <h4>QUEST OFFICES PVT LTD</h4>
         <p>Quest Offices offers you an office option, ready to use plug and play workspaces, which lets you set up and work right away</p>
       </div>
-    <div class="row">
-      
-     <!-- <div class="col-md-3 removePadding">
-        <div class="text-center">
-          <img src="assets/cospaze-logo.png" alt="cospace" style="width:100%;height: 120px;">
-        </div>
-          <div class="text-center img-circle">
-            <img src="assets/profile.jpg" alt="cospace" class="img-circle">
+      <div class="col-md-3 text-right">
+          <div style="margin:10px">
+            <span class="home-menu"> Hi {{userDetailsObj?.name}}</span>
+           <a (click)="goToinbox()" class="home-menu"><i class="fa fa-envelope-square"></i> Inbox</a>
+        <!--  <a href="#" *ngIf="islogedin"  (click)="logout()" class="home-menu"> <i class="fa fa-power"> Logout</a>
+          <a href="#" *ngIf="!islogedin"  (click)="logout()" class="home-menu">Login</a>
+           <h1><a href="#">Edit Profile</a></h1>-->
           </div>
-        <div class="logo-description">
-            <h1> welcome {{userDetailsObj?.name}}</h1>
-            <p><i class="fa fa-envelope-square"></i> <a (click)="goToinbox()">Inbox</a></p>
-            <p>Company</p>
-           <!--  <h1 *ngIf="islogedin"  (click)="logout()" value="Logout"><a href="#" style="font-size: 15px;">Logout</a></h1>
-            <h1 *ngIf="!islogedin"  (click)="logout()" value="Login"><a href="#" style="font-size: 15px;">Logout</a></h1>
-           <h1><a href="#">Edit Profile</a></h1>	--
-        </div>
-      </div>	-->
+          
+      </div>
+  </div>
+        
+      </div>
+    <div class="row cospace-feed-back-banner">
+      
+	
       <div class="col-md-9">
-          <div class="New-Members-Announcement">
-            <app-feedback></app-feedback>
-            <!--<h1>Suggestions & Requests</h1>
-            <p>Is there anything you require?</p><p>Please submit your requests here and let us know how we can serve you better</p>
-            <textarea name="message" value="" class="input-text" placeholder="Suggestion" [pattern]="textpattern" ngModel #message="ngModel"></textarea><br>
-            <button class="search-button" (click)="open()">Submit</button>  -->         
+          <div class="New-Members-Announcement" style="padding: 10px">
+                <app-feedback></app-feedback>
          </div>	
       </div>
       <div class="col-md-3 removePadding">
           <div [hidden]="isEmployee">
-          <div class="menu-background shadowEffect">
+          <div class="shadowEffect">
               
           <div class="menu-mainbox removeBorder"  >
              <h4 class="menu" *ngIf = "isCompany">Payment Status</h4>
@@ -84,7 +86,7 @@
            <a href="membersDetails" style="float: right;">View More</a>
 
           </div>
-          <div class="col-md-6 paddingContainer" style="background:#fdfdfd;overflow: hidden;">
+          <div class="col-md-6 paddingContainer cospace-search-background">
 
            
             <app-search></app-search>
@@ -146,31 +148,45 @@
    </div>
 
 
-   <section class="featured-section">
+   <section class="featured-section" style="padding: 47px;">
       <div class="Featured-spaces">
         <h5>Featured spaces</h5>
         <hr class="hr-row">
       </div>
 
-  <div *ngFor="let item of list; let i = index; even as isEven; odd as isOdd;">
-  <div class="container process-item" *ngIf = "isEven">
-      <div class="row"> 
-        <div >
-            <div class="col-md-4">
-                <img src="{{ item.officeImages[0].imagePath}}" *ngIf="item.officeImages.length>0" alt ="" style="width:100%; height:155px;margin-bottom: 30px;">
-                <img src="/assets/meeting_room.jpg" *ngIf="item.officeImages.length<1" alt ="" style="width:100%; height:155px;">
-              </div>
-          <div class="col-md-8">
-            <div class="process-inner">
-              <span>{{ i+1 }}</span>
-              <h4 class="office-list-details"><a (click)="officeDetails(item.id)" style="cursor: pointer; color:#000">{{item.OfficeName}}</a></h4>
-              <!--<h4>{{item.OfficeName}}</h4>-->
-              <p>{{item.Address}}</p>
-            </div>
+
+      <div class="row">
+             
+          <div class="col-md-4" *ngFor="let item of list ; let i = index" style="text-align: center">
+              <div class="row" style="margin: 10px;min-height: 298px;">
+                <div class="col-md-12" style="text-align: center">
+                    <img src="{{ item.officeImages[0].imagePath}}" *ngIf="item.officeImages.length>0" alt ="" style="width:80%; height:155px;">
+                    <img src="/assets/meeting_room.jpg" *ngIf="item.officeImages.length<1" alt ="" style="width:80%; height:155px;">
+                </div>
+               <div class="col-md-12 officeList">
+                <div class="office-list-details" style="font-size:16px;"><a (click)="officeDetails(item.id)" style="cursor: pointer;">{{item.OfficeName}}</a></div>
+                <div class="office-address">{{item.Address}}</div>
+                <div class="office-address">{{item.Location}},{{item.City}}</div>
+                <div class="col-md-12" style="margin-top: 10px;">
+                  <div *ngFor="let officeSeat of item.officeSeats; let i = index">
+                  <div class="col-md-7 office-cost">
+                     {{ officeSeat.typeOfSeats}}
+                  </div>
+                  <div class="col-md-5 office-cost">
+                    <i class='fa fa-inr'></i>{{ officeSeat.pricePerSeats}} 
+                  </div>
+
+                </div>
+                
+                </div>
+               </div>
+        
+               </div>
           </div>
+  
         </div>
-     </div>
-     </div>
+
+ 
        <!-- <div class="container process-item-left" *ngIf = "isOdd">
             <div class="row"> 
         <div >
@@ -191,7 +207,7 @@
 
       </div>
     </div>-->
-  </div>
+  
   </section>    
    
    <app-listyourself id="listme" [(visible)]="showDialog">

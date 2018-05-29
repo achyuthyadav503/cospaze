@@ -1,25 +1,25 @@
 
 .inbox-mainbox{
-    background: white;
 border: 0px solid gray;
 height: 600px;
 }
 .inbox-heading{
-    background: #eceff1;
 border: 0px solid gray;
 height:34px;
 font-size:18px;
 text-transform: capitalize;
 padding-top: 2px;
 padding-left: 22px;
+   background: #212121;
+color: #FFF;
+text-transform: uppercase;
 }
 .inbox-messages{
-    background: #eceff1;
-border-bottom: 1px  #ded7d7;
-height:70px;
+height: 43px;
+border-bottom: 1px solid #ded7d7;
 }
 .inbox-messages:hover{
-background: white;
+background: #f9f9f9;
 }
 .fromUser{
     margin-top:5px;

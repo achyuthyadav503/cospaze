@@ -8,9 +8,9 @@
         
        <span *ngIf="!Message.isFrom" (click)="sendMessage(Message.fromUser,Message.message_from)">
          <div class="col-md-12 paddingContainer">
-           <div class="col-md-4 fromUser">
+         <!--  <div class="col-md-4 fromUser">
               <b>{{Message.toUser}}</b>
-           </div>
+           </div> -->
            <div class="col-md-8 toUser">
              <div class="col-md-12 messageTo">
             <b>{{Message.fromUser}}</b>
@@ -24,9 +24,9 @@
        </span>
         <span *ngIf="Message.isFrom" (click)="sendMessage(Message.toUser,Message.message_to)">
           <div class="col-md-12 paddingContainer">
-           <div class="col-md-4 fromUser">
+          <!--  <div class="col-md-4 fromUser">
               <b>{{Message.fromUser}}</b>
-           </div>
+           </div> -->
            <div class="col-md-8 toUser">
              <div class="col-md-12 messageTo">
             <b>{{Message.toUser}}</b>

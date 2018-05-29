@@ -104,7 +104,7 @@ body {
     margin-left: 10px;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     color: #212121;
     font-family: 'Source Sans Pro';
     margin-left: 10px;
@@ -240,14 +240,8 @@ font-family: 'Raleway', sans-serif, 'Lucida Grande', Helvetica, Arial, sans-seri
 	 border: 2px solid gray;
 }
 .menu{
-	text-align:center;
     text-align: center;
-    font-size: 25px;
-    font-size: 30px;
     color: #212121;
-    line-height: 30px;
-    font-family: Crimson Text;
-    font-weight: 600;
     margin: 16px 0 1px;
 }
 .menu-background{
@@ -259,7 +253,7 @@ font-family: 'Raleway', sans-serif, 'Lucida Grande', Helvetica, Arial, sans-seri
    
 }
 .menu-mainbox{
-	    background: white;
+	    
     border: 1px solid #d8cccc;
 }
 .menu-description p{
@@ -330,9 +324,6 @@ font-family: 'Raleway', sans-serif, 'Lucida Grande', Helvetica, Arial, sans-seri
     
     margin: 0 auto;
    text-align: center;
-    height:270px;
-   /* box-shadow: 7px 8px 6px -6px black;
-    background: #e9ecef;*/
 }
 .New-Members-Announcement h1{
     margin: 0 auto;
@@ -356,11 +347,7 @@ font-family: 'Raleway', sans-serif, 'Lucida Grande', Helvetica, Arial, sans-seri
     
 }
 .shadowEffect{
-   /* -webkit-box-shadow: 7px 8px 6px -6px black;
-	   -moz-box-shadow: 7px 8px 6px -6px black;
-	        box-shadow: 7px 8px 6px -6px black;*/
-            background: white !important;
-                min-height: 270px;
+       min-height: 203px;      
     border: 1px solid #eae6e6
 }
 .removeBorder{
@@ -373,6 +360,7 @@ font-family: 'Raleway', sans-serif, 'Lucida Grande', Helvetica, Arial, sans-seri
 	        box-shadow: 0px 8px 6px -6px black;
             padding-left: 0px !important;
             padding-right: 0px !important;
+           
 }
 .message-list{
     font-size: 13px;

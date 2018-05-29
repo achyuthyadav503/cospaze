@@ -8,7 +8,7 @@
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #fff;
+    color: #d9c002;
     font-size: 18px;
     font-family: sans-serif;
 }
@@ -37,11 +37,11 @@ li active a{
     border: 2px solid #fff;
 }
 .ow-navigation .nav.navbar-nav > li.active > a, .ow-navigation .nav.navbar-nav > li.active:hover > a, .ow-navigation .nav.navbar-nav > li.active:focus > a, .ow-navigation .nav.navbar-nav > li:hover > a, .ow-navigation .nav.navbar-nav > li:focus > a, .ow-navigation .nav.navbar-nav > li > a:hover, .ow-navigation .nav.navbar-nav > li > a:focus, .ow-navigation .dropdown-menu li:hover > a, .ow-navigation .dropdown-menu li > a:hover, .ow-navigation .dropdown-menu > li:hover > a, .ow-navigation .dropdown-menu > li:focus > a, .ow-navigation .dropdown-menu > li > a:hover, .ow-navigation .dropdown-menu > li > a:focus {
-    /* background-color: transparent; */
-    color: #fff;
+ background: none; 
+    color: #d9c002;
 }
 .ow-navigation .nav.navbar-nav > li > a:hover, .ow-navigation .nav.navbar-nav > li.active > a {
-    color: #fff;
+   color: #d9c002;
     border: 2px solid #fff;
 }
 

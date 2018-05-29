@@ -1,11 +1,14 @@
 
 .inbox-mainbox{
-    background: white;
+  
 border: 1px solid gray;
 height: 600px;
 }
 .inbox-heading{
-    background: rgb(179, 209, 170);
+    background: #212121;
+
+color: #FFF;
+text-transform: uppercase;
 border: 1px solid gray;
 }
 .inbox-messages{

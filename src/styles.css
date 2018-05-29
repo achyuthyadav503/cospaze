@@ -33,13 +33,8 @@ body {
     background-image:url('assets/cospaze-logo.png');
   }
 .search-cospace{
-  /*background-image:url('assets/cospaze.jpg');*/
-  background-color: #212121;
   width:100%;
    height:420px;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
 }
   
   table   { border-collapse: collapse;
@@ -84,11 +79,33 @@ padding-left: 0px !important;
     margin-bottom: 14px
 }
 .cospace-header-banner{
-  background-image:url('assets/cospace-header-banner.jpg');
-  height: 150px;
+  background-image:url('assets/cospace-header-banner2.jpg');
+  height: 115px;
   width: 100%;
-  background-position: center;
   background-size: cover;
+}
+.cospace-search-background{
+ background: url("assets/1.jpg");
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+min-height: 400px;
+}
+.cospace-search-background::before {
+    background-color: rgba(255, 255, 255, 0.8);
+    bottom: 15px;
+    content: "";
+    display: inline-block;
+    left: 15px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.cospace-feed-back-banner{
+  background: url('assets/lamp2.png') no-repeat 70% 120%;
+  background-size: auto;
 }
 .process-item {
   margin-bottom: 30px;
@@ -162,4 +179,18 @@ p {
   height: 60px;
   background: #727272 !important;
 
+}
+.home-menu{
+  display: inline-block;
+  color:#fff !important;
+}
+.office-address{
+font-size: 13px;
+margin-bottom: 0px;
+font-family: 'Source Sans Pro';
+color: #727272;
+line-height: 16px;
+}
+.office-cost{
+  font-size: 12px;
 }

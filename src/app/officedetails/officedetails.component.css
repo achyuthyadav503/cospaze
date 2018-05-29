@@ -2,6 +2,12 @@
 .co-working-offices{
     margin-top: 70px;
 }
+h2.office-heading{
+background: #212121;
+color: #FFF;
+text-transform: uppercase;
+font-size: 16px;
+}
 .search-box{
     padding: 10px 10px 20px 10px;
     background: #fff;
@@ -38,10 +44,19 @@ ul{
     list-style: none;
 }
 .office-address{
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;  
+   font-size: 13px;
+line-height: 25px;
+color: #727272;
+    margin-bottom: 6px;
+    text-align: center;
+    
+}
+.office-description{
+   font-size: 13px;
+line-height: 25px;
+color: #727272;
+font-family: Crimson Text;
+font-style: italic;
     margin-bottom: 6px;
     text-align: center;
     
@@ -55,13 +70,13 @@ ul{
     text-align: center;
     
 }
-.office-cost{
+/*.office-cost{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;  
     margin-bottom: 6px;
-}
+}*/
 .Featured-spaces {
       margin-left: 20px
 }
@@ -81,10 +96,11 @@ ul{
 }
 .section-head {
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 .section-head h4 {
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 24px;
+line-height: 26px;
     font-family: Crimson Text;
     font-weight: 600;
     margin: 16px 0 1px;
@@ -108,14 +124,13 @@ ul{
 
 
 .icon-teaser2 span {
-    width: 70px;
-    height: 70px;
+    width: 24px;
     border: 2px solid #212121;
     color: #212121;
     border-radius: 50%;
-    font-size: 30px;
+    font-size: 12px;
     text-align: center;
-    line-height: 66px;
+    line-height: 14px;
     display: table;
     position: absolute;
     top: 0;
@@ -123,7 +138,7 @@ ul{
 }
 
 .icon-teaser2 h4 {
-    font-size: 16px;
+    font-size: 13px;
     letter-spacing: 0.10em;
     text-transform: uppercase;
     margin: 0;

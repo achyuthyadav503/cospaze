@@ -1,6 +1,6 @@
 <div class="menuResize text-center">
   <app-menu></app-menu>
-  <h2>{{office.OfficeName}}</h2>
+ <!--  <h2 class="office-heading">{{office.OfficeName}}</h2> -->
   
 </div>
 
@@ -45,15 +45,20 @@
 
                      </div>
                     </div>
-                 
-            <div class="col-md-12">
+            <div class="row">
+            <div class="col-md-3">
+                 <img src="{{office.officeLogo}}"  alt ="" style="height:60px;margin: 17px;">
+            </div>
+            <div class="col-md-9">
             <div class="office-list-details" style="font-size:20px;">{{office.OfficeName}}</div>
              <div class="office-address">{{office.Address}},{{office.Location}},{{office.City}}</div>
-             <br>
-             <div class="office-address">{{office.Description}}</div>
-             <br>
+             
+             <div class="office-description">{{office.Description}}</div>
+            </div>
+            </div>
+              <div class="col-md-12">
              <div class="col-md-12">
-            <div *ngFor="let officeSeat of office.officeSeats; let i = index">
+            <div *ngFor="let officeSeat of office.officeSeats; let i = index" class="row">
                 <div class="col-md-7 office-cost">
                     <b> {{ officeSeat.typeOfSeats}} </b>
                 </div>
@@ -61,6 +66,7 @@
                     <i class='fa fa-inr'></i>{{ officeSeat.pricePerSeats}} 
                 </div>              
             </div>
+            <br>
                <div class="section-head"><h4>Amenities</h4></div>
                <div class="row">
                 <div *ngFor="let amenities of office.officeAmenities; let i = index">
@@ -69,7 +75,7 @@
                                 <div class="col-md-4">
                                     <div class="icon-teaser2">
                                         <span class="fa fa-paper-plane"></span>
-                                        <ul class="paper-plane">
+                                        <ul class="paper-plane" style="padding-left: 9px;">
                                             <li> {{ amenities.amenities}} </li>
                                         </ul>
                                     </div>
@@ -86,7 +92,7 @@
          </div>
       </div>
       <div class="col-md-3">
-          <img src="{{office.officeLogo}}"  alt ="" style="width:100%;height:150px;margin-left: 60%;">
+         
       </div>
   
   </div>
