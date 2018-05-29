@@ -153,8 +153,6 @@
         <h5>Featured spaces</h5>
         <hr class="hr-row">
       </div>
-
-
       <div class="row">
              
           <div class="col-md-4" *ngFor="let item of list ; let i = index" style="text-align: center">
@@ -185,28 +183,6 @@
           </div>
   
         </div>
-
- 
-       <!-- <div class="container process-item-left" *ngIf = "isOdd">
-            <div class="row"> 
-        <div >
-            <div class="col-md-4 col-md-push-7">
-                <img src="{{ item.officeImages[0].imagePath}}" *ngIf="item.officeImages.length>0" alt ="" style="width:100%; height:155px;margin-bottom: 30px;">
-                <img src="/assets/meeting_room.jpg" *ngIf="item.officeImages.length<1" alt ="" style="width:100%; height:155px;">
-              </div> 
-          <div class="col-md-8 col-md-pull-5">
-            <div class="process-inner">
-                <span>{{ i+1 }}</span>
-              <h4 class="office-list-details"><a (click)="officeDetails(item.id)" style="cursor: pointer; color:#000">{{item.OfficeName}}</a></h4>
-              <div class="clearfix"></div>
-              <p>{{item.Address}}</p>
-            </div>
-          </div>
-        </div>
-        
-
-      </div>
-    </div>-->
   
   </section>    
    
